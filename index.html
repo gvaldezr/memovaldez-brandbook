@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memo Valdez — Director · Músico · Explorador</title>
+  <meta name="description" content="Memo Valdez: músico, director de ensambles corales e instrumentales y explorador de tecnología e IA. Acompañar. Dirigir. Explorar. Desde Mérida, México." />
+  <meta name="theme-color" content="#131110" />
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Memo Valdez — Director · Músico · Explorador" />
+  <meta property="og:description" content="Donde la música encuentra la tecnología — y ambas encuentran a las personas." />
+  <meta property="og:locale" content="es_MX" />
+
+  <link rel="icon" type="image/png" href="brandbook/assets/monogram_mv.png" />
+  <link rel="apple-touch-icon" href="brandbook/assets/monogram_mv.png" />
+
+  <!-- Anti-FOUC: aplica el tema guardado antes de pintar -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('mv-theme');
+        if (t === 'light' || t === 'dark') {
+          document.documentElement.setAttribute('data-theme', t);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Bodoni+Moda:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <!-- ===================== HEADER / NAV ===================== -->
+  <header class="site-header" data-header>
+    <div class="container nav-bar">
+      <a class="brand" href="#hero" aria-label="Memo Valdez — inicio">
+        <span class="brand__mark" aria-hidden="true">MV</span>
+        <span class="brand__name">Memo Valdez</span>
+      </a>
+
+      <div class="nav__actions">
+        <!-- Theme switch (light / dark / system) -->
+        <div class="theme-switch" role="group" aria-label="Cambiar tema">
+          <button class="theme-switch__btn" data-theme-option="light" aria-pressed="false" title="Tema claro" aria-label="Tema claro">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          </button>
+          <button class="theme-switch__btn" data-theme-option="dark" aria-pressed="false" title="Tema oscuro" aria-label="Tema oscuro">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          </button>
+          <button class="theme-switch__btn" data-theme-option="system" aria-pressed="false" title="Según el sistema" aria-label="Tema según el sistema">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+          </button>
+        </div>
+
+        <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú">
+          <svg class="nav-toggle__open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="nav-toggle__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+
+      <nav class="nav" id="primary-nav" data-nav aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#music">Música</a></li>
+          <li><a href="#tech">Tecnología</a></li>
+          <li><a href="#blog">Reflexiones</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <h1 class="hero__wordmark" id="hero-title" data-reveal>
+          MEMO<br /><span class="is-terra">VALDEZ</span>
+        </h1>
+        <p class="hero__tagline" data-reveal data-delay="1">Acompañar. Dirigir. Explorar.</p>
+        <p class="hero__descriptor" data-reveal data-delay="2">
+          Director <span class="dot" aria-hidden="true">·</span>
+          Músico <span class="dot" aria-hidden="true">·</span>
+          Explorador
+        </p>
+        <div class="hero__cta" data-reveal data-delay="3">
+          <a class="btn btn--primary" href="#about">Conoce más</a>
+          <a class="btn btn--ghost" href="#contact">Trabajemos juntos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE MÍ ===================== -->
+    <section class="section section--surface" id="about" aria-labelledby="about-title" tabindex="-1">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__manifesto" data-reveal>
+            <p class="eyebrow">Sobre mí</p>
+            <h2 class="section-title" id="about-title">Donde la música encuentra la tecnología, las personas se encuentran.</h2>
+            <p style="margin-top: var(--mv-space-8);">
+              Dirijo ensambles corales e instrumentales, enseño en la Universidad Anáhuac Mayab, y paso una cantidad
+              sospechosa de tiempo explorando cómo la <strong>inteligencia artificial</strong> puede hacer que aprendamos,
+              creemos y nos conectemos de formas que antes no eran posibles.
+            </p>
+            <p>
+              Para algunos suena contradictorio: ¿un director de coro metido en el mundo tech? Para mí es la misma
+              pregunta con otro instrumento: <strong>¿cómo ayudamos a las personas a encontrar su voz?</strong>
+            </p>
+            <blockquote class="about__quote">
+              Creo que la música y la tecnología existen para acercar a las personas. Y que acompañar es
+              más valioso que instruir.
+            </blockquote>
+            <p class="about__sign">— Memo</p>
+          </div>
+          <div class="about__photo" data-reveal data-delay="1" role="img" aria-label="Retrato de Memo Valdez (pendiente)">
+            <span>[ Foto — placeholder ]</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MÚSICA ===================== -->
+    <section class="section" id="music" aria-labelledby="music-title" tabindex="-1">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Música · El ensamble como laboratorio humano</p>
+          <h2 class="section-title" id="music-title">Ensambles &amp; conciertos</h2>
+          <p class="section-lead">
+            El concierto dura una hora. Los ensayos duran un semestre. Aquí viven las voces que se están formando
+            y los encuentros que las reúnen.
+          </p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card event-card" data-reveal>
+            <p class="event-card__date">Nov 2026 · Mérida</p>
+            <h3 class="event-card__title">Ensamble Coral — Concierto de Otoño</h3>
+            <p class="event-card__meta">Auditorio Anáhuac Mayab · 20:00 h</p>
+            <p class="event-card__desc">Repertorio del Renacimiento al presente. Voces que se encuentran, imperfectas y valientes.</p>
+            <span class="tag">Coro</span>
+          </article>
+
+          <article class="card event-card" data-reveal data-delay="1">
+            <p class="event-card__date">Feb 2027 · Mérida</p>
+            <h3 class="event-card__title">Ensamble Instrumental — Cámara</h3>
+            <p class="event-card__meta">Sala de Conciertos · 19:30 h</p>
+            <p class="event-card__desc">Un programa de música de cámara donde cada instrumento escucha antes de sonar.</p>
+            <span class="tag">Instrumental</span>
+          </article>
+
+          <article class="card event-card" data-reveal data-delay="2">
+            <p class="event-card__date">Taller · Fecha por confirmar</p>
+            <h3 class="event-card__title">Dirigir es escuchar</h3>
+            <p class="event-card__meta">Taller abierto para coristas</p>
+            <p class="event-card__desc">Una tarde sobre técnica coral, comunidad y el arte de encontrar la propia voz.</p>
+            <span class="tag">Taller</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TECNOLOGÍA ===================== -->
+    <section class="section section--surface" id="tech" aria-labelledby="tech-title" tabindex="-1">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Tecnología · IA con alma</p>
+          <h2 class="section-title" id="tech-title">Exploraciones</h2>
+          <p class="section-lead">
+            No uso IA para reemplazar lo que hacemos — la uso para amplificar lo que somos. La herramienta cambia;
+            la pregunta permanece: ¿cómo ayudamos a las personas a crecer?
+          </p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card tech-card" data-reveal>
+            <p class="tech-card__kicker">Framework</p>
+            <h3 class="tech-card__title">Dinámicas corales aplicadas al diseño de experiencias</h3>
+            <p class="tech-card__desc">Lo que dirigir un coro me enseñó sobre facilitar con IA: ritmo, escucha y coordinación colectiva.</p>
+            <a class="tech-card__link" href="#blog">Leer más
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <article class="card tech-card" data-reveal data-delay="1">
+            <p class="tech-card__kicker">Experimento</p>
+            <h3 class="tech-card__title">IA como herramienta de escucha, no de reemplazo</h3>
+            <p class="tech-card__desc">Un registro de hallazgos al explorar modelos generativos aplicados a la educación musical.</p>
+            <a class="tech-card__link" href="#blog">Leer más
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <article class="card tech-card" data-reveal data-delay="2">
+            <p class="tech-card__kicker">Ensayo</p>
+            <h3 class="tech-card__title">El humanismo como sistema operativo</h3>
+            <p class="tech-card__desc">Sobre por qué las fronteras entre disciplinas son los lugares más interesantes para pensar.</p>
+            <a class="tech-card__link" href="#blog">Leer más
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BLOG / REFLEXIONES ===================== -->
+    <section class="section" id="blog" aria-labelledby="blog-title" tabindex="-1">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Notas de ensayo</p>
+          <h2 class="section-title" id="blog-title">Reflexiones</h2>
+          <p class="section-lead">
+            Querido ser humano curioso: aquí escribo desde la frontera donde la música se encuentra con la innovación.
+          </p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card post-card" data-reveal>
+            <p class="post-card__cat">Liderazgo</p>
+            <h3 class="post-card__title">Lo que un coro me enseñó sobre el trabajo en equipo</h3>
+            <p class="post-card__excerpt">Si falta una voz, se nota. La diversidad no es un valor corporativo: es acústica.</p>
+            <p class="post-card__date">Próximamente</p>
+          </article>
+
+          <article class="card post-card" data-reveal data-delay="1">
+            <p class="post-card__cat">Tecnología</p>
+            <h3 class="post-card__title">La parte que nadie te dice sobre la IA en la educación</h3>
+            <p class="post-card__excerpt">Desmitificar sin destruir. Informar sin alarmar. La herramienta al servicio de lo humano.</p>
+            <p class="post-card__date">Próximamente</p>
+          </article>
+
+          <article class="card post-card" data-reveal data-delay="2">
+            <p class="post-card__cat">Proceso</p>
+            <h3 class="post-card__title">Hay un silencio que precede a toda la música</h3>
+            <p class="post-card__excerpt">El proceso importa tanto como el resultado. Si solo vives para el concierto, te pierdes el 99%.</p>
+            <p class="post-card__date">Próximamente</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACTO ===================== -->
+    <section class="section section--surface" id="contact" aria-labelledby="contact-title" tabindex="-1">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Contacto</p>
+          <h2 class="section-title" id="contact-title">Hablemos</h2>
+        </div>
+
+        <div class="contact__grid">
+          <form class="contact-form" data-contact-form novalidate data-reveal>
+            <div class="field">
+              <label for="nombre">Nombre <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="nombre" name="nombre" autocomplete="name" required
+                     aria-required="true" aria-describedby="nombre-error" placeholder="¿Cómo te llamas?" />
+              <span class="field-error" id="nombre-error" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label for="email">Correo <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required
+                     aria-required="true" aria-describedby="email-error" placeholder="hola@ejemplo.com" />
+              <span class="field-error" id="email-error" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label for="mensaje">Mensaje <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="mensaje" name="mensaje" required aria-required="true"
+                        aria-describedby="mensaje-error" placeholder="Cuéntame en qué andas..."></textarea>
+              <span class="field-error" id="mensaje-error" role="alert"></span>
+            </div>
+
+            <button type="submit" class="btn btn--primary">Enviar mensaje</button>
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="contact-aside" data-reveal data-delay="1">
+            <h3 class="contact-aside__title">Desde Mérida, México</h3>
+            <p>
+              ¿Un concierto, un taller, una colaboración en la frontera entre música y tecnología?
+              Escríbeme y te respondo pronto.
+            </p>
+            <div class="socials">
+              <a class="social-link" href="#" aria-label="Instagram de Memo Valdez">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                Instagram
+              </a>
+              <a class="social-link" href="#" aria-label="LinkedIn de Memo Valdez">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h3v11H4zM5.5 4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM10 9h3v1.5A3.2 3.2 0 0 1 16 9c2.2 0 4 1.5 4 4.5V20h-3v-6c0-1.4-.8-2.2-2-2.2S13 12.6 13 14v6h-3z"/></svg>
+                LinkedIn
+              </a>
+              <a class="social-link" href="#" aria-label="Newsletter Notas de Ensayo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                Newsletter
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <span class="footer__mark" aria-hidden="true">MV</span>
+            <span class="footer__name">Memo Valdez</span>
+          </div>
+          <p class="footer__tagline">Acompañar. Dirigir. Explorar.</p>
+        </div>
+        <nav class="footer__links" aria-label="Enlaces del pie de página">
+          <a href="#about">Sobre mí</a>
+          <a href="#music">Música</a>
+          <a href="#tech">Tecnología</a>
+          <a href="#blog">Reflexiones</a>
+          <a href="#contact">Contacto</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year>2026</span> Guillermo “Memo” Valdez</span>
+        <span class="mono">Mérida, México</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/theme-manager.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
