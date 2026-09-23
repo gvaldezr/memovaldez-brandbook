@@ -1,0 +1,222 @@
+/* ================================================================
+   MEMO VALDEZ — Design Tokens v1.0
+   "Minimalismo con alma"
+   Generated: September 2026
+   Prefix: --mv-
+   ================================================================ */
+
+:root {
+
+  /* =============================================================
+     🎨 COLORS — PRIMARY (Terracota Cálido — Humanismo)
+     "La tierra, las manos que dirigen, la arcilla que conecta."
+     ============================================================= */
+  --mv-primary:                #B85C38;
+  --mv-primary-light:          #D4845E;
+  --mv-primary-dark:           #8E3F22;
+
+  /* =============================================================
+     🎨 COLORS — SECONDARY (Dorado / Ochre — Sofisticación)
+     "El bronce de los instrumentos, la miel de la luz en Mérida."
+     ============================================================= */
+  --mv-secondary:              #C8A96E;
+  --mv-secondary-light:        #DBBF8A;
+  --mv-secondary-dark:         #A68B4B;
+
+  /* =============================================================
+     🎨 COLORS — TERTIARY (Slate Azul Profundo — Tecnología)
+     "El azul del código, sereno no frío. Tech al servicio del arte."
+     ============================================================= */
+  --mv-tertiary:               #3D5A73;
+  --mv-tertiary-light:         #5A7A96;
+  --mv-tertiary-dark:          #2A3F52;
+
+  /* =============================================================
+     🎨 COLORS — SEMANTIC
+     ============================================================= */
+  --mv-success:                #4A7C59;
+  --mv-warning:                #D4A843;
+  --mv-error:                  #C44B4B;
+  --mv-error-dark:             #A83838;
+  --mv-info:                   #4A6FA5;
+
+  /* =============================================================
+     🎨 COLORS — NEUTRALS (Warm Gray Scale)
+     Matiz cálido ≈30–36° HSL. Nunca grises puros.
+     ============================================================= */
+  --mv-neutral-50:             #FEFEFE;
+  --mv-neutral-100:            #F5F0EB;
+  --mv-neutral-200:            #E8E1D9;
+  --mv-neutral-300:            #D4CBC0;
+  --mv-neutral-400:            #B8ADA0;
+  --mv-neutral-500:            #968A7D;
+  --mv-neutral-600:            #756A5E;
+  --mv-neutral-700:            #574E44;
+  --mv-neutral-800:            #3A342D;
+  --mv-neutral-900:            #231F1B;
+  --mv-neutral-950:            #161310;
+
+  /* =============================================================
+     🎨 COLORS — SURFACES
+     ============================================================= */
+  --mv-bg:                     #FEFEFE;
+  --mv-surface:                #F5F0EB;
+  --mv-surface-elevated:       #FFFFFF;
+  --mv-overlay:                rgba(35, 31, 27, 0.60);
+
+  /* =============================================================
+     🎨 COLORS — TEXT
+     ============================================================= */
+  --mv-text-primary:           #231F1B;
+  --mv-text-secondary:         #574E44;
+  --mv-text-tertiary:          #968A7D;
+  --mv-text-inverse:           #FEFEFE;
+
+  /* =============================================================
+     🔤 TYPOGRAPHY — FAMILIES
+     ============================================================= */
+  --mv-font-display:           'Instrument Sans', 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --mv-font-body:              'Inter', system-ui, -apple-system, sans-serif;
+  --mv-font-serif:             'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  --mv-font-mono:              'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+
+  /* =============================================================
+     🔤 TYPOGRAPHY — SIZE SCALE (Major Third ≈1.25)
+     Base: 16px = 1rem
+     ============================================================= */
+  --mv-text-xs:                0.75rem;      /* 12px */
+  --mv-text-sm:                0.875rem;     /* 14px */
+  --mv-text-base:              1rem;         /* 16px */
+  --mv-text-lg:                1.125rem;     /* 18px */
+  --mv-text-xl:                1.25rem;      /* 20px */
+  --mv-text-2xl:               1.5rem;       /* 24px */
+  --mv-text-3xl:               1.875rem;     /* 30px */
+  --mv-text-4xl:               2.5rem;       /* 40px */
+  --mv-text-5xl:               3.5rem;       /* 56px */
+
+  /* =============================================================
+     🔤 TYPOGRAPHY — WEIGHTS
+     ============================================================= */
+  --mv-font-light:             300;
+  --mv-font-regular:           400;
+  --mv-font-medium:            500;
+  --mv-font-semibold:          600;
+  --mv-font-bold:              700;
+
+  /* =============================================================
+     🔤 TYPOGRAPHY — LINE HEIGHTS
+     ============================================================= */
+  --mv-leading-tight:          1.2;
+  --mv-leading-normal:         1.5;
+  --mv-leading-relaxed:        1.7;
+
+  /* =============================================================
+     🔤 TYPOGRAPHY — LETTER SPACING
+     ============================================================= */
+  --mv-tracking-tight:         -0.02em;
+  --mv-tracking-normal:        0em;
+  --mv-tracking-wide:          0.05em;
+  --mv-tracking-widest:        0.1em;
+
+  /* =============================================================
+     📐 SPACING — Base 4px System
+     "Como un compás musical — cada pulso es múltiplo de la unidad."
+     ============================================================= */
+  --mv-space-0:                0;
+  --mv-space-0-5:              0.125rem;     /* 2px  */
+  --mv-space-1:                0.25rem;      /* 4px  */
+  --mv-space-2:                0.5rem;       /* 8px  */
+  --mv-space-3:                0.75rem;      /* 12px */
+  --mv-space-4:                1rem;         /* 16px */
+  --mv-space-5:                1.25rem;      /* 20px */
+  --mv-space-6:                1.5rem;       /* 24px */
+  --mv-space-8:                2rem;         /* 32px */
+  --mv-space-10:               2.5rem;       /* 40px */
+  --mv-space-12:               3rem;         /* 48px */
+  --mv-space-16:               4rem;         /* 64px */
+  --mv-space-20:               5rem;         /* 80px */
+  --mv-space-24:               6rem;         /* 96px */
+
+  /* =============================================================
+     🌑 SHADOWS (Light Mode — warm tint, never pure black)
+     ============================================================= */
+  --mv-shadow-sm:              0 1px 2px 0 rgba(35, 31, 27, 0.05);
+  --mv-shadow-md:              0 4px 6px -1px rgba(35, 31, 27, 0.08),
+                               0 2px 4px -2px rgba(35, 31, 27, 0.05);
+  --mv-shadow-lg:              0 10px 15px -3px rgba(35, 31, 27, 0.10),
+                               0 4px 6px -4px rgba(35, 31, 27, 0.06);
+  --mv-shadow-xl:              0 20px 25px -5px rgba(35, 31, 27, 0.12),
+                               0 8px 10px -6px rgba(35, 31, 27, 0.06);
+
+  /* =============================================================
+     ⬜ BORDER RADIUS
+     "Esquinas de piano de cola — precisas pero con curva elegante."
+     ============================================================= */
+  --mv-radius-sm:              4px;
+  --mv-radius-md:              8px;
+  --mv-radius-lg:              16px;
+  --mv-radius-xl:              24px;
+  --mv-radius-full:            9999px;
+
+  /* =============================================================
+     ⏱️ TRANSITIONS — DURATIONS
+     "Las dinámicas de la interfaz — piano, forte, crescendo."
+     ============================================================= */
+  --mv-duration-fast:          150ms;
+  --mv-duration-normal:        300ms;
+  --mv-duration-slow:          500ms;
+  --mv-duration-dramatic:      800ms;
+
+  /* =============================================================
+     ⏱️ TRANSITIONS — EASINGS
+     ============================================================= */
+  --mv-ease-out:               cubic-bezier(0.16, 1, 0.3, 1);
+  --mv-ease-spring:            cubic-bezier(0.34, 1.56, 0.64, 1);
+  --mv-ease-gentle:            cubic-bezier(0.4, 0, 0.2, 1);
+  --mv-ease-linear:            linear;
+
+  /* =============================================================
+     ⏱️ TRANSITIONS — SHORTCUTS
+     ============================================================= */
+  --mv-transition-fast:        all 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --mv-transition-normal:      all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  --mv-transition-slow:        all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --mv-transition-dramatic:    all 800ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* =============================================================
+     🎯 FOCUS
+     ============================================================= */
+  --mv-focus-ring:             0 0 0 2px var(--mv-bg), 0 0 0 4px var(--mv-primary);
+  --mv-focus-ring-offset:      2px;
+
+  /* =============================================================
+     📚 Z-INDEX SCALE
+     ============================================================= */
+  --mv-z-dropdown:             10;
+  --mv-z-sticky:               20;
+  --mv-z-fixed:                30;
+  --mv-z-modal-backdrop:       40;
+  --mv-z-modal:                50;
+  --mv-z-popover:              60;
+  --mv-z-tooltip:              70;
+
+  /* =============================================================
+     📦 CONTAINER MAX-WIDTHS
+     ============================================================= */
+  --mv-container-sm:           100%;         /* padding: 20px */
+  --mv-container-md:           720px;
+  --mv-container-lg:           960px;
+  --mv-container-xl:           1140px;
+  --mv-container-2xl:          1320px;
+  --mv-container-narrow:       680px;        /* Lectura: blog, artículos */
+  --mv-container-wide:         1440px;       /* Portfolio, galerías */
+
+  /* =============================================================
+     📱 BREAKPOINTS (reference only — use in media queries)
+     ============================================================= */
+  --mv-screen-sm:              640px;
+  --mv-screen-md:              768px;
+  --mv-screen-lg:              1024px;
+  --mv-screen-xl:              1280px;
+  --mv-screen-2xl:             1536px;
+}

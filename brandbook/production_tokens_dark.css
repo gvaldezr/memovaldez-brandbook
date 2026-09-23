@@ -1,0 +1,196 @@
+/* ================================================================
+   MEMO VALDEZ — Design Tokens v1.0
+   "Minimalismo con alma"
+   Generated: September 2026
+   Prefix: --mv-
+   ================================================================ */
+
+/* =================================================================
+   DARK MODE — Manual toggle via data attribute
+   "La sala de conciertos antes de que empiece la música:
+    oscuro, cálido, lleno de anticipación."
+   ================================================================= */
+
+[data-theme="dark"] {
+
+  /* =============================================================
+     🎨 COLORS — PRIMARY (Terracota Elevado)
+     Iluminado para mantener contraste sin perder calidez.
+     ============================================================= */
+  --mv-primary:                #D4845E;
+  --mv-primary-light:          #E8A882;
+  --mv-primary-dark:           #B85C38;
+
+  /* =============================================================
+     🎨 COLORS — SECONDARY (Dorado Luminoso)
+     ============================================================= */
+  --mv-secondary:              #DBBF8A;
+  --mv-secondary-light:        #EAD5A8;
+  --mv-secondary-dark:         #C8A96E;
+
+  /* =============================================================
+     🎨 COLORS — TERTIARY (Slate Azul Iluminado)
+     ============================================================= */
+  --mv-tertiary:               #6B9DBF;
+  --mv-tertiary-light:         #8BB8D4;
+  --mv-tertiary-dark:          #4A7999;
+
+  /* =============================================================
+     🎨 COLORS — SEMANTIC (Dark Mode)
+     Saturación reducida ~10-15%, luminosidad elevada.
+     ============================================================= */
+  --mv-success:                #6BAF7B;
+  --mv-warning:                #E4BF5A;
+  --mv-error:                  #E07070;
+  --mv-error-dark:             #C44B4B;
+  --mv-info:                   #6B93CC;
+
+  /* =============================================================
+     🎨 COLORS — NEUTRALS (Inverted Warm Scale)
+     50 = más oscuro, 950 = más claro (conceptualmente invertido).
+     ============================================================= */
+  --mv-neutral-50:             #161310;
+  --mv-neutral-100:            #1C1916;
+  --mv-neutral-200:            #28231E;
+  --mv-neutral-300:            #3A342D;
+  --mv-neutral-400:            #574E44;
+  --mv-neutral-500:            #756A5E;
+  --mv-neutral-600:            #968A7D;
+  --mv-neutral-700:            #B8ADA0;
+  --mv-neutral-800:            #D4CBC0;
+  --mv-neutral-900:            #E8E1D9;
+  --mv-neutral-950:            #F5F0EB;
+
+  /* =============================================================
+     🎨 COLORS — SURFACES (Dark)
+     Elevación = superficies más claras, no sombras.
+     ============================================================= */
+  --mv-bg:                     #131110;
+  --mv-surface:                #1C1916;
+  --mv-surface-elevated:       #28231E;
+  --mv-overlay:                rgba(0, 0, 0, 0.70);
+
+  /* =============================================================
+     🎨 COLORS — TEXT (Dark)
+     ============================================================= */
+  --mv-text-primary:           #F0EBE5;
+  --mv-text-secondary:         #B8ADA0;
+  --mv-text-tertiary:          #756A5E;
+  --mv-text-inverse:           #231F1B;
+
+  /* =============================================================
+     🌑 SHADOWS (Dark Mode)
+     ============================================================= */
+  --mv-shadow-sm:              0 1px 2px 0 rgba(0, 0, 0, 0.20);
+  --mv-shadow-md:              0 4px 6px -1px rgba(0, 0, 0, 0.30),
+                               0 2px 4px -2px rgba(0, 0, 0, 0.20);
+  --mv-shadow-lg:              0 10px 15px -3px rgba(0, 0, 0, 0.40),
+                               0 4px 6px -4px rgba(0, 0, 0, 0.25);
+  --mv-shadow-xl:              0 20px 25px -5px rgba(0, 0, 0, 0.50),
+                               0 8px 10px -6px rgba(0, 0, 0, 0.30);
+
+  /* =============================================================
+     🎯 FOCUS (Dark)
+     ============================================================= */
+  --mv-focus-ring:             0 0 0 2px var(--mv-bg), 0 0 0 4px var(--mv-primary);
+
+  /* =============================================================
+     🔤 TYPOGRAPHY — WEIGHT COMPENSATION (Dark thinning)
+     Texto se ve más delgado en fondos oscuros — compensar.
+     ============================================================= */
+  --mv-font-light:             350;
+  --mv-font-regular:           420;
+}
+
+/* =================================================================
+   SYSTEM PREFERENCE AUTO-DETECT
+   Aplica dark mode cuando el sistema lo prefiere
+   y el usuario NO ha elegido explícitamente light.
+   ================================================================= */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+
+    /* --- Colors: Primary --- */
+    --mv-primary:              #D4845E;
+    --mv-primary-light:        #E8A882;
+    --mv-primary-dark:         #B85C38;
+
+    /* --- Colors: Secondary --- */
+    --mv-secondary:            #DBBF8A;
+    --mv-secondary-light:      #EAD5A8;
+    --mv-secondary-dark:       #C8A96E;
+
+    /* --- Colors: Tertiary --- */
+    --mv-tertiary:             #6B9DBF;
+    --mv-tertiary-light:       #8BB8D4;
+    --mv-tertiary-dark:        #4A7999;
+
+    /* --- Colors: Semantic --- */
+    --mv-success:              #6BAF7B;
+    --mv-warning:              #E4BF5A;
+    --mv-error:                #E07070;
+    --mv-error-dark:           #C44B4B;
+    --mv-info:                 #6B93CC;
+
+    /* --- Colors: Neutrals --- */
+    --mv-neutral-50:           #161310;
+    --mv-neutral-100:          #1C1916;
+    --mv-neutral-200:          #28231E;
+    --mv-neutral-300:          #3A342D;
+    --mv-neutral-400:          #574E44;
+    --mv-neutral-500:          #756A5E;
+    --mv-neutral-600:          #968A7D;
+    --mv-neutral-700:          #B8ADA0;
+    --mv-neutral-800:          #D4CBC0;
+    --mv-neutral-900:          #E8E1D9;
+    --mv-neutral-950:          #F5F0EB;
+
+    /* --- Colors: Surfaces --- */
+    --mv-bg:                   #131110;
+    --mv-surface:              #1C1916;
+    --mv-surface-elevated:     #28231E;
+    --mv-overlay:              rgba(0, 0, 0, 0.70);
+
+    /* --- Colors: Text --- */
+    --mv-text-primary:         #F0EBE5;
+    --mv-text-secondary:       #B8ADA0;
+    --mv-text-tertiary:        #756A5E;
+    --mv-text-inverse:         #231F1B;
+
+    /* --- Shadows --- */
+    --mv-shadow-sm:            0 1px 2px 0 rgba(0, 0, 0, 0.20);
+    --mv-shadow-md:            0 4px 6px -1px rgba(0, 0, 0, 0.30),
+                               0 2px 4px -2px rgba(0, 0, 0, 0.20);
+    --mv-shadow-lg:            0 10px 15px -3px rgba(0, 0, 0, 0.40),
+                               0 4px 6px -4px rgba(0, 0, 0, 0.25);
+    --mv-shadow-xl:            0 20px 25px -5px rgba(0, 0, 0, 0.50),
+                               0 8px 10px -6px rgba(0, 0, 0, 0.30);
+
+    /* --- Focus --- */
+    --mv-focus-ring:           0 0 0 2px var(--mv-bg), 0 0 0 4px var(--mv-primary);
+
+    /* --- Typography: Weight Compensation --- */
+    --mv-font-light:           350;
+    --mv-font-regular:         420;
+  }
+}
+
+/* =================================================================
+   REDUCED MOTION — Accessibility
+   Respeta la preferencia del usuario de reducir animaciones.
+   ================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  :root,
+  [data-theme="dark"] {
+    --mv-duration-fast:        0ms;
+    --mv-duration-normal:      0ms;
+    --mv-duration-slow:        0ms;
+    --mv-duration-dramatic:    0ms;
+    --mv-transition-fast:      none;
+    --mv-transition-normal:    none;
+    --mv-transition-slow:      none;
+    --mv-transition-dramatic:  none;
+  }
+}

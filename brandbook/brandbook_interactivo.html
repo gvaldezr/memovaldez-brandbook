@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memo Valdez — Brand Book Interactivo</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS LIGHT ============ */
+:root {
+  --mv-primary:#B85C38;--mv-primary-light:#D4845E;--mv-primary-dark:#8E3F22;
+  --mv-secondary:#C8A96E;--mv-secondary-light:#DBBF8A;--mv-secondary-dark:#A68B4B;
+  --mv-tertiary:#3D5A73;--mv-tertiary-light:#5A7A96;--mv-tertiary-dark:#2A3F52;
+  --mv-success:#4A7C59;--mv-warning:#D4A843;--mv-error:#C44B4B;--mv-info:#4A6FA5;
+  --mv-neutral-50:#FEFEFE;--mv-neutral-100:#F5F0EB;--mv-neutral-200:#E8E1D9;
+  --mv-neutral-300:#D4CBC0;--mv-neutral-400:#B8ADA0;--mv-neutral-500:#968A7D;
+  --mv-neutral-600:#756A5E;--mv-neutral-700:#574E44;--mv-neutral-800:#3A342D;
+  --mv-neutral-900:#231F1B;--mv-neutral-950:#161310;
+  --mv-bg:#FEFEFE;--mv-surface:#F5F0EB;--mv-surface-elevated:#FFFFFF;
+  --mv-text-primary:#231F1B;--mv-text-secondary:#574E44;--mv-text-tertiary:#968A7D;
+  --mv-text-inverse:#FEFEFE;--mv-overlay:rgba(35,31,27,0.60);
+  --mv-shadow-sm:0 1px 2px 0 rgba(35,31,27,0.05);
+  --mv-shadow-md:0 4px 6px -1px rgba(35,31,27,0.08),0 2px 4px -2px rgba(35,31,27,0.05);
+  --mv-shadow-lg:0 10px 15px -3px rgba(35,31,27,0.10),0 4px 6px -4px rgba(35,31,27,0.06);
+  --mv-font-display:'Instrument Sans','Plus Jakarta Sans',system-ui,sans-serif;
+  --mv-font-body:'Inter',system-ui,-apple-system,sans-serif;
+  --mv-font-serif:'Bodoni Moda','Playfair Display',Georgia,serif;
+  --mv-font-mono:'JetBrains Mono','SF Mono',monospace;
+  --mv-radius-sm:4px;--mv-radius-md:8px;--mv-radius-lg:16px;--mv-radius-full:9999px;
+  --mv-duration-fast:150ms;--mv-duration-normal:300ms;--mv-duration-slow:500ms;
+  --mv-ease-out:cubic-bezier(0.16,1,0.3,1);
+  --mv-ease-gentle:cubic-bezier(0.4,0,0.2,1);
+  --mv-transition-fast:all 150ms cubic-bezier(0.16,1,0.3,1);
+  --mv-transition-normal:all 300ms cubic-bezier(0.16,1,0.3,1);
+  --mv-sidebar-w:260px;
+  --mv-font-light:300;--mv-font-regular:400;--mv-font-medium:500;--mv-font-semibold:600;--mv-font-bold:700;
+}
+
+/* ============ TOKENS DARK ============ */
+[data-theme="dark"] {
+  --mv-primary:#D4845E;--mv-primary-light:#E8A882;--mv-primary-dark:#B85C38;
+  --mv-secondary:#DBBF8A;--mv-secondary-light:#EAD5A8;--mv-secondary-dark:#C8A96E;
+  --mv-tertiary:#6B9DBF;--mv-tertiary-light:#8BB8D4;--mv-tertiary-dark:#4A7999;
+  --mv-success:#6BAF7B;--mv-warning:#E4BF5A;--mv-error:#E07070;--mv-info:#6B93CC;
+  --mv-neutral-50:#161310;--mv-neutral-100:#1C1916;--mv-neutral-200:#28231E;
+  --mv-neutral-300:#3A342D;--mv-neutral-400:#574E44;--mv-neutral-500:#756A5E;
+  --mv-neutral-600:#968A7D;--mv-neutral-700:#B8ADA0;--mv-neutral-800:#D4CBC0;
+  --mv-neutral-900:#E8E1D9;--mv-neutral-950:#F5F0EB;
+  --mv-bg:#131110;--mv-surface:#1C1916;--mv-surface-elevated:#28231E;
+  --mv-text-primary:#F0EBE5;--mv-text-secondary:#B8ADA0;--mv-text-tertiary:#756A5E;
+  --mv-text-inverse:#231F1B;--mv-overlay:rgba(0,0,0,0.70);
+  --mv-shadow-sm:0 1px 2px 0 rgba(0,0,0,0.20);
+  --mv-shadow-md:0 4px 6px -1px rgba(0,0,0,0.30),0 2px 4px -2px rgba(0,0,0,0.20);
+  --mv-shadow-lg:0 10px 15px -3px rgba(0,0,0,0.40),0 4px 6px -4px rgba(0,0,0,0.25);
+  --mv-font-light:350;--mv-font-regular:420;
+}
+
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --mv-primary:#D4845E;--mv-primary-light:#E8A882;--mv-primary-dark:#B85C38;
+  --mv-secondary:#DBBF8A;--mv-tertiary:#6B9DBF;
+  --mv-bg:#131110;--mv-surface:#1C1916;--mv-surface-elevated:#28231E;
+  --mv-text-primary:#F0EBE5;--mv-text-secondary:#B8ADA0;--mv-text-tertiary:#756A5E;
+  --mv-text-inverse:#231F1B;--mv-font-light:350;--mv-font-regular:420;
+}}
+
+@media(prefers-reduced-motion:reduce){
+  :root,[data-theme="dark"]{--mv-duration-fast:0ms;--mv-duration-normal:0ms;--mv-duration-slow:0ms;
+  --mv-transition-fast:none;--mv-transition-normal:none;}
+}
+
+/* ============ RESET & BASE ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px;scroll-padding-top:80px}
+body{font-family:var(--mv-font-body);background:var(--mv-bg);color:var(--mv-text-primary);
+  line-height:1.5;font-weight:var(--mv-font-regular);transition:background-color var(--mv-duration-normal) var(--mv-ease-gentle),color var(--mv-duration-normal) var(--mv-ease-gentle);
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+::selection{background:var(--mv-primary);color:var(--mv-text-inverse)}
+:focus-visible{outline:none;box-shadow:0 0 0 2px var(--mv-bg),0 0 0 4px var(--mv-primary)}
+
+/* ============ SIDEBAR ============ */
+.sidebar{position:fixed;top:0;left:0;width:var(--mv-sidebar-w);height:100vh;background:var(--mv-surface);
+  border-right:1px solid var(--mv-neutral-300);padding:32px 24px;display:flex;flex-direction:column;
+  z-index:30;transition:transform var(--mv-duration-normal) var(--mv-ease-out);overflow-y:auto}
+.sidebar__brand{font-family:var(--mv-font-display);font-weight:var(--mv-font-bold);font-size:0.8rem;
+  letter-spacing:0.14em;color:var(--mv-text-primary);margin-bottom:8px;text-transform:uppercase}
+.sidebar__sub{font-family:var(--mv-font-serif);font-style:italic;font-size:0.8rem;color:var(--mv-text-tertiary);margin-bottom:32px}
+.sidebar nav{flex:1}
+.sidebar a{display:block;padding:8px 12px;border-radius:var(--mv-radius-sm);font-size:0.875rem;
+  color:var(--mv-text-secondary);text-decoration:none;transition:var(--mv-transition-fast);margin-bottom:2px}
+.sidebar a:hover,.sidebar a.active{color:var(--mv-text-primary);background:var(--mv-neutral-200)}
+.sidebar a.active{color:var(--mv-primary);font-weight:var(--mv-font-medium)}
+.sidebar__footer{margin-top:auto;padding-top:24px;border-top:1px solid var(--mv-neutral-300)}
+
+/* Theme toggle */
+.theme-toggle{display:flex;gap:4px;background:var(--mv-neutral-200);border-radius:var(--mv-radius-full);padding:3px}
+.theme-toggle button{border:none;background:transparent;padding:6px 10px;border-radius:var(--mv-radius-full);
+  cursor:pointer;font-size:0.75rem;color:var(--mv-text-tertiary);transition:var(--mv-transition-fast);font-family:var(--mv-font-body)}
+.theme-toggle button.active{background:var(--mv-surface-elevated);color:var(--mv-text-primary);box-shadow:var(--mv-shadow-sm)}
+.theme-toggle button:focus-visible{box-shadow:0 0 0 2px var(--mv-bg),0 0 0 4px var(--mv-primary)}
+
+/* Mobile hamburger */
+.hamburger{display:none;position:fixed;top:16px;left:16px;z-index:40;width:44px;height:44px;
+  border:none;background:var(--mv-surface);border-radius:var(--mv-radius-md);cursor:pointer;
+  box-shadow:var(--mv-shadow-md);align-items:center;justify-content:center}
+.hamburger span{display:block;width:20px;height:2px;background:var(--mv-text-primary);transition:var(--mv-transition-fast);
+  position:relative}
+.hamburger span::before,.hamburger span::after{content:'';position:absolute;width:100%;height:2px;
+  background:var(--mv-text-primary);left:0;transition:var(--mv-transition-fast)}
+.hamburger span::before{top:-6px}.hamburger span::after{top:6px}
+.hamburger.open span{background:transparent}
+.hamburger.open span::before{top:0;transform:rotate(45deg)}
+.hamburger.open span::after{top:0;transform:rotate(-45deg)}
+.sidebar-overlay{display:none;position:fixed;inset:0;background:var(--mv-overlay);z-index:25}
+
+/* ============ MAIN ============ */
+.main{margin-left:var(--mv-sidebar-w);padding:64px 48px 96px}
+.main>section{max-width:860px;margin:0 auto 96px}
+.main>section:last-child{margin-bottom:0}
+
+/* ============ HERO ============ */
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center}
+.hero__wordmark{font-family:var(--mv-font-display);font-weight:var(--mv-font-bold);font-size:clamp(2rem,6vw,3.5rem);
+  letter-spacing:0.14em;text-transform:uppercase;color:var(--mv-text-primary);margin-bottom:12px}
+.hero__tagline{font-family:var(--mv-font-display);font-weight:var(--mv-font-light);font-size:clamp(0.75rem,2vw,0.95rem);
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--mv-text-tertiary);margin-bottom:40px}
+.hero__descriptor{font-family:var(--mv-font-serif);font-style:italic;font-size:1.1rem;color:var(--mv-text-secondary);
+  max-width:480px;line-height:1.7}
+.hero__line{width:48px;height:1px;background:var(--mv-neutral-400);margin:32px auto}
+
+/* ============ SECTIONS ============ */
+h2{font-family:var(--mv-font-display);font-size:1.75rem;font-weight:var(--mv-font-bold);margin-bottom:8px;letter-spacing:-0.01em}
+h3{font-family:var(--mv-font-display);font-size:1.1rem;font-weight:var(--mv-font-semibold);margin-bottom:12px;margin-top:32px;color:var(--mv-text-primary)}
+.section-lead{color:var(--mv-text-secondary);font-size:0.95rem;line-height:1.7;max-width:640px;margin-bottom:40px}
+
+/* ============ COLOR SWATCHES ============ */
+.color-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:32px}
+.swatch{border-radius:var(--mv-radius-lg);overflow:hidden;cursor:pointer;transition:var(--mv-transition-fast);
+  border:1px solid var(--mv-neutral-300)}
+.swatch:hover{transform:translateY(-2px);box-shadow:var(--mv-shadow-lg)}
+.swatch:focus-visible{box-shadow:0 0 0 2px var(--mv-bg),0 0 0 4px var(--mv-primary)}
+.swatch__color{height:96px;display:flex;align-items:flex-end;padding:10px 14px}
+.swatch__info{padding:12px 14px;background:var(--mv-surface)}
+.swatch__name{font-size:0.8rem;font-weight:var(--mv-font-semibold);color:var(--mv-text-primary);margin-bottom:2px}
+.swatch__hex{font-family:var(--mv-font-mono);font-size:0.75rem;color:var(--mv-text-tertiary)}
+.swatch__meaning{font-size:0.72rem;color:var(--mv-text-secondary);margin-top:4px;font-style:italic}
+
+/* ============ TYPOGRAPHY SPECIMENS ============ */
+.type-specimen{margin-bottom:32px;padding:32px;background:var(--mv-surface);border-radius:var(--mv-radius-lg);
+  border:1px solid var(--mv-neutral-300)}
+.type-specimen__label{font-size:0.72rem;font-family:var(--mv-font-mono);color:var(--mv-text-tertiary);
+  text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px}
+.type-specimen--display{font-family:var(--mv-font-display)}
+.type-specimen--body{font-family:var(--mv-font-body)}
+.type-specimen--serif{font-family:var(--mv-font-serif)}
+.type-specimen--mono{font-family:var(--mv-font-mono)}
+.type-specimen .sample-xl{font-size:2rem;line-height:1.2;font-weight:var(--mv-font-bold);margin-bottom:8px}
+.type-specimen .sample-base{font-size:1rem;line-height:1.6;color:var(--mv-text-secondary)}
+.type-scale{display:grid;gap:12px;margin-top:32px}
+.type-scale__row{display:flex;align-items:baseline;gap:16px;padding:8px 0;border-bottom:1px solid var(--mv-neutral-200)}
+.type-scale__token{font-family:var(--mv-font-mono);font-size:0.72rem;color:var(--mv-text-tertiary);min-width:80px}
+.type-scale__sample{font-family:var(--mv-font-display);color:var(--mv-text-primary)}
+
+/* ============ VOICE TRAITS ============ */
+.voice-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.voice-card{padding:24px;background:var(--mv-surface);border-radius:var(--mv-radius-lg);
+  border:1px solid var(--mv-neutral-300);transition:var(--mv-transition-fast)}
+.voice-card:hover{border-color:var(--mv-primary);box-shadow:var(--mv-shadow-md)}
+.voice-card__trait{font-family:var(--mv-font-display);font-size:0.95rem;font-weight:var(--mv-font-semibold);
+  color:var(--mv-primary);margin-bottom:8px}
+.voice-card__yes{font-size:0.875rem;color:var(--mv-text-primary);margin-bottom:8px;line-height:1.6}
+.voice-card__no{font-size:0.8rem;color:var(--mv-text-tertiary);font-style:italic}
+
+/* ============ LOGO SECTION ============ */
+.logo-display{display:flex;align-items:center;justify-content:center;padding:64px 32px;
+  border-radius:var(--mv-radius-lg);margin-bottom:24px;border:1px solid var(--mv-neutral-300)}
+.logo-display--dark{background:#131110}
+.logo-display--light{background:#FEFEFE}
+.logo-display__text{font-family:var(--mv-font-display);font-weight:400;letter-spacing:0.14em;text-transform:uppercase}
+.logo-specs{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.logo-specs dt{font-size:0.75rem;color:var(--mv-text-tertiary);font-family:var(--mv-font-mono);text-transform:uppercase;letter-spacing:0.05em}
+.logo-specs dd{font-size:0.95rem;color:var(--mv-text-primary);margin-bottom:16px}
+
+/* ============ COMPONENTS PREVIEW ============ */
+.component-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:24px}
+.mv-btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 24px;
+  border-radius:var(--mv-radius-md);font-family:var(--mv-font-body);font-size:0.875rem;
+  font-weight:var(--mv-font-semibold);border:none;cursor:pointer;transition:var(--mv-transition-fast);
+  text-decoration:none;line-height:1}
+.mv-btn:hover{transform:translateY(-1px);box-shadow:var(--mv-shadow-md)}
+.mv-btn:active{transform:translateY(0);box-shadow:none}
+.mv-btn:focus-visible{box-shadow:0 0 0 2px var(--mv-bg),0 0 0 4px var(--mv-primary)}
+.mv-btn--primary{background:var(--mv-primary);color:var(--mv-text-inverse)}
+.mv-btn--primary:hover{background:var(--mv-primary-light)}
+.mv-btn--secondary{background:transparent;color:var(--mv-primary);border:1.5px solid var(--mv-primary)}
+.mv-btn--secondary:hover{background:var(--mv-primary);color:var(--mv-text-inverse)}
+.mv-btn--ghost{background:transparent;color:var(--mv-text-secondary)}
+.mv-btn--ghost:hover{color:var(--mv-text-primary);background:var(--mv-neutral-200)}
+.mv-btn--tertiary{background:var(--mv-tertiary);color:var(--mv-text-inverse)}
+.mv-btn--tertiary:hover{background:var(--mv-tertiary-light)}
+.mv-btn--sm{padding:6px 16px;font-size:0.8rem}
+.mv-btn--lg{padding:14px 32px;font-size:1rem}
+
+.preview-card{padding:24px;background:var(--mv-surface);border:1px solid var(--mv-neutral-300);
+  border-radius:var(--mv-radius-lg);max-width:340px;transition:var(--mv-transition-fast)}
+.preview-card:hover{transform:translateY(-2px);box-shadow:var(--mv-shadow-lg)}
+.preview-card__title{font-family:var(--mv-font-display);font-size:1.1rem;font-weight:var(--mv-font-semibold);margin-bottom:8px}
+.preview-card__text{font-size:0.875rem;color:var(--mv-text-secondary);line-height:1.6;margin-bottom:16px}
+.preview-card__tag{display:inline-block;padding:3px 10px;border-radius:var(--mv-radius-full);font-size:0.72rem;
+  font-weight:var(--mv-font-medium);background:var(--mv-neutral-200);color:var(--mv-text-secondary);margin-right:6px}
+
+.preview-input{width:100%;max-width:340px;padding:10px 14px;border:1.5px solid var(--mv-neutral-400);
+  border-radius:var(--mv-radius-sm);background:transparent;color:var(--mv-text-primary);font-family:var(--mv-font-body);
+  font-size:0.875rem;transition:var(--mv-transition-fast)}
+.preview-input:focus{outline:none;border-color:var(--mv-primary);box-shadow:0 0 0 3px rgba(184,92,56,0.15)}
+.preview-input::placeholder{color:var(--mv-text-tertiary)}
+.input-label{display:block;font-size:0.8rem;font-weight:var(--mv-font-medium);color:var(--mv-text-secondary);margin-bottom:6px}
+
+/* ============ QUICK REFERENCE ============ */
+.qr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.qr-item{padding:16px;background:var(--mv-surface);border-radius:var(--mv-radius-md);border:1px solid var(--mv-neutral-300)}
+.qr-item__label{font-size:0.7rem;font-family:var(--mv-font-mono);color:var(--mv-text-tertiary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
+.qr-item__value{font-size:0.9rem;color:var(--mv-text-primary);font-weight:var(--mv-font-medium)}
+
+/* ============ FOUNDATION VALUES ============ */
+.values-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.value-card{padding:24px;background:var(--mv-surface);border-radius:var(--mv-radius-lg);
+  border:1px solid var(--mv-neutral-300);border-top:3px solid var(--mv-primary)}
+.value-card__name{font-family:var(--mv-font-display);font-size:1rem;font-weight:var(--mv-font-semibold);
+  margin-bottom:8px;color:var(--mv-primary)}
+.value-card__def{font-size:0.875rem;color:var(--mv-text-secondary);line-height:1.6}
+
+/* ============ TOAST ============ */
+.toast{position:fixed;bottom:24px;right:24px;padding:12px 20px;background:var(--mv-surface-elevated);
+  color:var(--mv-text-primary);border-radius:var(--mv-radius-md);box-shadow:var(--mv-shadow-lg);
+  font-size:0.85rem;font-weight:var(--mv-font-medium);z-index:70;transform:translateY(80px);
+  opacity:0;transition:all var(--mv-duration-normal) var(--mv-ease-out);pointer-events:none;
+  border:1px solid var(--mv-neutral-300)}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1279px){.main{padding:48px 32px}}
+@media(max-width:1023px){
+  .sidebar{transform:translateX(-100%)}
+  .sidebar.open{transform:translateX(0)}
+  .hamburger{display:flex}
+  .main{margin-left:0;padding:80px 24px 64px}
+  .sidebar-overlay.open{display:block}
+}
+@media(max-width:767px){
+  .main{padding:72px 20px 48px}
+  .main>section{margin-bottom:64px}
+  .hero{min-height:50vh}
+  .hero__wordmark{font-size:clamp(1.6rem,8vw,2.4rem)}
+  .color-grid{grid-template-columns:1fr 1fr}
+  .voice-grid{grid-template-columns:1fr}
+  .logo-display{padding:40px 20px}
+  h2{font-size:1.4rem}
+}
+@media(max-width:639px){
+  .color-grid{grid-template-columns:1fr}
+  .logo-specs{grid-template-columns:1fr}
+  .qr-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HAMBURGER -->
+<button class="hamburger" aria-label="Abrir menú" id="hamburger"><span></span></button>
+<div class="sidebar-overlay" id="overlay"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar__brand">Memo Valdez</div>
+  <div class="sidebar__sub">Brand Book v1.0</div>
+  <nav>
+    <a href="#hero">Portada</a>
+    <a href="#foundation">Fundación</a>
+    <a href="#colors">Colores</a>
+    <a href="#typography">Tipografía</a>
+    <a href="#logo">Logo</a>
+    <a href="#voice">Voz y tono</a>
+    <a href="#components">Componentes</a>
+    <a href="#reference">Quick Reference</a>
+  </nav>
+  <div class="sidebar__footer">
+    <div class="theme-toggle" role="radiogroup" aria-label="Tema de color">
+      <button data-theme-set="dark" class="active" role="radio" aria-checked="true">Oscuro</button>
+      <button data-theme-set="light" role="radio" aria-checked="false">Claro</button>
+      <button data-theme-set="system" role="radio" aria-checked="false">Auto</button>
+    </div>
+  </div>
+</aside>
+
+<main class="main">
+
+  <!-- HERO / PORTADA -->
+  <section id="hero" class="hero">
+    <div class="hero__wordmark">Memo Valdez</div>
+    <div class="hero__tagline">Acompañar · Dirigir · Explorar</div>
+    <div class="hero__line"></div>
+    <p class="hero__descriptor">Donde la música encuentra la tecnología, las personas se encuentran a sí mismas.</p>
+  </section>
+
+  <!-- FUNDACIÓN -->
+  <section id="foundation">
+    <h2>Fundación de Marca</h2>
+    <p class="section-lead">La tecnología y el arte no compiten — conspiran juntas para revelar lo mejor de las personas.</p>
+
+    <h3>Propósito</h3>
+    <p style="font-family:var(--mv-font-serif);font-style:italic;font-size:1.05rem;color:var(--mv-text-secondary);line-height:1.7;margin-bottom:32px;max-width:600px">
+      Memo Valdez existe para demostrar que la tecnología y el arte no compiten — conspiran juntas para revelar lo mejor de las personas.
+    </p>
+
+    <h3>Visión 2031</h3>
+    <p style="font-size:0.9rem;color:var(--mv-text-secondary);line-height:1.7;margin-bottom:32px;max-width:600px">
+      El referente en español de cómo la música, la tecnología y el acompañamiento humano convergen para transformar la forma en que las personas aprenden, crean y se conectan.
+    </p>
+
+    <h3>Misión</h3>
+    <p style="font-size:0.9rem;color:var(--mv-text-secondary);line-height:1.7;margin-bottom:32px;max-width:600px">
+      Dirijo ensambles, exploro tecnología y acompaño personas. En ese orden de pasión, no de importancia — porque las personas siempre van primero.
+    </p>
+
+    <h3>Valores</h3>
+    <div class="values-grid">
+      <div class="value-card"><div class="value-card__name">Acompañamiento</div><div class="value-card__def">Estar presente en el proceso del otro — no para dirigir su camino, sino para que camine con más confianza.</div></div>
+      <div class="value-card"><div class="value-card__name">Convergencia</div><div class="value-card__def">Las mejores ideas nacen donde disciplinas distintas se encuentran — y la práctica activa de provocar esos encuentros.</div></div>
+      <div class="value-card"><div class="value-card__name">Claridad</div><div class="value-card__def">La disciplina de eliminar lo innecesario para que lo esencial brille. El espacio entre las notas, no el silencio absoluto.</div></div>
+      <div class="value-card"><div class="value-card__name">Autenticidad Radical</div><div class="value-card__def">Mostrarse como se es — con las pasiones, las dudas y los procesos visibles. Selectiva y digna.</div></div>
+      <div class="value-card"><div class="value-card__name">Servicio Generoso</div><div class="value-card__def">Crear valor para otros antes de pedir algo a cambio. La generosidad tiene ritmo — alterna el dar y el recibir.</div></div>
+    </div>
+  </section>
+
+  <!-- COLORES -->
+  <section id="colors">
+    <h2>Paleta de Colores</h2>
+    <p class="section-lead">Cada color tiene raíz semántica. Click en cualquier swatch para copiar el hex.</p>
+
+    <h3>Colores de marca</h3>
+    <div class="color-grid" id="colorGrid">
+      <div class="swatch" tabindex="0" data-hex="#B85C38" data-dark="#D4845E">
+        <div class="swatch__color" style="background:#B85C38"></div>
+        <div class="swatch__info"><div class="swatch__name">Primary — Terracota</div><div class="swatch__hex">#B85C38</div><div class="swatch__meaning">La tierra, las manos que dirigen</div></div>
+      </div>
+      <div class="swatch" tabindex="0" data-hex="#C8A96E" data-dark="#DBBF8A">
+        <div class="swatch__color" style="background:#C8A96E"></div>
+        <div class="swatch__info"><div class="swatch__name">Secondary — Dorado</div><div class="swatch__hex">#C8A96E</div><div class="swatch__meaning">El bronce de los instrumentos</div></div>
+      </div>
+      <div class="swatch" tabindex="0" data-hex="#3D5A73" data-dark="#6B9DBF">
+        <div class="swatch__color" style="background:#3D5A73"></div>
+        <div class="swatch__info"><div class="swatch__name">Tertiary — Slate</div><div class="swatch__hex">#3D5A73</div><div class="swatch__meaning">El azul del código, sereno no frío</div></div>
+      </div>
+      <div class="swatch" tabindex="0" data-hex="#FEFEFE" data-dark="#131110">
+        <div class="swatch__color" style="background:#FEFEFE;border-bottom:1px solid #E8E1D9"></div>
+        <div class="swatch__info"><div class="swatch__name">Background — Blanco</div><div class="swatch__hex">#FEFEFE</div><div class="swatch__meaning">La partitura en blanco cálido</div></div>
+      </div>
+      <div class="swatch" tabindex="0" data-hex="#131110" data-dark="#131110">
+        <div class="swatch__color" style="background:#131110"></div>
+        <div class="swatch__info"><div class="swatch__name">Carbón Cálido</div><div class="swatch__hex">#131110</div><div class="swatch__meaning">La sala antes del concierto</div></div>
+      </div>
+    </div>
+
+    <h3>Semánticos</h3>
+    <div class="color-grid">
+      <div class="swatch" tabindex="0" data-hex="#4A7C59" data-dark="#6BAF7B">
+        <div class="swatch__color" style="background:#4A7C59"></div>
+        <div class="swatch__info"><div class="swatch__name">Success</div><div class="swatch__hex">#4A7C59</div></div>
+      </div>
+      <div class="swatch" tabindex="0" data-hex="#D4A843" data-dark="#E4BF5A">
+        <div class="swatch__color" style="background:#D4A843"></div>
+        <div class="swatch__info"><div class="swatch__name">Warning</div><div class="swatch__hex">#D4A843</div></div>
+      </div>
+      <div class="swatch" tabindex="0" data-hex="#C44B4B" data-dark="#E07070">
+        <div class="swatch__color" style="background:#C44B4B"></div>
+        <div class="swatch__info"><div class="swatch__name">Error</div><div class="swatch__hex">#C44B4B</div></div>
+      </div>
+      <div class="swatch" tabindex="0" data-hex="#4A6FA5" data-dark="#6B93CC">
+        <div class="swatch__color" style="background:#4A6FA5"></div>
+        <div class="swatch__info"><div class="swatch__name">Info</div><div class="swatch__hex">#4A6FA5</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPOGRAFÍA -->
+  <section id="typography">
+    <h2>Tipografía</h2>
+    <p class="section-lead">Cuatro familias, cada una con un rol claro. Las jerarquías se construyen con tamaño y peso, nunca con decoración.</p>
+
+    <div class="type-specimen">
+      <div class="type-specimen__label">Display — Instrument Sans</div>
+      <div class="type-specimen--display">
+        <div class="sample-xl">Donde la música encuentra la tecnología</div>
+        <div class="sample-base">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ abcdefghijklmnñopqrstuvwxyz 0123456789</div>
+      </div>
+    </div>
+    <div class="type-specimen">
+      <div class="type-specimen__label">Body — Inter</div>
+      <div class="type-specimen--body">
+        <div class="sample-xl">Cada voz importa — literalmente y como metáfora</div>
+        <div class="sample-base">La tecnología al servicio de lo humano, no al revés. Acompañar es más valioso que instruir. Las fronteras entre disciplinas son los lugares más interesantes.</div>
+      </div>
+    </div>
+    <div class="type-specimen">
+      <div class="type-specimen__label">Serif Accent — Bodoni Moda</div>
+      <div class="type-specimen--serif">
+        <div class="sample-xl" style="font-style:italic">«El espacio entre las notas»</div>
+        <div class="sample-base" style="font-style:italic">Querido ser humano curioso: la música no vive en las notas, vive entre ellas.</div>
+      </div>
+    </div>
+    <div class="type-specimen">
+      <div class="type-specimen__label">Mono — JetBrains Mono</div>
+      <div class="type-specimen--mono">
+        <div class="sample-xl" style="font-size:1.3rem;font-weight:400">--mv-primary: #B85C38;</div>
+        <div class="sample-base">const ensamble = voices.reduce((harmony, voice) => harmony.merge(voice));</div>
+      </div>
+    </div>
+
+    <h3>Escala de tamaños</h3>
+    <div class="type-scale">
+      <div class="type-scale__row"><span class="type-scale__token">5xl · 56px</span><span class="type-scale__sample" style="font-size:2.2rem;font-weight:700">Display</span></div>
+      <div class="type-scale__row"><span class="type-scale__token">4xl · 40px</span><span class="type-scale__sample" style="font-size:1.8rem;font-weight:700">Headline</span></div>
+      <div class="type-scale__row"><span class="type-scale__token">3xl · 30px</span><span class="type-scale__sample" style="font-size:1.5rem;font-weight:600">Page Title</span></div>
+      <div class="type-scale__row"><span class="type-scale__token">2xl · 24px</span><span class="type-scale__sample" style="font-size:1.25rem;font-weight:600">Section</span></div>
+      <div class="type-scale__row"><span class="type-scale__token">xl · 20px</span><span class="type-scale__sample" style="font-size:1.1rem;font-weight:500">Card Title</span></div>
+      <div class="type-scale__row"><span class="type-scale__token">lg · 18px</span><span class="type-scale__sample" style="font-size:1rem">Lead Paragraph</span></div>
+      <div class="type-scale__row"><span class="type-scale__token">base · 16px</span><span class="type-scale__sample" style="font-size:0.875rem">Body Text</span></div>
+      <div class="type-scale__row"><span class="type-scale__token">sm · 14px</span><span class="type-scale__sample" style="font-size:0.8rem;color:var(--mv-text-secondary)">Labels, metadata</span></div>
+      <div class="type-scale__row"><span class="type-scale__token">xs · 12px</span><span class="type-scale__sample" style="font-size:0.72rem;color:var(--mv-text-tertiary)">Footnotes</span></div>
+    </div>
+  </section>
+
+  <!-- LOGO -->
+  <section id="logo">
+    <h2>Logo &amp; Wordmark</h2>
+    <p class="section-lead">El gesto del director congelado en su instante más preciso. Precisión de Apple × calidez de Nils Frahm × sofisticación de Aesop.</p>
+
+    <div class="logo-display logo-display--dark">
+      <span class="logo-display__text" style="color:#F5F0EB;font-size:clamp(1.4rem,4vw,2.2rem)">MEMO VALDEZ</span>
+    </div>
+    <div class="logo-display logo-display--light">
+      <span class="logo-display__text" style="color:#1A1714;font-size:clamp(1.4rem,4vw,2.2rem)">MEMO VALDEZ</span>
+    </div>
+
+    <h3>Especificaciones</h3>
+    <dl class="logo-specs">
+      <dt>Tipografía</dt><dd>Söhne Book (400) / Instrument Sans</dd>
+      <dt>Capitalización</dt><dd>Versales (ALL CAPS)</dd>
+      <dt>Tracking</dt><dd>+120 a +160 (CSS: 0.12em–0.16em)</dd>
+      <dt>Ratio</dt><dd>≈ 6:1 a 7:1 (ancho:alto)</dd>
+      <dt>Clear Space</dt><dd>1.5× cap height de "M"</dd>
+      <dt>Mínimo web</dt><dd>120px ancho</dd>
+      <dt>Tagline</dt><dd>ACOMPAÑAR. DIRIGIR. EXPLORAR.</dd>
+      <dt>Monograma</dt><dd>MV — Söhne Kräftig (500)</dd>
+    </dl>
+  </section>
+
+  <!-- VOZ Y TONO -->
+  <section id="voice">
+    <h2>Voz y Tono</h2>
+    <p class="section-lead">Cinco rasgos que definen cómo suena Memo. Cada pieza de comunicación debería pasar el test: «¿Podrías ponerle "Tuyo, Memo" al final?»</p>
+
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="voice-card__trait">Epistolar-Cercano</div>
+        <div class="voice-card__yes">«Ayer, en medio de un ensayo, pasó algo que tengo que contarte…»</div>
+        <div class="voice-card__no">Nunca: «A través del presente comunicado, nos complace informar…»</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-card__trait">Explorador Curioso</div>
+        <div class="voice-card__yes">«Llevo dos semanas usando IA para analizar un motete de Palestrina. Déjame enseñarte.»</div>
+        <div class="voice-card__no">Nunca: «Como experto en IA aplicada a la música, he desarrollado una metodología propietaria…»</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-card__trait">Mentor de Banqueta</div>
+        <div class="voice-card__yes">«No te voy a mentir: la primera vez que dirigí, me temblaban las manos.»</div>
+        <div class="voice-card__no">Nunca: «Con más de X años de experiencia formando ensambles de excelencia…»</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-card__trait">Puente entre Mundos</div>
+        <div class="voice-card__yes">«Un coro bien dirigido funciona como una red neuronal: cada voz procesa su parte de forma independiente, pero el resultado solo emerge cuando todas se conectan.»</div>
+        <div class="voice-card__no">Nunca: «La sinergia cross-disciplinaria entre las artes performativas y los paradigmas emergentes…»</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-card__trait">Optimista con Raíz</div>
+        <div class="voice-card__yes">«No creo que la IA vaya a reemplazar a los maestros. Creo que la pregunta interesante es otra…»</div>
+        <div class="voice-card__no">Nunca: «¡La IA está revolucionando TODO! 🚀🔥 Si no te subes al tren te quedas atrás!!!»</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENTES -->
+  <section id="components">
+    <h2>Componentes</h2>
+    <p class="section-lead">Cada componente es un instrumento en el ensamble. Todos comparten la misma afinación (tokens), el mismo tempo (transiciones) y la misma dinámica (estados).</p>
+
+    <h3>Botones</h3>
+    <div class="component-row">
+      <button class="mv-btn mv-btn--primary">Suscríbete</button>
+      <button class="mv-btn mv-btn--secondary">Ver detalles</button>
+      <button class="mv-btn mv-btn--ghost">Cancelar</button>
+      <button class="mv-btn mv-btn--tertiary">Ver código</button>
+    </div>
+    <div class="component-row">
+      <button class="mv-btn mv-btn--primary mv-btn--sm">Pequeño</button>
+      <button class="mv-btn mv-btn--primary">Mediano</button>
+      <button class="mv-btn mv-btn--primary mv-btn--lg">Grande</button>
+    </div>
+
+    <h3>Cards</h3>
+    <div class="component-row" style="align-items:stretch">
+      <div class="preview-card">
+        <div class="preview-card__title">El Ensamble como Laboratorio</div>
+        <div class="preview-card__text">La dirección coral como modelo de escucha, coordinación y creación colectiva.</div>
+        <span class="preview-card__tag">Música</span><span class="preview-card__tag">Personas</span>
+      </div>
+      <div class="preview-card">
+        <div class="preview-card__title">Tecnología con Alma</div>
+        <div class="preview-card__text">La IA no reemplaza lo humano — lo amplifica. Exploración desde la práctica.</div>
+        <span class="preview-card__tag">Tech</span><span class="preview-card__tag">IA</span>
+      </div>
+    </div>
+
+    <h3>Inputs</h3>
+    <div style="max-width:340px;margin-bottom:24px">
+      <label class="input-label" for="demo-input">Tu nombre</label>
+      <input class="preview-input" id="demo-input" type="text" placeholder="Escribe aquí…">
+    </div>
+    <div style="max-width:340px">
+      <label class="input-label" for="demo-textarea">Mensaje</label>
+      <textarea class="preview-input" id="demo-textarea" rows="3" placeholder="Querido ser humano curioso…" style="resize:vertical"></textarea>
+    </div>
+  </section>
+
+  <!-- QUICK REFERENCE -->
+  <section id="reference">
+    <h2>Quick Reference</h2>
+    <p class="section-lead">Todo lo esencial del sistema en un vistazo. Director · Músico · Explorador.</p>
+
+    <h3>Spacing</h3>
+    <div class="qr-grid" style="margin-bottom:24px">
+      <div class="qr-item"><div class="qr-item__label">space-2</div><div class="qr-item__value">8px</div></div>
+      <div class="qr-item"><div class="qr-item__label">space-4</div><div class="qr-item__value">16px</div></div>
+      <div class="qr-item"><div class="qr-item__label">space-6</div><div class="qr-item__value">24px</div></div>
+      <div class="qr-item"><div class="qr-item__label">space-8</div><div class="qr-item__value">32px</div></div>
+    </div>
+
+    <h3>Radius</h3>
+    <div class="qr-grid" style="margin-bottom:24px">
+      <div class="qr-item"><div class="qr-item__label">sm</div><div class="qr-item__value">4px</div></div>
+      <div class="qr-item"><div class="qr-item__label">md</div><div class="qr-item__value">8px</div></div>
+      <div class="qr-item"><div class="qr-item__label">lg</div><div class="qr-item__value">16px</div></div>
+      <div class="qr-item"><div class="qr-item__label">full</div><div class="qr-item__value">9999px</div></div>
+    </div>
+
+    <h3>Transitions</h3>
+    <div class="qr-grid" style="margin-bottom:24px">
+      <div class="qr-item"><div class="qr-item__label">fast</div><div class="qr-item__value">150ms</div></div>
+      <div class="qr-item"><div class="qr-item__label">normal</div><div class="qr-item__value">300ms</div></div>
+      <div class="qr-item"><div class="qr-item__label">slow</div><div class="qr-item__value">500ms</div></div>
+      <div class="qr-item"><div class="qr-item__label">dramatic</div><div class="qr-item__value">800ms</div></div>
+    </div>
+
+    <h3>Breakpoints</h3>
+    <div class="qr-grid" style="margin-bottom:24px">
+      <div class="qr-item"><div class="qr-item__label">sm</div><div class="qr-item__value">640px</div></div>
+      <div class="qr-item"><div class="qr-item__label">md</div><div class="qr-item__value">768px</div></div>
+      <div class="qr-item"><div class="qr-item__label">lg</div><div class="qr-item__value">1024px</div></div>
+      <div class="qr-item"><div class="qr-item__label">xl</div><div class="qr-item__value">1280px</div></div>
+    </div>
+
+    <h3>Voice test rápido</h3>
+    <div style="padding:24px;background:var(--mv-surface);border-radius:var(--mv-radius-lg);border:1px solid var(--mv-neutral-300);font-size:0.875rem;color:var(--mv-text-secondary);line-height:2">
+      ✓ ¿Usaría esta frase en una conversación real?<br>
+      ✓ ¿Está en «tú»?<br>
+      ✓ ¿Lidera con la persona, no con la herramienta?<br>
+      ✓ ¿Podrías ponerle «Tuyo, Memo» al final?
+    </div>
+  </section>
+
+</main>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* Memo Valdez Brandbook — Interactive Script v2 */
+
+/* ============ THEME TOGGLE ============ */
+function setTheme(t) {
+  var html = document.documentElement;
+  var btns = document.querySelectorAll('.theme-toggle button');
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].classList.remove('active');
+    btns[i].setAttribute('aria-checked', 'false');
+  }
+  var active = document.querySelector('[data-theme-set="' + t + '"]');
+  if (active) {
+    active.classList.add('active');
+    active.setAttribute('aria-checked', 'true');
+  }
+  if (t === 'system') {
+    html.removeAttribute('data-theme');
+  } else {
+    html.setAttribute('data-theme', t);
+  }
+  try { localStorage.setItem('mv-theme', t); } catch(e) {}
+}
+
+/* Init theme */
+var savedTheme = 'dark';
+try { savedTheme = localStorage.getItem('mv-theme') || 'dark'; } catch(e) {}
+setTheme(savedTheme);
+
+/* Bind theme buttons */
+var themeBtns = document.querySelectorAll('.theme-toggle button');
+for (var i = 0; i < themeBtns.length; i++) {
+  (function(btn) {
+    btn.addEventListener('click', function() {
+      setTheme(btn.getAttribute('data-theme-set'));
+    });
+  })(themeBtns[i]);
+}
+
+/* ============ CLICK-TO-COPY COLOR ============ */
+var toastEl = document.getElementById('toast');
+var toastTimer = null;
+
+function showToast(msg) {
+  if (!toastEl) return;
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function() {
+    toastEl.classList.remove('show');
+  }, 2000);
+}
+
+var swatches = document.querySelectorAll('.swatch');
+for (var i = 0; i < swatches.length; i++) {
+  (function(s) {
+    s.addEventListener('click', function() {
+      var hexEl = s.querySelector('.swatch__hex');
+      if (!hexEl) return;
+      var hex = hexEl.textContent;
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(hex).then(function() {
+            showToast('Copiado: ' + hex);
+          }).catch(function() {
+            showToast(hex);
+          });
+        } else {
+          showToast(hex);
+        }
+      } catch(e) {
+        showToast(hex);
+      }
+    });
+  })(swatches[i]);
+}
+
+/* ============ MOBILE SIDEBAR ============ */
+var hamburger = document.getElementById('hamburger');
+var sidebar = document.getElementById('sidebar');
+var overlayEl = document.getElementById('overlay');
+
+function toggleSidebar() {
+  if (!sidebar || !hamburger || !overlayEl) return;
+  var isOpen = sidebar.classList.toggle('open');
+  hamburger.classList.toggle('open');
+  overlayEl.classList.toggle('open');
+  hamburger.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+}
+
+if (hamburger) hamburger.addEventListener('click', toggleSidebar);
+if (overlayEl) overlayEl.addEventListener('click', toggleSidebar);
+
+/* Close sidebar on nav click (mobile) */
+if (sidebar) {
+  var sidebarLinks = sidebar.querySelectorAll('a');
+  for (var i = 0; i < sidebarLinks.length; i++) {
+    sidebarLinks[i].addEventListener('click', function() {
+      if (window.innerWidth < 1024) toggleSidebar();
+    });
+  }
+}
+
+/* ============ ACTIVE NAV HIGHLIGHT ============ */
+var mainSections = document.querySelectorAll('main > section');
+var navAnchors = sidebar ? sidebar.querySelectorAll('nav a') : [];
+
+if (mainSections.length > 0 && navAnchors.length > 0) {
+  try {
+    var observer = new IntersectionObserver(function(entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (entries[i].isIntersecting) {
+          for (var j = 0; j < navAnchors.length; j++) {
+            navAnchors[j].classList.remove('active');
+          }
+          var targetId = entries[i].target.id;
+          if (targetId && sidebar) {
+            var matchLink = sidebar.querySelector('a[href="#' + targetId + '"]');
+            if (matchLink) matchLink.classList.add('active');
+          }
+        }
+      }
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    for (var i = 0; i < mainSections.length; i++) {
+      observer.observe(mainSections[i]);
+    }
+  } catch(e) { /* IntersectionObserver not supported */ }
+}
+</script>
+</body>
+</html>
