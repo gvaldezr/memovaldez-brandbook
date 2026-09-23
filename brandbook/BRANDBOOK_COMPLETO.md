@@ -190,7 +190,7 @@ En un mundo donde la IA polariza y la música clásica lucha por relevancia, Mem
 | `--mv-primary-dark` | `#8E3F22` | hsl(16, 61%, 35%) | Texto de enlace sobre fondo claro (6.87:1 ✅ AA) |
 | `--mv-secondary` | `#C8A96E` | hsl(39, 45%, 61%) | Acentos decorativos, iconos, badges |
 | `--mv-tertiary` | `#3D5A73` | hsl(208, 31%, 35%) | Links tech, etiquetas de código (6.81:1 ✅ AA) |
-| `--mv-bg` | `#FEFEFE` | hsl(36, 33%, 97%) | Fondo de página — "la partitura en blanco cálido" |
+| `--mv-bg` | `#FEFEFE` | hsl(0, 0%, 100%) | Fondo de página — "la partitura en blanco cálido" |
 | `--mv-surface` | `#F5F0EB` | hsl(30, 33%, 94%) | Cards, sidebars, secciones alternas |
 | `--mv-text-primary` | `#231F1B` | hsl(30, 13%, 12%) | Cuerpo de texto (15.44:1 ✅ AAA) |
 | `--mv-text-secondary` | `#574E44` | hsl(32, 12%, 30%) | Párrafos secundarios (7.68:1 ✅ AAA) |
