@@ -15,7 +15,7 @@
 
 Empecé dirigiendo un coro de diez personas en un salón que se inundaba cuando llovía. Nadie sabía leer partitura. Yo apenas sabía cómo marcar un compás de 3/4 sin parecer que estaba espantando moscas. Pero algo pasó esa primera noche que todavía no puedo explicar del todo: cuando las voces se encontraron — imperfectas, tímidas, desafinadas en los mejores lugares — sentí que ahí había algo que el mundo necesita.
 
-Hoy dirijo ensambles corales e instrumentales, enseño en la Universidad Anáhuac Mayab, y paso una cantidad sospechosa de tiempo explorando cómo la inteligencia artificial puede hacer que aprendamos, creemos y nos conectemos de formas que antes no eran posibles. Para algunos eso suena contradictorio: ¿un director de coro metido en el mundo tech? Para mí es la misma pregunta con otro instrumento: *¿cómo ayudamos a las personas a encontrar su voz?*
+Hoy dirijo ensambles corales e instrumentales, trabajo en la Universidad Anáhuac Mayab, y paso una cantidad sospechosa de tiempo explorando cómo la inteligencia artificial puede hacer que aprendamos, creemos y nos conectemos de formas que antes no eran posibles. Para algunos eso suena contradictorio: ¿un director de coro metido en el mundo tech? Para mí es la misma pregunta con otro instrumento: *¿cómo ayudamos a las personas a encontrar su voz?*
 
 No me interesa la tecnología por la tecnología. Me interesa lo que pasa cuando le das a alguien una herramienta que le permite hacer lo que antes no podía. Me interesa el momento en que una soprano descubre que sí puede, o cuando un diseñador instruccional encuentra que la música le enseña algo sobre ritmo que ningún framework le había mostrado.
 
