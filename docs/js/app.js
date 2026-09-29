@@ -154,14 +154,14 @@
 
     var validators = {
       nombre: function (v) {
-        return v.trim().length >= 2 ? '' : 'Escribe tu nombre (mínimo 2 caracteres).';
+        return v.trim().length >= 2 ? '' : 'Necesito al menos tu nombre.';
       },
       email: function (v) {
         var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
         return ok ? '' : 'Escribe un correo válido, por ejemplo hola@ejemplo.com.';
       },
       mensaje: function (v) {
-        return v.trim().length >= 10 ? '' : 'Cuéntame un poco más (mínimo 10 caracteres).';
+        return v.trim().length >= 10 ? '' : 'Cuéntame un poco más, ¿va?';
       }
     };
 
@@ -197,7 +197,7 @@
 
       if (!allValid) {
         if (status) {
-          status.textContent = 'Revisa los campos marcados antes de enviar.';
+          status.textContent = 'Parece que falta algo — revisa antes de enviar.';
           status.className = 'form-status is-error';
         }
         if (firstInvalid) firstInvalid.focus();
