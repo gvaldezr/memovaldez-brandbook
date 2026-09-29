@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 180" width="800" height="180">
+  <rect width="800" height="180" fill="#FEFEFE"/>
+  <rect x="20" y="20" width="100" height="100" rx="8" fill="#B85C38"/>
+  <text x="70" y="145" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" fill="#574E44">#B85C38</text>
+  <text x="70" y="160" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#968A7D">Primary</text>
+  <rect x="145" y="20" width="100" height="100" rx="8" fill="#8E3F22"/>
+  <text x="195" y="145" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" fill="#574E44">#8E3F22</text>
+  <text x="195" y="160" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#968A7D">Primary Dark</text>
+  <rect x="270" y="20" width="100" height="100" rx="8" fill="#C8A96E"/>
+  <text x="320" y="145" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" fill="#574E44">#C8A96E</text>
+  <text x="320" y="160" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#968A7D">Secondary</text>
+  <rect x="395" y="20" width="100" height="100" rx="8" fill="#3D5A73"/>
+  <text x="445" y="145" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" fill="#574E44">#3D5A73</text>
+  <text x="445" y="160" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#968A7D">Tertiary</text>
+  <rect x="520" y="20" width="100" height="100" rx="8" fill="#131110"/>
+  <text x="570" y="145" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" fill="#574E44">#131110</text>
+  <text x="570" y="160" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#968A7D">Dark BG</text>
+  <rect x="645" y="20" width="100" height="100" rx="8" fill="#FEFEFE" stroke="#E8E1D9" stroke-width="1"/>
+  <text x="695" y="145" text-anchor="middle" font-family="'Inter',sans-serif" font-size="11" fill="#574E44">#FEFEFE</text>
+  <text x="695" y="160" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#968A7D">Light BG</text>
+</svg>
