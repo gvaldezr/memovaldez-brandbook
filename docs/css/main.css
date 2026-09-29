@@ -118,6 +118,21 @@ section:focus { outline: none; }
 .section--surface { background-color: var(--mv-surface); }
 .section-head { margin-bottom: var(--mv-space-12); }
 
+/* Imagen decorativa de sección */
+.section-media {
+  margin-bottom: var(--mv-space-12);
+  border-radius: var(--mv-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--mv-neutral-200);
+  box-shadow: var(--mv-shadow-md);
+  aspect-ratio: 16 / 7;
+}
+.section-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* ── Botones ──────────────────────────────────────────────────── */
 .btn {
   display: inline-flex;
@@ -376,6 +391,7 @@ section:focus { outline: none; }
   box-shadow: var(--mv-shadow-md);
 }
 .about__photo span { font-family: var(--mv-font-mono); font-size: var(--mv-text-sm); }
+.about__photo img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ── Cards genéricas ──────────────────────────────────────────── */
 .card {
