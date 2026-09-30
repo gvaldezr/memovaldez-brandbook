@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Las 5 cosas que la IA no puede hacer por ti — Memo Valdez</title>
+  <meta name="description" content="La IA quiere ser tu colega creativo. Mi amigo quiere que le limpie la casa. Las 5 cosas que ningún algoritmo puede replicar." />
+  <meta name="theme-color" content="#131110" />
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Las 5 cosas que la IA no puede hacer por ti — Memo Valdez" />
+  <meta property="og:description" content="La IA quiere ser tu colega creativo. Mi amigo quiere que le limpie la casa. Las 5 cosas que ningún algoritmo puede replicar." />
+  <meta property="og:locale" content="es_MX" />
+  <meta property="og:url" content="https://yo.memovaldez.com/blog/nota-04-human-premium" />
+  <link rel="canonical" href="https://yo.memovaldez.com/blog/nota-04-human-premium" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@vmcemin" />
+
+  <link rel="icon" type="image/png" href="../assets/monogram_mv.png" />
+  <link rel="apple-touch-icon" href="../assets/monogram_mv.png" />
+
+  <!-- Anti-FOUC -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('mv-theme');
+        if (t === 'light' || t === 'dark') {
+          document.documentElement.setAttribute('data-theme', t);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Bodoni+Moda:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <!-- ===================== HEADER / NAV ===================== -->
+  <header class="site-header" data-header>
+    <div class="container nav-bar">
+      <a class="brand" href="../index.html#hero" aria-label="Memo Valdez — inicio">
+        <span class="brand__mark" aria-hidden="true">MV</span>
+        <span class="brand__name">Memo Valdez</span>
+      </a>
+
+      <div class="nav__actions">
+        <div class="theme-switch" role="group" aria-label="Cambiar tema">
+          <button class="theme-switch__btn" data-theme-option="light" aria-pressed="false" title="Tema claro" aria-label="Tema claro">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          </button>
+          <button class="theme-switch__btn" data-theme-option="dark" aria-pressed="false" title="Tema oscuro" aria-label="Tema oscuro">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          </button>
+          <button class="theme-switch__btn" data-theme-option="system" aria-pressed="false" title="Según el sistema" aria-label="Tema según el sistema">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+          </button>
+        </div>
+
+        <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú">
+          <svg class="nav-toggle__open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="nav-toggle__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+
+      <nav class="nav" id="primary-nav" data-nav aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="../index.html#about">Sobre mí</a></li>
+          <li><a href="../index.html#music">Música</a></li>
+          <li><a href="../index.html#tech">Tecnología</a></li>
+          <li><a href="../index.html#blog">Reflexiones</a></li>
+          <li><a href="../index.html#contact">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="blog-main">
+    <article class="blog-article">
+      <p class="eyebrow">Tecnología · Septiembre 2026</p>
+      <h1>Las 5 cosas que la IA no puede hacer por ti</h1>
+      <p class="article-meta">Por Memo Valdez · Lectura de ~3 min</p>
+
+      <p>Un buen amigo me dijo hace poco: <em>"Necesito que la IA limpie la casa y cocine por mí. No que analice y haga todos mis reportes del trabajo."</em></p>
+      <p>Me reí. Pero luego me quedé pensando.</p>
+      <p>Porque tiene razón. La IA está aprendiendo a escribir correos, a resumir juntas, a generar reportes — cosas que, bien o mal, requieren criterio humano. Mientras tanto, el robot que tiende la cama existe… pero cuesta lo que un carro.</p>
+      <p>La IA quiere ser tu colega creativo. Mi amigo quiere que le limpie la casa. Y en esa brecha — entre lo que la IA <em>puede</em> hacer y lo que <em>deberíamos</em> dejarle hacer — está la pregunta que nadie se está haciendo.</p>
+      <p>Así que me puse a buscar. Si mi amigo tiene razón — si la IA se está quedando con el trabajo interesante — ¿qué nos queda a los humanos?</p>
+      <h2>Lo que queda cuando la IA se lleva lo fácil</h2>
+      <p>El <em>Global Skills Report 2026</em> de Coursera le daría la razón a mi amigo — pero no como él espera.</p>
+      <p>Las inscripciones en pensamiento crítico crecieron <strong>107% en un año</strong>. No porque la gente quiera ser más lista, sino porque la IA absorbió las tareas que antes llenaban el día. Lo que queda es lo que ningún algoritmo replica: juicio, empatía, la capacidad de hacer buenas preguntas.</p>
+      <p>McKinsey lo pone en números duros: el <strong>74% del valor económico de la IA</strong> lo captura solo el 20% de las organizaciones. La diferencia no es la tecnología que tienen — es que invirtieron en lo que las máquinas no ofrecen.</p>
+      <p>Lo gracioso es que si le preguntas a mi amigo qué hace bien en su trabajo, no te dice "mis reportes". Te dice: "sé leer a la gente", "sé cuándo una idea va a tronar antes de que truene". Exactamente las cosas que ningún algoritmo replica. Lo que él no quiere que la IA toque — ya es lo que lo hace irremplazable. Nomás no se ha dado cuenta.</p>
+      <h2>Tu lista de lo irremplazable</h2>
+      <p>Entonces, si la IA se va a quedar con los reportes y no con la cocina, ¿qué te queda a ti?</p>
+      <h3>1. Juicio</h3>
+      <p>La IA te da 10 opciones en 3 segundos. Lo que no te da es la razón para elegir una. Eso requiere contexto, experiencia, y la capacidad de decir "no" cuando los datos dicen "sí". La IA puede escribirle los correos a mi amigo — pero no puede decidir cuál no mandar.</p>
+      <h3>2. Empatía</h3>
+      <p>No la simulada — la que requiere riesgo. La que te obliga a escuchar algo que no quieres oír y responder con algo que no habías planeado decir.</p>
+      <h3>3. Curiosidad</h3>
+      <p>No la de googlear — la de preguntar <em>por qué</em> cinco veces seguidas hasta que la respuesta te incomode. La IA responde lo que le pidas. Tú decides qué vale la pena preguntar.</p>
+      <h3>4. Creatividad</h3>
+      <p>La IA genera. Tú creas. Generar es combinar lo que ya existe. Crear es apostar por algo que todavía no tiene nombre.</p>
+      <h3>5. Seguridad psicológica</h3>
+      <p>Cada martes dirijo un ensayo de coro. Y lo más difícil no es la música — es lograr que alguien cante fuerte por primera vez. Un coro donde nadie se atreve a cantar fuerte es un coro silencioso. La habilidad de crear espacios donde otros se atrevan a equivocarse no se automatiza.</p>
+      <hr />
+      <p>Mi amigo sigue esperando su robot que cocine. Mientras tanto, la IA le está escribiendo los correos. Y él sigue siendo el que sabe leer la cara del cliente cuando algo no cuadra.</p>
+      <p>La herramienta cambia. Lo que te hace irremplazable, no.</p>
+      <p>Y a lo mejor eso incluye saber cocinar.</p>
+      <hr />
+      <p class="article-sources">Fuentes: Coursera & Udemy, Global Skills Report 2026 · McKinsey Global Institute, 74% AI value concentration · Forbes, "5 Career Skills Suddenly Worth More", ago. 2026 · PwC, AI economic value distribution</p>
+    </article>
+
+    <nav class="blog-nav" aria-label="Navegación del artículo">
+      <a href="../index.html#blog">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 19l-7-7 7-7"/></svg>
+        Volver a Reflexiones
+      </a>
+    </nav>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <span class="footer__mark" aria-hidden="true">MV</span>
+            <span class="footer__name">Memo Valdez</span>
+          </div>
+          <p class="footer__tagline">Acompañar. Dirigir. Explorar.</p>
+        </div>
+        <nav class="footer__links" aria-label="Enlaces del pie de página">
+          <a href="../index.html#about">Sobre mí</a>
+          <a href="../index.html#music">Música</a>
+          <a href="../index.html#tech">Tecnología</a>
+          <a href="../index.html#blog">Reflexiones</a>
+          <a href="../index.html#contact">Contacto</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Memo Valdez</span>
+        <span class="mono">Mérida, México</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/theme-manager.js"></script>
+</body>
+</html>
