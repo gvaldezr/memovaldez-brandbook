@@ -30,11 +30,11 @@ Forbes publicó este año las 5 growth skills para la era de la IA:
 2. **Pensamiento crítico** — la capacidad de cuestionar la respuesta, especialmente cuando viene de una máquina
 3. **Colaboración con tecnología** — saber qué delegar y qué retener
 4. **Creatividad** — generar lo que no existe, no combinar lo que ya hay
-5. **Seguridad psicológica** — crear espacios donde el error sea aprendizaje, no amenaza. Cada martes, en el ensayo, le digo al ensamble lo mismo: "si te equivocas cantando fuerte, aprendo algo; si te equivocas cantando quedito, no me entero"
+5. **Seguridad psicológica** — crear espacios donde el error sea aprendizaje, no amenaza. En el ensayo le digo al ensamble lo mismo: "si te equivocas cantando fuerte, aprendo algo; si te equivocas cantando quedito, no me entero"
 
 ¿Notas algo? Ninguna de estas es una habilidad técnica. Ninguna requiere una suscripción. Ninguna se aprende en un tutorial de YouTube de 10 minutos.
 
-Se practican. Se cultivan. Se viven.
+Ninguna se descarga. Todas se practican. Y la mayoría se aprenden sin que nadie te las enseñe — en un ensayo, en un proyecto que se complicó, en una conversación donde no supiste qué decir.
 
 Y aquí es donde yo me contradigo.
 

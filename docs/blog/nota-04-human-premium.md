@@ -41,7 +41,7 @@ No la de googlear — la de preguntar *por qué* cinco veces seguidas hasta que 
 La IA genera. Tú creas. Generar es combinar lo que ya existe. Crear es apostar por algo que todavía no tiene nombre.
 
 ### 5. Seguridad psicológica
-Cada martes dirijo un ensayo de coro. Y lo más difícil no es la música — es lograr que alguien cante fuerte por primera vez. Un coro donde nadie se atreve a cantar fuerte es un coro silencioso. La habilidad de crear espacios donde otros se atrevan a equivocarse no se automatiza.
+Varias veces a la semana dirijo ensayos. Y lo más difícil no es la música — es lograr que alguien cante fuerte por primera vez. Un ensamble donde nadie se atreve a cantar fuerte es un ensamble silencioso. La habilidad de crear espacios donde otros se atrevan a equivocarse no se automatiza.
 
 ---
 
