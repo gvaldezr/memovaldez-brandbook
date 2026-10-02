@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lo más difícil del ensayo no es tu parte — Deck Memo Valdez</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Bodoni+Moda:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mv-primary:#B85C38; --mv-primary-light:#D4845E; --mv-primary-dark:#8E3F22;
+    --mv-secondary:#C8A96E; --mv-tertiary:#3D5A73; --mv-tertiary-light:#5A7A96;
+    --mv-ink:#161310; --mv-ink-2:#231F1B; --mv-paper:#FEFEFE;
+    --mv-muted:#B8ADA0; --mv-neutral-300:#D4CBC0;
+    --mv-font-display:'Instrument Sans','Inter',system-ui,sans-serif;
+    --mv-font-body:'Inter',system-ui,sans-serif;
+    --mv-font-serif:'Bodoni Moda',Georgia,serif;
+    --mv-font-mono:'JetBrains Mono',monospace;
+  }
+  .reveal{font-family:var(--mv-font-body);font-size:34px;color:var(--mv-paper);}
+  .reveal-viewport{background:var(--mv-ink);}
+  .reveal .slides{text-align:left;}
+  .reveal h1,.reveal h2,.reveal h3{font-family:var(--mv-font-display);font-weight:700;letter-spacing:-0.02em;color:var(--mv-paper);text-transform:none;line-height:1.08;}
+  .reveal h1{font-size:2.2em;} .reveal h2{font-size:1.55em;} .reveal h3{font-size:1.1em;}
+  .mv-display{font-family:var(--mv-font-display);font-weight:700;font-size:3.2em;line-height:0.98;letter-spacing:-0.03em;color:var(--mv-paper);}
+  .reveal em{color:var(--mv-primary-light);font-style:italic;}
+  .reveal strong{color:var(--mv-secondary);font-weight:600;}
+  .mv-kicker{font-family:var(--mv-font-mono);font-size:0.5em;letter-spacing:0.18em;text-transform:uppercase;color:var(--mv-primary-light);margin-bottom:0.6em;}
+  .mv-huge{font-family:var(--mv-font-display);font-weight:700;font-size:7em;line-height:0.9;color:var(--mv-primary-light);letter-spacing:-0.04em;}
+  .mv-huge-xl{font-size:9em;}
+  .mv-quote{font-family:var(--mv-font-serif);font-style:italic;font-size:1.35em;line-height:1.3;color:var(--mv-paper);}
+  .mv-attr{font-family:var(--mv-font-mono);font-size:0.6em;letter-spacing:0.08em;color:var(--mv-muted);margin-top:1em;text-transform:uppercase;}
+  .mv-sub{color:var(--mv-neutral-300);font-size:0.72em;font-weight:300;margin-top:0.8em;line-height:1.4;}
+  .mv-center{text-align:center;}
+  .mv-rule{width:64px;height:3px;background:var(--mv-primary);border:none;margin:0.9em 0;}
+  .mv-center .mv-rule{margin-left:auto;margin-right:auto;}
+  .reveal .slides section{display:flex;flex-direction:column;justify-content:center;min-height:100%;}
+  .mv-note{position:fixed;bottom:14px;left:18px;font-family:var(--mv-font-mono);font-size:11px;color:rgba(254,254,254,0.28);letter-spacing:0.1em;}
+  .mv-dim{color:#8FA8C0;}
+  .mv-skills{list-style:none;padding:0;margin:0.6em 0 0;font-family:var(--mv-font-display);}
+  .mv-skills li{font-size:1.15em;font-weight:600;color:var(--mv-paper);padding:0.18em 0;border-bottom:1px solid rgba(254,254,254,0.08);}
+  .mv-skills li span{color:var(--mv-primary-light);font-family:var(--mv-font-mono);font-size:0.6em;margin-right:0.6em;}
+  .mv-skills li.fragment.current-fragment span{color:var(--mv-secondary);transform:scale(1.15);display:inline-block;transition:all .2s;}
+  .mv-bgimg{position:absolute;inset:0;z-index:-1;background-size:cover;background-position:center;}
+  .mv-bgimg::after{content:"";position:absolute;inset:0;}
+  .mv-ov-ink::after{background:linear-gradient(90deg, rgba(22,19,16,0.92) 0%, rgba(22,19,16,0.78) 50%, rgba(22,19,16,0.55) 100%);}
+  .mv-ov-slate::after{background:linear-gradient(90deg, rgba(46,69,87,0.94) 0%, rgba(46,69,87,0.80) 55%, rgba(46,69,87,0.66) 100%);}
+  .mv-ov-blue::after{background:radial-gradient(ellipse at center, rgba(29,42,61,0.62) 0%, rgba(22,19,16,0.88) 100%);}
+  .mv-ov-center::after{background:radial-gradient(ellipse at center, rgba(22,19,16,0.55) 0%, rgba(22,19,16,0.9) 100%);}
+  .mv-ov-content{position:relative;z-index:1;}
+  .mv-blackcue{font-family:var(--mv-font-mono);font-size:0.3em;color:rgba(254,254,254,0.14);letter-spacing:0.2em;text-transform:uppercase;text-align:center;}
+  .mv-staff{position:absolute;left:0;right:0;z-index:0;pointer-events:none;opacity:0.10;}
+  .reveal .progress{color:var(--mv-primary);}
+  .reveal .controls{color:var(--mv-primary);}
+  .reveal .slide-number{background:transparent;color:rgba(254,254,254,0.3);font-family:var(--mv-font-mono);}
+  @media (prefers-reduced-motion: no-preference){
+    .reveal .present .mv-huge.mv-anim{animation:mvHugeIn 900ms cubic-bezier(.17,.84,.44,1) both;}
+    @keyframes mvHugeIn{0%{opacity:0;transform:translateY(0.18em) scale(0.94);letter-spacing:0.04em;}60%{opacity:1;}100%{opacity:1;transform:none;letter-spacing:-0.04em;}}
+    .reveal .present .mv-huge-xl.mv-anim{animation:mvHugeXL 820ms cubic-bezier(.2,.9,.3,1.2) both;}
+    @keyframes mvHugeXL{0%{opacity:0;transform:scale(0.6);}70%{opacity:1;}100%{transform:scale(1);}}
+    .reveal .present .mv-rule.mv-draw{animation:mvDraw 700ms ease-out 350ms both;}
+    @keyframes mvDraw{0%{width:0;}100%{width:64px;}}
+    .reveal .present .mv-bgimg.mv-kenburns{animation:mvKen 8s ease-out both;}
+    @keyframes mvKen{0%{transform:scale(1);}100%{transform:scale(1.03);}}
+    .reveal .present .mv-wave path{stroke-dasharray:1400;stroke-dashoffset:1400;animation:mvWave 2.4s ease-out 300ms forwards;}
+    @keyframes mvWave{to{stroke-dashoffset:0;}}
+  }
+</style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+<!-- NEGRA: apertura dinámica -->
+<section data-background-color="#161310" data-notes="APERTURA SIN PALABRAS. Sube, aplaude un ritmo, gesto: síganme. Dinámica 1 (teclado humano): call-and-response, divide en 2 grupos, combínalos. Para. '¿Cómo es posible?'">
+  <p class="mv-blackcue">● APERTURA SIN PALABRAS · Dinámica 1: el teclado humano (palmas, 2 grupos)</p>
+</section>
+
+<!-- 1 - Portada: Ken Burns + text-shadow -->
+<section class="mv-center" data-notes="La presentación llega DESPUÉS de la dinámica. Me llamo Memo, dirijo ensambles, y esa pregunta me ha tomado quince años responder.">
+  <div class="mv-bgimg mv-ov-center mv-kenburns" style="background-image:url('img/manos.jpg');"></div>
+  <div class="mv-ov-content">
+    <p class="mv-kicker">Conferencia</p>
+    <h1 style="text-shadow:0 2px 24px rgba(0,0,0,0.6);">Lo más difícil<br>del ensayo<br><em>no es tu parte.</em></h1>
+    <p class="mv-note">Memo Valdez · yo.memovaldez.com</p>
+  </div>
+</section>
+
+<!-- 2 - Acabamos de hacer música -->
+<section data-background-color="#161310" class="mv-center" data-notes="Sin instrumentos, sin ensayo, sin partitura. ¿Cómo es posible? Esa pregunta me ha tomado 15 años.">
+  <h2>Acabamos de hacer música.</h2>
+  <p class="mv-sub">Sin instrumentos. Sin ensayo. Sin partitura.<br>Sin que nadie les dijera cómo.</p>
+  <hr class="mv-rule mv-draw">
+  <p class="mv-quote">¿Cómo es posible?</p>
+</section>
+
+<!-- NEGRA: storytelling Herbie -->
+<section data-background-color="#161310" data-notes="STORYTELLING Herbie (sin pantalla, puro cuento). 1963, 23 años, banda de Miles. El peor acorde en el peor momento. Se congeló. '¿Les ha pasado?' — ESPERA 3s. Pero no paró. Micro-interacción: 'volteen al de al lado — ¿los cubriría?'">
+  <p class="mv-blackcue">● STORYTELLING Herbie (sin pantalla) + micro-interacción 'el de al lado'</p>
+</section>
+
+<!-- 3 - Herbie: el peor acorde (dos tiempos) -->
+<section data-notes="Lo que hizo Herbie DESPUÉS cambia todo. No paró. Y por eso Miles pudo convertir el error en música. La decisión del que se equivoca — quedarse, confiar, seguir — nadie la cuenta.">
+  <div class="mv-bgimg mv-ov-slate" style="background-image:url('img/piano.jpg');"></div>
+  <div class="mv-ov-content">
+    <p class="mv-kicker">1963 · Herbie tiene 23 años</p>
+    <h3>Tocó el peor acorde<br>en el peor momento.</h3>
+    <p class="mv-sub fragment fade-in" data-fragment-index="1">Se congeló. Se tapó los oídos.<br>Quería desaparecer.</p>
+    <hr class="mv-rule fragment fade-in" data-fragment-index="2">
+    <p class="mv-sub fragment fade-up" data-fragment-index="2"><strong>Pero no paró.</strong> Decidió seguir tocando.<br>Y por eso Miles pudo convertir el error en música.</p>
+  </div>
+</section>
+
+<!-- 4 - Pizzarelli -->
+<section data-background-color="#2E4557" class="mv-center" data-notes="La frase más importante que he escuchado sobre trabajar con otra persona. El que sostiene (sección rítmica) es un acto de generosidad. El solo solo existe si alguien está dispuesto a sostener.">
+  <p class="mv-kicker">La frase más importante</p>
+  <p class="mv-quote">"Tu trabajo es siempre hacer<br>que el otro suene lo mejor posible."</p>
+  <p class="mv-attr">Bucky Pizzarelli</p>
+</section>
+
+<!-- 5 - Kind of Blue + onda que se dibuja -->
+<section class="mv-center" data-notes="Modo cuento. 'Hit it.' Primera toma. Tenían entre 23 y 33 años — jóvenes que sabían tanto que podían darse el lujo de olvidar. Puente: 'La tecnología hace más inteligentes a los inteligentes.'">
+  <div class="mv-bgimg mv-ov-blue" style="background-image:url('img/kindofblue.jpg');"></div>
+  <svg class="mv-staff mv-wave" style="top:50%;transform:translateY(-50%);" height="120" viewBox="0 0 1280 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 60 Q 80 10 160 60 T 320 60 T 480 60 T 640 60 T 800 60 T 960 60 T 1120 60 T 1280 60" fill="none" stroke="var(--mv-primary-light)" stroke-width="2"/>
+  </svg>
+  <div class="mv-ov-content">
+    <p class="mv-kicker">1959 · tenían entre 23 y 33 años</p>
+    <h2 style="font-size:1.9em;"><em style="color:#FEFEFE;font-style:italic;">Kind of Blue</em></h2>
+    <p class="mv-sub">Sin ensayo. Primera toma. El álbum de jazz<br>más vendido de la historia.</p>
+    <p class="mv-quote fragment fade-up" style="margin-top:0.8em;">"Hit it."</p>
+  </div>
+</section>
+
+<!-- NEGRA: patitos + La Llama + dinámica 2 -->
+<section data-background-color="#161310" data-notes="PATITOS (ridículo compartido = cómplices). LA LLAMA (misterio, 'esto ya no es sobre mí, es sobre nosotros'). Los viejos enseñan a los nuevos = magia. Dinámica 2: el error — me equivoco a propósito, ojos cerrados, el ritmo se sostiene solo = CONFIANZA. Confesión compacta: soy tirano, el motín, tenían razón.">
+  <p class="mv-blackcue">● PATITOS + LA LLAMA + Dinámica 2: el error (ojos cerrados) + confesión</p>
+</section>
+
+<!-- 6 - 67% gigante en dorado, con overshoot -->
+<section data-background-color="#161310" class="mv-center" data-notes="Hay un número que me obsesiona. 67% de las empresas en México no encuentran a quien necesitan. ¿Y qué buscan? ¿Programación? ¿IA?">
+  <p class="mv-huge mv-huge-xl mv-anim" style="color:var(--mv-secondary);">67<span style="font-size:0.5em;">%</span></p>
+  <hr class="mv-rule mv-draw">
+  <p class="mv-sub fragment fade-up" data-fragment-index="1">de las empresas en México dicen que no encuentran<br>a las personas que necesitan. <span class="mv-dim">— ManpowerGroup 2026</span></p>
+</section>
+
+<!-- 7 - Las 5 habilidades, una por una -->
+<section data-background-color="#161310" data-notes="Léanlas. (pausa) Ninguna es técnica. Ninguna es de computadora. Avanza una por una. Al final: 'Y tú ya sabes hacer esto. Nada más que nadie te lo había dicho.'">
+  <p class="mv-kicker">Lo que más buscan — y ninguna es técnica</p>
+  <ul class="mv-skills">
+    <li class="fragment fade-right" data-fragment-index="1"><span>01</span>Trabajo en equipo</li>
+    <li class="fragment fade-right" data-fragment-index="2"><span>02</span>Comunicación</li>
+    <li class="fragment fade-right" data-fragment-index="3"><span>03</span>Adaptabilidad</li>
+    <li class="fragment fade-right" data-fragment-index="4"><span>04</span>Pensamiento crítico</li>
+    <li class="fragment fade-right" data-fragment-index="5"><span>05</span>Liderazgo</li>
+  </ul>
+  <p class="mv-sub fragment fade-up" data-fragment-index="6" style="margin-top:1em;">Y tú ya sabes hacer esto. Nada más<br>que nadie te lo había dicho.</p>
+</section>
+
+<!-- 8 - La pregunta: remate en display -->
+<section data-background-color="#161310" class="mv-center" data-notes="Deja la pregunta clavada. No es si tocaste bien. Es si alguien más tocó mejor porque tú estabas ahí.">
+  <p class="mv-kicker">La pregunta</p>
+  <h2 style="font-size:1.3em;line-height:1.3;">La pregunta no es si tocaste bien.</h2>
+  <hr class="mv-rule mv-draw">
+  <p class="mv-display fragment fade-up" data-fragment-index="1" style="font-size:2.1em;">Es si alguien más tocó mejor<br>porque <em style="font-style:italic;">tú estabas ahí.</em></p>
+</section>
+
+<!-- 9 - Cierre, 'Groove' en dorado -->
+<section data-background-color="#161310" class="mv-center" data-notes="Voz sola, sin apuro. Musicalidad, no perfección. (pausa) Groove, no exactitud. Y sobre todo — personas felices, creciendo, jugando, aprendiendo. Muchas veces sin darse cuenta. Silencio.">
+  <h2 style="font-size:1.4em;line-height:1.3;">Musicalidad, no perfección.<br>
+    <span class="fragment fade-up" data-fragment-index="1"><em style="color:var(--mv-secondary);font-style:normal;">Groove</em>, no exactitud.</span>
+  </h2>
+  <hr class="mv-rule mv-draw">
+  <p class="mv-sub fragment fade-in" data-fragment-index="2">Y sobre todo — personas felices, creciendo,<br>jugando, aprendiendo. <em>Muchas veces sin darse cuenta.</em></p>
+</section>
+
+<!-- NEGRA: cierre hablado -->
+<section data-background-color="#161310" data-notes="CIERRE hablado · silencio final. No más slides. El silencio es el cierre.">
+  <p class="mv-blackcue">● CIERRE hablado · silencio final</p>
+</section>
+
+</div></div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  try {
+    Reveal.initialize({
+      hash:true, transition:'fade', transitionSpeed:'slow',
+      controls:true, progress:true, slideNumber:'c/t', center:false,
+      autoAnimateDuration:0.8, autoAnimateEasing:'ease-in-out',
+      width:1280, height:720, margin:0.08
+    });
+  } catch(e){ document.body.innerHTML='<p style="color:#fff;font-family:sans-serif;padding:2em">Requiere navegador con internet para cargar reveal.js</p>'; }
+</script>
+</body>
+</html>

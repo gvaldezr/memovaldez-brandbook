@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dirijo ensambles. Soy un tirano. — Deck Memo Valdez</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Bodoni+Moda:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mv-primary:#B85C38; --mv-primary-light:#D4845E; --mv-primary-dark:#8E3F22;
+    --mv-secondary:#C8A96E; --mv-tertiary:#3D5A73; --mv-tertiary-light:#5A7A96;
+    --mv-ink:#161310; --mv-ink-2:#231F1B; --mv-paper:#FEFEFE;
+    --mv-muted:#B8ADA0; --mv-neutral-300:#D4CBC0;
+    --mv-font-display:'Instrument Sans','Inter',system-ui,sans-serif;
+    --mv-font-body:'Inter',system-ui,sans-serif;
+    --mv-font-serif:'Bodoni Moda',Georgia,serif;
+    --mv-font-mono:'JetBrains Mono',monospace;
+  }
+  .reveal{font-family:var(--mv-font-body);font-size:34px;color:var(--mv-paper);}
+  .reveal-viewport{background:var(--mv-ink);}
+  .reveal .slides{text-align:left;}
+  .reveal h1,.reveal h2,.reveal h3{font-family:var(--mv-font-display);font-weight:700;letter-spacing:-0.02em;color:var(--mv-paper);text-transform:none;line-height:1.1;}
+  .reveal h1{font-size:2.1em;} .reveal h2{font-size:1.5em;} .reveal h3{font-size:1.1em;}
+  /* Peldaño display dramático — reservado para frases-tesis */
+  .mv-display{font-family:var(--mv-font-display);font-weight:700;font-size:3.4em;line-height:0.98;letter-spacing:-0.03em;color:var(--mv-paper);}
+  .reveal em{color:var(--mv-primary-light);font-style:italic;}
+  .reveal strong{color:var(--mv-secondary);font-weight:600;}
+  .mv-kicker{font-family:var(--mv-font-mono);font-size:0.5em;letter-spacing:0.18em;text-transform:uppercase;color:var(--mv-primary-light);margin-bottom:0.6em;}
+  .mv-huge{font-family:var(--mv-font-display);font-weight:700;font-size:7em;line-height:0.9;color:var(--mv-primary-light);letter-spacing:-0.04em;}
+  .mv-quote{font-family:var(--mv-font-serif);font-style:italic;font-size:1.35em;line-height:1.3;color:var(--mv-paper);}
+  .mv-attr{font-family:var(--mv-font-mono);font-size:0.6em;letter-spacing:0.08em;color:var(--mv-muted);margin-top:1em;text-transform:uppercase;}
+  .mv-sub{color:var(--mv-neutral-300);font-size:0.72em;font-weight:300;margin-top:0.8em;line-height:1.4;}
+  .mv-center{text-align:center;}
+  .mv-rule{width:64px;height:3px;background:var(--mv-primary);border:none;margin:0.9em 0;}
+  .mv-center .mv-rule{margin-left:auto;margin-right:auto;}
+  .reveal .slides section{display:flex;flex-direction:column;justify-content:center;min-height:100%;}
+  .mv-note{position:fixed;bottom:14px;left:18px;font-family:var(--mv-font-mono);font-size:11px;color:rgba(254,254,254,0.28);letter-spacing:0.1em;}
+  .mv-dim{color:#8FA8C0;}
+  /* Fondos con imagen + overlay para legibilidad */
+  .mv-bgimg{position:absolute;inset:0;z-index:-1;background-size:cover;background-position:center;}
+  .mv-bgimg::after{content:"";position:absolute;inset:0;}
+  .mv-ov-ink::after{background:linear-gradient(90deg, rgba(22,19,16,0.92) 0%, rgba(22,19,16,0.78) 50%, rgba(22,19,16,0.55) 100%);}
+  .mv-ov-slate::after{background:linear-gradient(90deg, rgba(46,69,87,0.94) 0%, rgba(46,69,87,0.80) 55%, rgba(46,69,87,0.66) 100%);}
+  .mv-ov-blue::after{background:radial-gradient(ellipse at center, rgba(29,42,61,0.62) 0%, rgba(22,19,16,0.88) 100%);}
+  .mv-ov-content{position:relative;z-index:1;}
+  /* Slide negra: nota tenue para el presentador */
+  .mv-blackcue{font-family:var(--mv-font-mono);font-size:0.3em;color:rgba(254,254,254,0.14);letter-spacing:0.2em;text-transform:uppercase;text-align:center;}
+  /* Motivo de marca: pentagrama / onda fantasma */
+  .mv-staff{position:absolute;left:0;right:0;z-index:0;pointer-events:none;opacity:0.10;}
+  /* Clímax del cierre: comilla gigante + marco */
+  .mv-quotemark{position:absolute;top:6%;left:50%;transform:translateX(-50%);font-family:var(--mv-font-serif);font-style:italic;font-size:9em;line-height:1;color:var(--mv-primary);opacity:0.08;z-index:0;pointer-events:none;}
+  .mv-frame{position:relative;z-index:1;padding:0.4em 0;}
+  .mv-frame::before,.mv-frame::after{content:"";display:block;width:64px;height:3px;background:var(--mv-primary);margin:0.6em auto;}
+  /* Barra de progreso + controles en terracota */
+  .reveal .progress{color:var(--mv-primary);}
+  .reveal .controls{color:var(--mv-primary);}
+  .reveal .slide-number{background:transparent;color:rgba(254,254,254,0.3);font-family:var(--mv-font-mono);}
+  /* ---- Motion: solo en el slide presente, respeta accesibilidad ---- */
+  @media (prefers-reduced-motion: no-preference){
+    .reveal .present .mv-huge.mv-anim{animation:mvHugeIn 900ms cubic-bezier(.17,.84,.44,1) both;}
+    @keyframes mvHugeIn{0%{opacity:0;transform:translateY(0.18em) scale(0.94);letter-spacing:0.04em;}60%{opacity:1;}100%{opacity:1;transform:none;letter-spacing:-0.04em;}}
+    .reveal .present .mv-rule.mv-draw{animation:mvDraw 700ms ease-out 350ms both;}
+    @keyframes mvDraw{0%{width:0;}100%{width:64px;}}
+    .reveal .present .mv-wave path{stroke-dasharray:1400;stroke-dashoffset:1400;animation:mvWave 2.4s ease-out 300ms forwards;}
+    @keyframes mvWave{to{stroke-dashoffset:0;}}
+  }
+</style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+<!-- 1 - Portada: frase-tesis en display -->
+<section data-background-color="#161310" class="mv-center" data-notes="Entra sin presentación. Esta conferencia se llama 'Soy un tirano'. Y lo soy. Pero no de la forma que piensan.">
+  <p class="mv-kicker">Conferencia · Liderazgo</p>
+  <p class="mv-display">Dirijo ensambles.<br><em style="font-style:italic;">Soy un tirano.</em></p>
+  <hr class="mv-rule mv-draw">
+  <p class="mv-sub">Lo que la música me enseñó sobre liderar<br>(y lo que tuve que desaprender)</p>
+  <p class="mv-note">Memo Valdez · yo.memovaldez.com</p>
+</section>
+
+<!-- NEGRA: videos -->
+<section data-background-color="#161310" data-notes="VIDEOS: Whiplash (silla) + Les Choristes (primer canto). '¿Con cuál se identifican?' — yo con los dos, y los dos me han fallado. Chiste: uno termina en hospital, el otro en orfanato.">
+  <p class="mv-blackcue">● VIDEOS · Whiplash + Les Choristes · ¿con cuál te identificas?</p>
+</section>
+
+<!-- 2 - 20% que aterriza, en dorado -->
+<section data-background-color="#161310" class="mv-center" data-notes="Soltar el dato como tristeza, no como alarma. Los otros ocho están en su silla pensando en otra cosa. La partitura suena impecable. La música está muerta.">
+  <p class="mv-huge mv-anim" style="color:var(--mv-secondary);">20<span style="font-size:0.5em;">%</span></p>
+  <hr class="mv-rule mv-draw">
+  <p class="mv-sub fragment fade-up" data-fragment-index="1">de los empleados en el mundo están genuinamente<br>comprometidos con su trabajo. <span class="mv-dim">— Gallup 2026</span></p>
+</section>
+
+<!-- 3 - La metáfora orquesta (bisagra: auto-animate + pentagrama) -->
+<section data-auto-animate data-transition="slide" data-notes="Drucker: el trabajo como orquesta. Mintzberg: los managers no dirigen en concierto, dirigen en ensayo — el oboe se peleó con el clarinete, el patrocinador cambió el programa. Les suena, ¿verdad?">
+  <div class="mv-bgimg mv-ov-ink" style="background-image:url('img/orquesta.jpg');"></div>
+  <svg class="mv-staff" style="top:38%;" height="54" viewBox="0 0 1280 54" preserveAspectRatio="none" aria-hidden="true">
+    <g stroke="var(--mv-primary)" stroke-width="1" opacity="0.6">
+      <line x1="0" y1="6" x2="1280" y2="6"/><line x1="0" y1="18" x2="1280" y2="18"/>
+      <line x1="0" y1="30" x2="1280" y2="30"/><line x1="0" y1="42" x2="1280" y2="42"/>
+      <line x1="0" y1="54" x2="1280" y2="54"/>
+    </g>
+  </svg>
+  <div class="mv-ov-content">
+    <p class="mv-kicker" data-id="hilo">La metáfora que nos vendieron</p>
+    <h2>El trabajo como<br>orquesta sinfónica.</h2>
+    <hr class="mv-rule" data-id="rule">
+    <p class="mv-sub">Un líder con visión. Profesionales que ejecutan.<br>Una partitura compartida. <strong>Suena hermoso.</strong></p>
+    <p class="mv-sub" style="margin-top:1em;">Pero los managers no dirigen en concierto —<br>dirigen <em>en ensayo</em>.</p>
+  </div>
+</section>
+
+<!-- NEGRA: dinámica + confesión -->
+<section data-background-color="#161310" data-notes="DINÁMICA de palmas (orquesta → error → jazz). Luego CONFESIÓN: soy un tirano. '¡Ahí va el golpe, Wil!'. El motín (barco pirata / capitán Garfio). La soprano que ya había entendido 3 correcciones atrás. '¿Cuántas veces mi exigencia dejó de ser por la música y empezó a ser por mí?'">
+  <p class="mv-blackcue">● DINÁMICA palmas (orquesta→error→jazz) + CONFESIÓN: motín · Wil · la soprano</p>
+</section>
+
+<!-- 4 - El otro extremo: remate en display -->
+<section data-background-color="#161310" data-notes="Solté más. 'Siéntanlo, hagan suya la pieza.' Sonaba progresista. Sonaba humano. Y sonaba terrible. La libertad sin partitura es desorientación con buenas intenciones.">
+  <p class="mv-kicker">El otro extremo</p>
+  <h2>"Siéntanlo.<br>Hagan suya la pieza."</h2>
+  <p class="mv-sub">Sonaba progresista. Sonaba humano.</p>
+  <p class="mv-display fragment fade-up" data-fragment-index="1" style="font-size:2.2em;margin-top:0.3em;">Y sonaba <em style="font-style:italic;">terrible.</em></p>
+  <p class="mv-sub fragment fade-in" data-fragment-index="2" style="margin-top:1.2em;">La libertad sin partitura no es libertad.<br>Es <em>desorientación con buenas intenciones</em>.</p>
+</section>
+
+<!-- 5 - Herbie en dos tiempos (el silencio es la historia) -->
+<section data-notes="El silencio entre el error y la decisión ES la historia. Deja colgar el primer beat. Herbie se congeló... y decidió no parar. La cita de Pizzarelli entra al final, sola.">
+  <div class="mv-bgimg mv-ov-slate" style="background-image:url('img/piano.jpg');"></div>
+  <div class="mv-ov-content">
+    <p class="mv-kicker" style="font-size:0.46em;">1963 · Stuttgart</p>
+    <h3 style="color:var(--mv-muted);">Herbie tocó el peor acorde<br>en el peor momento.</h3>
+    <p class="mv-sub fragment fade-in" data-fragment-index="1">Y decidió no parar. Decidió confiar en que<br>el grupo encontraría la salida.</p>
+    <hr class="mv-rule fragment fade-in" data-fragment-index="2">
+    <p class="mv-quote fragment fade-up" data-fragment-index="2">"Tu trabajo es siempre hacer<br>que el otro suene lo mejor posible."</p>
+    <p class="mv-attr fragment fade-in" data-fragment-index="2">Bucky Pizzarelli</p>
+  </div>
+</section>
+
+<!-- 6 - El jazz no es libertad (bisagra: cierra auto-animate con transición convex) -->
+<section data-background-color="#161310" class="mv-center" data-auto-animate data-transition="convex" data-notes="El jazz no es libertad — es otra forma de control. Dato NIH: cuando dos músicos de jazz se adaptan, sus cerebros se sincronizan. No es metáfora, es fisiología.">
+  <p class="mv-kicker" data-id="hilo">La paradoja</p>
+  <h2 style="font-size:1.7em;">El jazz no es libertad.<br>Es <em>otra forma de control.</em></h2>
+  <hr class="mv-rule" data-id="rule">
+  <p class="mv-sub">Cuando dos músicos de jazz se adaptan,<br>sus cerebros se sincronizan. No es metáfora.<br><span class="mv-dim">— NIH, 2021</span></p>
+</section>
+
+<!-- 7 - Kind of Blue + onda de sonido que se dibuja -->
+<section class="mv-center" data-notes="Modo cuento. Miles llegó con bosquejos. 'Hit it.' Primera toma. Pausa dramática. El álbum de jazz más vendido de la historia. No fue perfecto. Fue algo mejor.">
+  <div class="mv-bgimg mv-ov-blue" style="background-image:url('img/kindofblue.jpg');"></div>
+  <svg class="mv-staff mv-wave" style="top:50%;transform:translateY(-50%);" height="120" viewBox="0 0 1280 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 60 Q 80 10 160 60 T 320 60 T 480 60 T 640 60 T 800 60 T 960 60 T 1120 60 T 1280 60" fill="none" stroke="var(--mv-primary-light)" stroke-width="2"/>
+  </svg>
+  <div class="mv-ov-content">
+    <p class="mv-kicker">1959</p>
+    <h2 style="font-size:2em;"><em style="color:#FEFEFE;font-style:italic;">Kind of Blue</em></h2>
+    <p class="mv-sub">Sin ensayo. Sin instrucciones. Primera toma.<br>El álbum de jazz más vendido de la historia.</p>
+    <p class="mv-quote fragment fade-up" style="margin-top:1em;">No fue perfecto. Fue algo mejor.</p>
+  </div>
+</section>
+
+<!-- 8 - Zander como clímax: comilla gigante + marco -->
+<section data-background-color="#161310" class="mv-center" data-notes="El clímax. Aplica para el director, para cada miembro del equipo, y para ti.">
+  <span class="mv-quotemark" aria-hidden="true">&rdquo;</span>
+  <div class="mv-frame">
+    <p class="mv-quote">"El poder del director está directamente<br>vinculado a cuánta grandeza está<br>dispuesto a otorgar a otros."</p>
+    <p class="mv-attr">Benjamin Zander</p>
+  </div>
+</section>
+
+<!-- 9 - Cierre en dos tiempos, 'Groove' en dorado -->
+<section data-background-color="#161310" class="mv-center" data-notes="Cadencia de coda. Musicalidad, no perfección. (pausa) Groove, no exactitud. Y sobre todo — personas felices, creciendo, jugando, aprendiendo. Muchas veces sin darse cuenta.">
+  <h2 style="font-size:1.5em;line-height:1.3;">Musicalidad, no perfección.<br>
+    <span class="fragment fade-up" data-fragment-index="1"><em style="color:var(--mv-secondary);font-style:normal;">Groove</em>, no exactitud.</span>
+  </h2>
+  <hr class="mv-rule mv-draw">
+  <p class="mv-sub fragment fade-in" data-fragment-index="2">Y sobre todo — personas felices, creciendo,<br>jugando, aprendiendo. <em>Muchas veces sin darse cuenta.</em></p>
+</section>
+
+<!-- NEGRA: coda -->
+<section data-background-color="#161310" data-notes="CODA: la promesa cumplida — 'mmm' al unísono (ojos no, solo la nota que salga). Luego una sola palma a tu señal. Silencio. 'Eso. Justo eso.' Gracias.">
+  <p class="mv-blackcue">● CODA · 'mmm' al unísono + una sola palma + GRACIAS</p>
+</section>
+
+</div></div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  try {
+    Reveal.initialize({
+      hash:true, transition:'fade', transitionSpeed:'slow',
+      controls:true, progress:true, slideNumber:'c/t', center:false,
+      autoAnimateDuration:0.8, autoAnimateEasing:'ease-in-out',
+      width:1280, height:720, margin:0.08
+    });
+  } catch(e){ document.body.innerHTML='<p style="color:#fff;font-family:sans-serif;padding:2em">Requiere navegador con internet para cargar reveal.js</p>'; }
+</script>
+</body>
+</html>
