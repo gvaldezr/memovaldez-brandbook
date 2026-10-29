@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perfil Neurocognitivo | Memo Valdez · Proyectos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500;600;700&family=Inter:wght@300;400;500;600&family=Bodoni+Moda:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#231F1B; --muted:#574E44; --bg:#FEFEFE; --card:#ffffff; --line:#E8E1D9;
+  --brand:#B85C38; --brand-2:#8E3F22; --accent:#B85C38; --accent-soft:#F5F0EB; --dark:#231F1B; --tertiary:#3D5A73; --gold:#C8A96E; --hover:#D4845E;
+  --ok:#2f7d5b; --mid:#c27a00; --hi:#c0392b; --radius:14px;
+  --fs:17px; --lh:1.6; --font: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+body.calm{ --bg:#f4f3f1; --brand:#4f4a5c; --brand-2:#6b6678; --accent:#8a7f6a; --accent-soft:#efede8; --line:#dedbd5; }
+body.calm *{ animation:none !important; transition:none !important; }
+body.read{ --fs:19px; --lh:1.9; letter-spacing:.02em; word-spacing:.12em; --font: Verdana, "Trebuchet MS", Arial, sans-serif; }
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--font); font-size:var(--fs); line-height:var(--lh); color:var(--ink); background:var(--bg);}
+a{color:var(--brand)}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px; border-radius:6px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:8px}
+.skip:focus{left:8px;z-index:99}
+header.top{background:var(--brand); color:#fff; position:sticky; top:0; z-index:20; box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.top .wrap{display:flex; align-items:center; gap:16px; flex-wrap:wrap; padding:10px 20px; max-width:1100px; margin:0 auto}
+.logo{font-weight:700; letter-spacing:.02em; display:flex; align-items:center; gap:10px; font-size:1.02em}
+.logo .dot{width:14px;height:14px;border-radius:50%;background:var(--accent);display:inline-block}
+nav.main{display:flex; gap:6px; flex-wrap:wrap; margin-left:auto}
+nav.main button, .tog{background:transparent; color:#fff; border:1px solid rgba(255,255,255,.35); border-radius:999px; padding:6px 14px; font:inherit; font-size:.88em; cursor:pointer}
+nav.main button[aria-current="page"]{background:#fff; color:var(--brand); font-weight:600}
+.tog[aria-pressed="true"]{background:var(--accent); border-color:var(--accent)}
+.tools{display:flex; gap:6px; flex-wrap:wrap}
+.disclaimer{background:var(--accent-soft); color:#5a2c10; font-size:.85em; text-align:center; padding:6px 16px; border-bottom:1px solid var(--line)}
+body.calm .disclaimer{color:#4a4538}
+main{max-width:980px; margin:0 auto; padding:28px 20px 80px}
+h1{font-size:2em; line-height:1.2; color:var(--brand); margin:.2em 0 .4em}
+h2{font-size:1.45em; color:var(--brand); margin:1.4em 0 .5em}
+h3{font-size:1.12em; margin:1.2em 0 .4em}
+.lead{font-size:1.1em; color:var(--muted); max-width:60ch}
+.card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px; margin:16px 0; box-shadow:0 1px 3px rgba(40,20,70,.04)}
+.hero{background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; border:none; padding:34px 32px}
+.hero h1{color:#fff}.hero .lead{color:#eee6f8}
+body.calm .hero{background:var(--brand)}
+.grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.mod{display:flex; flex-direction:column; gap:8px}
+.mod .tag{font-size:.78em; text-transform:uppercase; letter-spacing:.08em; color:var(--muted)}
+.mod h3{margin:0}
+.mod p{margin:0; color:var(--muted); font-size:.93em}
+.mod .foot{margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:10px; padding-top:8px}
+.btn{background:var(--brand); color:#fff; border:none; border-radius:10px; padding:11px 20px; font:inherit; font-weight:600; cursor:pointer}
+.btn:hover{background:var(--brand-2)}
+.btn.alt{background:#fff; color:var(--brand); border:1.5px solid var(--brand)}
+.btn.accent{background:var(--accent)}
+.btn:disabled{opacity:.45; cursor:not-allowed}
+.btn.sm{padding:7px 14px; font-size:.9em}
+.row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+.prog{height:8px; background:var(--line); border-radius:99px; overflow:hidden}
+.prog > i{display:block; height:100%; background:var(--accent); border-radius:99px}
+.pill{font-size:.8em; padding:3px 10px; border-radius:99px; background:var(--line); color:var(--ink); white-space:nowrap}
+.pill.done{background:#e3f3ea; color:var(--ok)}
+fieldset.q{border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin:14px 0; background:var(--card)}
+fieldset.q legend{font-weight:600; padding:0 6px; max-width:100%}
+.qnum{color:var(--accent); font-weight:700; margin-right:6px}
+body.calm .qnum{color:var(--brand)}
+.scale{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
+.scale label{flex:1 1 120px; display:flex; align-items:center; gap:8px; border:1.5px solid var(--line); border-radius:10px; padding:9px 12px; cursor:pointer; font-size:.93em; background:#fff}
+.scale label:hover{border-color:var(--brand-2)}
+.scale input{accent-color:var(--brand); width:18px; height:18px; flex:none}
+.scale label:has(input:checked){border-color:var(--brand); background:#f1ecf8; font-weight:600}
+body.calm .scale label:has(input:checked){background:#ebe9e4}
+.note{font-size:.9em; color:var(--muted)}
+.box{border-left:4px solid var(--brand); background:#f4f0fa; padding:12px 16px; border-radius:8px; margin:12px 0}
+.box.warn{border-color:var(--accent); background:var(--accent-soft)}
+.box.crisis{border-color:var(--hi); background:#fdecea}
+.box.ok{border-color:var(--ok); background:#e9f5ef}
+body.calm .box{background:#efede9}
+.strengths{display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 0; padding:0; list-style:none}
+.strengths li{background:#eef7f2; color:#20573f; border-radius:99px; padding:4px 12px; font-size:.88em}
+/* Cognitivo */
+.cogwrap{display:grid; gap:18px}
+.stim{display:flex; justify-content:center; padding:10px; background:#fff; border:1px solid var(--line); border-radius:12px}
+.opts{display:grid; gap:12px; grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
+.opts.txt{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+.opt{position:relative; border:2px solid var(--line); border-radius:12px; background:#fff; cursor:pointer; padding:8px; display:flex; flex-direction:column; align-items:center; gap:4px; text-align:center}
+.opt:hover{border-color:var(--brand-2)}
+.opt input{position:absolute; opacity:0; inset:0; cursor:pointer}
+.opt:has(input:checked){border-color:var(--accent); box-shadow:0 0 0 3px rgba(255,89,0,.18); background:#fffaf6}
+.opt:has(input:focus-visible){outline:3px solid var(--accent); outline-offset:2px}
+.opt .lbl{font-size:.8em; color:var(--muted); font-weight:700}
+.opt .tx{font-size:1.05em; font-weight:600}
+.dots{display:flex; flex-wrap:wrap; gap:6px}
+.dots button{width:30px; height:30px; border-radius:50%; border:1.5px solid var(--line); background:#fff; font-size:.75em; cursor:pointer; color:var(--ink)}
+.dots button.ans{background:var(--brand); color:#fff; border-color:var(--brand)}
+.dots button.cur{outline:3px solid var(--accent)}
+.timer{font-variant-numeric:tabular-nums; font-weight:700; color:var(--brand)}
+.series{font-size:1.7em; font-weight:700; letter-spacing:.06em; color:var(--brand); text-align:center; padding:8px}
+/* Reporte */
+.lvl{display:inline-block; padding:3px 12px; border-radius:99px; font-size:.82em; font-weight:700; color:#fff}
+.lvl.l0{background:var(--ok)} .lvl.l1{background:var(--mid)} .lvl.l2{background:var(--hi)} .lvl.lx{background:#9a93a8}
+.rgrid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.kpi{font-size:2.4em; font-weight:800; color:var(--brand); line-height:1}
+.chart{width:100%; overflow:visible}
+table.ref{width:100%; border-collapse:collapse; font-size:.92em}
+table.ref th, table.ref td{border-bottom:1px solid var(--line); text-align:left; padding:8px 6px; vertical-align:top}
+.refs li{margin:6px 0; font-size:.93em}
+footer.f{max-width:980px; margin:0 auto; padding:20px; font-size:.82em; color:var(--muted)}
+@media (max-width:640px){ h1{font-size:1.6em} .hero{padding:24px 20px} main{padding:18px 14px 60px} }
+@media print{
+  header.top, .noprint, nav, .disclaimer{display:none !important}
+  body{background:#fff; font-size:12pt}
+  .card{break-inside:avoid; box-shadow:none}
+  main{padding:0}
+}
+
+/* === Branding Memo Valdez — "Minimalismo con alma" (tokens v1.0) === */
+header.top{background:rgba(254,254,254,.94);backdrop-filter:blur(8px);color:var(--dark);border-bottom:1px solid var(--line);box-shadow:none}
+.logo{color:var(--dark);gap:12px;text-decoration:none}
+.mvmark{width:34px;height:34px;border-radius:50%;background:#161310;color:#FEFEFE;display:grid;place-items:center;font-family:"Instrument Sans",Inter,sans-serif;font-weight:600;font-size:.82em;letter-spacing:.02em}
+.mvname{font-family:"Instrument Sans",Inter,sans-serif;font-weight:600;letter-spacing:.04em}
+.logo .sep{width:1px;height:24px;background:var(--line)}
+.logo span:last-child{font-weight:500;color:var(--muted)}
+nav.main button,.tog{color:var(--dark);border-color:var(--line);font-weight:500;border-radius:999px}
+nav.main button:hover,.tog:hover{border-color:var(--brand);color:var(--brand)}
+nav.main button[aria-current="page"]{background:#161310;color:#FEFEFE;border-color:#161310}
+.tog[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+h1,h2,h3,h4{font-family:"Instrument Sans",Inter,sans-serif;font-weight:600;color:var(--dark);letter-spacing:-.01em}
+h1{font-size:2.5em} h2{font-size:1.85em;border:none;padding:0}
+h2::before{content:"";display:block;width:36px;height:3px;background:var(--gold);margin-bottom:10px;border-radius:2px}
+.hero{background:#F5F0EB;color:var(--dark);border:1px solid var(--line)} .hero h1{color:var(--dark)} .hero .lead{color:var(--muted)}
+.hero h1 em,.serif{font-family:"Bodoni Moda",Georgia,serif;font-style:italic;font-weight:400;color:var(--brand)}
+.mod .tag{color:var(--tertiary);font-family:"JetBrains Mono",monospace;letter-spacing:.12em}
+.card{border-radius:16px;box-shadow:0 1px 2px rgba(35,31,27,.04)}
+.btn,button.primary{border-radius:999px;font-weight:500}
+.btn:hover,button.primary:hover{background:var(--hover)!important}
+.disclaimer{background:#F5F0EB;color:#574E44}
+footer.brand{background:#161310;color:#B8ADA0;text-align:center;padding:28px;font-size:.85em}
+footer.brand a{color:#C8A96E}
+body.calm .hero{background:#efede8} body.calm h2::before{background:var(--muted)}
+@media print{header.top{position:static} footer.brand{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<a class="skip" href="#app">Saltar al contenido</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="https://yo.memovaldez.com" aria-label="Memo Valdez"><span class="mvmark" aria-hidden="true">MV</span><span class="mvname">Memo Valdez</span><span class="sep" aria-hidden="true"></span><span>Perfil Neurocognitivo</span></a>
+    <nav class="main" aria-label="Secciones">
+      <button data-go="home">Inicio</button>
+      <button data-go="modules">Módulos</button>
+      <button data-go="report">Mi reporte</button>
+      <button data-go="about">Fundamentación</button>
+    </nav>
+    <div class="tools">
+      <button class="tog" id="tCalm" aria-pressed="false" title="Sin animaciones y con colores suaves">Baja estimulación</button>
+      <button class="tog" id="tRead" aria-pressed="false" title="Letra más grande y más espacio">Lectura amplia</button>
+    </div>
+  </div>
+</header>
+<div class="disclaimer" role="note">Herramienta de <strong>tamizaje y autoconocimiento</strong>. <strong>No es un diagnóstico.</strong> Sus respuestas se guardan solo en este navegador.</div>
+<main id="app" tabindex="-1"></main>
+<footer class="f">Instrumento educativo elaborado con base en ASRS v1.1 (OMS), AQ-10 (ARC Cambridge), Adult Dyslexia Checklist (BDA), los modelos de Renzulli, Gagné y Dabrowski, el modelo CHC y el formato ICAR. Los reactivos son paráfrasis o creaciones originales con fines educativos. Versión 1.0 · octubre 2026.</footer>
+<script>
+/* ===== NÚCLEO: datos y calificación (sin DOM) ===== */
+var ND = {};
+
+ND.FREQ5 = ["Nunca", "Rara vez", "A veces", "A menudo", "Muy a menudo"];
+ND.AGREE4 = ["Totalmente de acuerdo", "Algo de acuerdo", "Algo en desacuerdo", "Totalmente en desacuerdo"];
+ND.FREQ4D = ["Rara vez", "Ocasionalmente", "A menudo", "Casi siempre"];
+ND.EASE4 = ["Fácil", "Algo difícil", "Difícil", "Muy difícil"];
+ND.FREQ4 = ["Nunca", "A veces", "A menudo", "Casi siempre"];
+ND.LIKE5 = ["Nada como yo", "Poco como yo", "Algo como yo", "Bastante como yo", "Muy como yo"];
+ND.YESNO = ["No", "Sí"];
+
+/* ---------- Contexto ---------- */
+ND.contexto = [
+  { id: "c1", t: "¿Recuerda que estas dificultades o rasgos (atención, organización, socialización, lectura o números) ya estaban presentes antes de los 12 años?", o: ["No", "Sí", "No estoy seguro/a"] },
+  { id: "c2", t: "¿Estos rasgos afectan de forma importante sus estudios, su trabajo o sus relaciones?", o: ["No", "Sí", "No estoy seguro/a"] },
+  { id: "c3", t: "En el último mes, ¿ha dormido menos de 6 horas la mayoría de las noches?", o: ["No", "Sí"] },
+  { id: "c4", t: "En las últimas 2 semanas, ¿se ha sentido con ánimo muy bajo o con ansiedad intensa casi todos los días?", o: ["No", "Sí"] },
+  { id: "c5", t: "¿Tiene un diagnóstico previo de TDAH, autismo, dislexia, discalculia u otra condición de salud mental?", o: ["No", "Sí", "Prefiero no decir"] },
+  { id: "c6", t: "En las últimas 2 semanas, ¿ha tenido pensamientos de hacerse daño o de que estaría mejor sin vivir?", o: ["No", "Sí"], crisis: true }
+];
+
+/* ---------- TDAH (ASRS v1.1, paráfrasis; últimos 6 meses) ---------- */
+// dom: I = inatención, H = hiperactividad/impulsividad; thr: umbral de zona sombreada (solo Parte A)
+ND.tdah = [
+  { id: "a1", dom: "I", thr: 2, t: "¿Con qué frecuencia le cuesta terminar los detalles finales de un proyecto, una vez que ya hizo la parte difícil?" },
+  { id: "a2", dom: "I", thr: 2, t: "¿Con qué frecuencia le cuesta poner las cosas en orden cuando una tarea requiere organización?" },
+  { id: "a3", dom: "I", thr: 2, t: "¿Con qué frecuencia tiene problemas para recordar citas, entregas u obligaciones?" },
+  { id: "a4", dom: "I", thr: 3, t: "Cuando una tarea exige pensar mucho, ¿con qué frecuencia evita o pospone empezarla?" },
+  { id: "a5", dom: "H", thr: 3, t: "¿Con qué frecuencia mueve manos o pies, o no encuentra postura, cuando tiene que estar sentado/a mucho tiempo?" },
+  { id: "a6", dom: "H", thr: 3, t: "¿Con qué frecuencia se siente demasiado activo/a o con necesidad de hacer cosas, como si tuviera un motor encendido?" },
+  { id: "b7", dom: "I", t: "¿Con qué frecuencia comete errores por descuido en tareas aburridas o difíciles?" },
+  { id: "b8", dom: "I", t: "¿Con qué frecuencia le cuesta mantener la atención en trabajo aburrido o repetitivo?" },
+  { id: "b9", dom: "I", t: "¿Con qué frecuencia le cuesta concentrarse en lo que le dicen, aun cuando le hablan directamente?" },
+  { id: "b10", dom: "I", t: "¿Con qué frecuencia pierde cosas o le cuesta encontrarlas en casa, la escuela o el trabajo?" },
+  { id: "b11", dom: "I", t: "¿Con qué frecuencia le distraen la actividad o el ruido a su alrededor?" },
+  { id: "b12", dom: "H", t: "¿Con qué frecuencia se levanta de su lugar en clases, juntas u otras situaciones en las que se espera que siga sentado/a?" },
+  { id: "b13", dom: "H", t: "¿Con qué frecuencia se siente inquieto/a?" },
+  { id: "b14", dom: "H", t: "¿Con qué frecuencia le cuesta relajarse cuando tiene tiempo libre?" },
+  { id: "b15", dom: "H", t: "¿Con qué frecuencia siente que habla de más en situaciones sociales?" },
+  { id: "b16", dom: "H", t: "En una conversación, ¿con qué frecuencia termina las frases de los demás antes de que ellos lo hagan?" },
+  { id: "b17", dom: "H", t: "¿Con qué frecuencia le cuesta esperar su turno cuando hay que respetarlo?" },
+  { id: "b18", dom: "H", t: "¿Con qué frecuencia interrumpe a otras personas cuando están ocupadas?" }
+];
+
+/* ---------- Autismo (AQ-10 adulto, paráfrasis) ---------- */
+// key "A": puntúa con acuerdo (0-1); key "D": puntúa con desacuerdo (2-3)
+ND.aq = [
+  { id: "q1", key: "A", t: "Con frecuencia noto sonidos pequeños que otras personas no perciben." },
+  { id: "q2", key: "D", t: "Normalmente me fijo más en el panorama general que en los detalles pequeños." },
+  { id: "q3", key: "D", t: "Me resulta fácil hacer más de una cosa a la vez." },
+  { id: "q4", key: "D", t: "Si me interrumpen, puedo volver rápidamente a lo que estaba haciendo." },
+  { id: "q5", key: "D", t: "Me resulta fácil “leer entre líneas” cuando alguien me habla." },
+  { id: "q6", key: "D", t: "Sé darme cuenta cuando alguien que me escucha se está aburriendo." },
+  { id: "q7", key: "A", t: "Cuando leo una historia, me cuesta deducir las intenciones de los personajes." },
+  { id: "q8", key: "A", t: "Me gusta reunir información sobre categorías de cosas (p. ej., tipos de autos, aves, trenes o plantas)." },
+  { id: "q9", key: "D", t: "Me resulta fácil saber qué piensa o siente alguien con solo ver su cara." },
+  { id: "q10", key: "A", t: "Me cuesta descifrar las intenciones de las personas." }
+];
+// Complementarios (perfil; inspirados en factores RAADS-14: sensorial, ansiedad social; + camuflaje)
+ND.aqx = [
+  { id: "x1", f: "Sensorial", t: "Ciertas texturas, luces, olores o ruidos me resultan tan intensos que me cuesta tolerarlos." },
+  { id: "x2", f: "Sensorial", t: "Necesito retirarme a un lugar tranquilo después de estar en ambientes con mucho estímulo." },
+  { id: "x3", f: "Social", t: "Las reuniones sociales me dejan agotado/a aunque la haya pasado bien." },
+  { id: "x4", f: "Social", t: "Me pongo muy nervioso/a en situaciones sociales cuyas “reglas” no tengo claras." },
+  { id: "x5", f: "Camuflaje", t: "Ensayo de antemano conversaciones o imito a otras personas para encajar socialmente." },
+  { id: "x6", f: "Rutina", t: "Me altera mucho que cambien mis planes o rutinas sin avisarme." }
+];
+
+/* ---------- Dislexia (BDA Adult Checklist, paráfrasis; pesos originales) ---------- */
+ND.dis = [
+  { id: "d1", w: 3, s: "F", t: "¿Confunde palabras visualmente parecidas, como “casa” y “cosa” o “pelo” y “pero”?" },
+  { id: "d2", w: 2, s: "F", t: "¿Pierde el renglón o se salta líneas al leer?" },
+  { id: "d3", w: 1, s: "F", t: "¿Confunde el nombre de objetos, por ejemplo “mesa” por “silla”?" },
+  { id: "d4", w: 1, s: "F", t: "¿Le cuesta distinguir la izquierda de la derecha?" },
+  { id: "d5", w: 1, s: "F", t: "¿Le resulta confuso leer un mapa o llegar a un lugar desconocido?" },
+  { id: "d6", w: 1, s: "F", t: "¿Necesita releer párrafos para comprenderlos?" },
+  { id: "d7", w: 1, s: "F", t: "¿Se confunde cuando le dan varias instrucciones a la vez?" },
+  { id: "d8", w: 1, s: "F", t: "¿Comete errores al anotar recados, teléfonos o datos que le dictan?" },
+  { id: "d9", w: 1, s: "F", t: "¿Le cuesta encontrar la palabra adecuada para decir algo?" },
+  { id: "d10", w: 1, s: "F", t: "¿Con qué frecuencia se le ocurren soluciones creativas a los problemas?" },
+  { id: "d11", w: 3, s: "E", t: "¿Qué tan difícil le resulta separar en sílabas en voz alta una palabra larga, como “e-le-fan-te” o “bi-blio-te-ca”?" },
+  { id: "d12", w: 2, s: "E", t: "Al escribir, ¿qué tan difícil le resulta organizar sus ideas en el papel?" },
+  { id: "d13", w: 2, s: "E", t: "¿Qué tan difícil le resultó aprender las tablas de multiplicar?" },
+  { id: "d14", w: 1, s: "E", t: "¿Qué tan difícil le resulta recitar el abecedario en orden?" },
+  { id: "d15", w: 1, s: "E", t: "¿Qué tan difícil le resulta leer en voz alta?" }
+];
+/* ---------- Discalculia (indicadores; perfil) ---------- */
+ND.dcal = [
+  { id: "n1", t: "Me cuesta hacer cálculos mentales sencillos (p. ej., el cambio de una compra) sin usar los dedos, papel o calculadora." },
+  { id: "n2", t: "Me cuesta estimar cantidades a simple vista (cuántas personas hay, cuánto pesa algo o cuánto mide)." },
+  { id: "n3", t: "Invierto o confundo el orden de los dígitos (p. ej., escribo 68 en lugar de 86)." },
+  { id: "n4", t: "Me cuesta calcular cuánto tiempo falta o leer la hora en un reloj de manecillas." },
+  { id: "n5", t: "Olvido los pasos de procedimientos matemáticos que ya practiqué (p. ej., divisiones o porcentajes)." },
+  { id: "n6", t: "Me cuesta recordar números como teléfonos, PIN o códigos, aunque los use seguido." },
+  { id: "n7", t: "Siento ansiedad o bloqueo intenso ante tareas con números." },
+  { id: "n8", t: "Me cuesta manejar presupuestos, propinas o dividir una cuenta entre varias personas." }
+];
+
+/* ---------- Altas capacidades (Renzulli + Dabrowski) ---------- */
+ND.ac = [
+  { id: "t1", f: "Compromiso", t: "Cuando un tema me apasiona, puedo trabajar en él durante horas o semanas sin que nadie me lo pida." },
+  { id: "t2", f: "Compromiso", t: "Me pongo estándares altos y persevero aunque una tarea se vuelva difícil." },
+  { id: "t3", f: "Compromiso", t: "Busco por mi cuenta fuentes, cursos o retos más avanzados de lo que se pide." },
+  { id: "t4", f: "Compromiso", t: "Termino los proyectos que me importan, aun cuando requieren mucho esfuerzo." },
+  { id: "k1", f: "Creatividad", t: "Se me ocurren muchas ideas diferentes o poco comunes para resolver un problema." },
+  { id: "k2", f: "Creatividad", t: "Disfruto cuestionar las reglas o “cómo se hacen las cosas” y proponer alternativas." },
+  { id: "k3", f: "Creatividad", t: "Conecto ideas de áreas muy distintas de formas que sorprenden a otras personas." },
+  { id: "k4", f: "Creatividad", t: "He creado algo original (un proyecto, obra, código, negocio o invento) por iniciativa propia." },
+  { id: "o1", f: "OE intelectual", t: "Tengo una curiosidad intensa: necesito entender a fondo el porqué de las cosas." },
+  { id: "o2", f: "OE imaginativa", t: "Mi imaginación es muy vívida (sueño despierto/a, invento mundos e historias)." },
+  { id: "o3", f: "OE emocional", t: "Vivo las emociones con mucha intensidad y profundidad." },
+  { id: "o4", f: "OE sensual", t: "Disfruto intensamente los estímulos estéticos (música, arte, texturas, sabores)." },
+  { id: "o5", f: "OE psicomotriz", t: "Tengo mucha energía física y mental; me cuesta estar sin actividad." }
+];
+
+/* ---------- Prueba cognitiva: 20 reactivos originales estilo ICAR ---------- */
+// type: matrix | series | verbal | rot. ans = índice de la opción correcta.
+ND.cog = [
+  // --- Gf · Matrices
+  { id: "m1", dom: "Gf", type: "matrix", q: "¿Qué figura completa la matriz?",
+    cells: [["c1","c2","c3"],["s1","s2","s3"],["t1","t2",null]],
+    opts: ["t2","t3","s3","c3","t4","t1"], ans: 1 },
+  { id: "m2", dom: "Gf", type: "matrix", q: "¿Qué figura completa la matriz?",
+    cells: [["cW","sW","dW"],["cG","sG","dG"],["cB","sB",null]],
+    opts: ["dG","sB","dW","dB","cB","sG"], ans: 3 },
+  { id: "m3", dom: "Gf", type: "matrix", q: "¿Qué figura completa la matriz?",
+    cells: [["a0","a45","a90"],["a90","a135","a180"],["a180","a225",null]],
+    opts: ["a225","a180","a270","a315","a90","a0"], ans: 2 },
+  { id: "m4", dom: "Gf", type: "matrix", q: "¿Qué figura completa la matriz?",
+    cells: [["c1","s2","t3"],["s3","t1","c2"],["t2","c3",null]],
+    opts: ["s2","c1","s3","t1","s1","sG1"], ans: 4 },
+  { id: "m5", dom: "Gf", type: "matrix", q: "¿Qué figura completa la matriz? (Observe cómo se combinan las líneas de las dos primeras columnas.)",
+    cells: [["LT,L","LL,D1","LT,D1"],["LH,R","LR,V","LH,V"],["LB,D2","LD2,T",null]],
+    opts: ["LB,T,D2","LD2","LB,T","LT,D2","LB,L","LB,T,V"], ans: 2 },
+  // --- Gf/Gq · Series
+  { id: "s1", dom: "Gq", type: "series", q: "3, 6, 9, 12, ¿?", opts: ["13","14","15","16","18","21"], ans: 2 },
+  { id: "s2", dom: "Gq", type: "series", q: "A, C, E, G, ¿?", opts: ["F","H","I","J","K","L"], ans: 2 },
+  { id: "s3", dom: "Gq", type: "series", q: "2, 6, 12, 20, 30, ¿?", opts: ["36","38","40","42","44","48"], ans: 3 },
+  { id: "s4", dom: "Gq", type: "series", q: "B, E, D, G, F, ¿?", opts: ["E","G","H","I","J","K"], ans: 3 },
+  { id: "s5", dom: "Gq", type: "series", q: "1, 2, 6, 15, 31, ¿?", opts: ["47","50","56","57","62","63"], ans: 2 },
+  // --- Gc · Verbal
+  { id: "v1", dom: "Gc", type: "verbal", q: "“Médico” es a “hospital” como “maestro” es a…", opts: ["libro","alumno","escuela","pizarrón","enseñanza"], ans: 2 },
+  { id: "v2", dom: "Gc", type: "verbal", q: "¿Cuál palabra NO pertenece al grupo?", opts: ["manzana","pera","zanahoria","uva","mango"], ans: 2 },
+  { id: "v3", dom: "Gc", type: "verbal", q: "Ana es mayor que Beto. Carla es menor que Beto. Diego es mayor que Ana. ¿Quién es la segunda persona más joven?", opts: ["Ana","Beto","Carla","Diego","No se puede saber"], ans: 1 },
+  { id: "v4", dom: "Gc", type: "verbal", q: "¿Cuál es el antónimo (lo contrario) de “efímero”?", opts: ["breve","frágil","duradero","ligero","invisible"], ans: 2 },
+  { id: "v5", dom: "Gc", type: "verbal", q: "Todos los zorks son blips. Algunos blips son trens. ¿Qué es NECESARIAMENTE verdadero?", opts: ["Todos los zorks son trens","Algunos zorks son trens","Ningún zork es tren","Algunos trens son zorks","Ninguna de las anteriores es necesariamente verdadera"], ans: 4 },
+  // --- Gv · Rotación (figura en cuadrícula; m = celda marcada)
+  { id: "r1", dom: "Gv", type: "rot", q: "¿Cuál opción es la MISMA figura, solo girada (sin voltearla como en un espejo)?",
+    shape: { cells: [[0,0],[0,1],[0,2],[1,2]], m: -1 }, plan: [["R",1],["M",0],["M",2],["M",1]], ans: 0 },
+  { id: "r2", dom: "Gv", type: "rot", q: "¿Cuál opción es la MISMA figura, solo girada (sin voltearla)?",
+    shape: { cells: [[1,0],[2,0],[0,1],[1,1],[1,2]], m: -1 }, plan: [["M",1],["M",3],["R",2],["M",0]], ans: 2 },
+  { id: "r3", dom: "Gv", type: "rot", q: "¿Cuál opción es la MISMA figura, solo girada (sin voltearla)?",
+    shape: { cells: [[0,0],[0,1],[1,1],[2,1],[2,2],[3,1]], m: -1 }, plan: [["M",2],["M",1],["M",3],["R",3]], ans: 3 },
+  { id: "r4", dom: "Gv", type: "rot", q: "La celda naranja forma parte de la figura. ¿Cuál opción es la MISMA figura, solo girada?",
+    shape: { cells: [[0,0],[1,0],[1,1],[1,2],[2,2],[3,2],[3,1]], m: 0 }, plan: [["M",1],["R",1],["M",3],["X",1]], ans: 1 },
+  { id: "r5", dom: "Gv", type: "rot", q: "La celda naranja forma parte de la figura. ¿Cuál opción es la MISMA figura, solo girada?",
+    shape: { cells: [[0,1],[1,1],[2,1],[2,0],[3,0],[1,2],[1,3],[2,3]], m: 4 }, plan: [["X",3],["M",2],["M",0],["R",3]], ans: 3 }
+];
+
+/* --- Geometría de rotación --- */
+ND.geo = {
+  rot: function (cells, k) { // 90° horario k veces: (x,y)->(-y,x) en coords pantalla
+    var c = cells.map(function (p) { return p.slice(); });
+    for (var i = 0; i < k; i++) c = c.map(function (p) { return [-p[1], p[0]]; });
+    return c;
+  },
+  mirror: function (cells) { return cells.map(function (p) { return [-p[0], p[1]]; }); },
+  norm: function (cells) {
+    var mx = Math.min.apply(null, cells.map(function (p) { return p[0]; }));
+    var my = Math.min.apply(null, cells.map(function (p) { return p[1]; }));
+    return cells.map(function (p) { return [p[0] - mx, p[1] - my]; });
+  },
+  key: function (cells, m) {
+    var n = ND.geo.norm(cells);
+    var mk = m >= 0 ? n[m].join(",") : "";
+    return n.map(function (p) { return p.join(","); }).sort().join(";") + "|" + mk;
+  },
+  // Construye la variante: R = rotación, M = espejo + rotación, X = marca desplazada + rotación
+  variant: function (shape, kind, k) {
+    var cells = shape.cells, m = shape.m;
+    if (kind === "M") cells = ND.geo.mirror(cells);
+    var out = ND.geo.rot(cells, k);
+    if (kind === "X") m = (m + 1) % cells.length;
+    return { cells: ND.geo.norm(out), m: m };
+  }
+};
+
+/* ---------- Calificación ---------- */
+ND.level = function (l) { return ["Bajo", "Moderado", "Alto"][l]; };
+
+ND.scoreTDAH = function (a) {
+  var shaded = 0, sumA = 0, I = 0, H = 0, n = 0;
+  ND.tdah.forEach(function (it) {
+    var v = a[it.id]; if (v === undefined) return; n++;
+    if (it.thr !== undefined) { sumA += v; if (v >= it.thr) shaded++; }
+    if (it.dom === "I") I += v; else H += v;
+  });
+  var lvl = shaded >= 4 ? 2 : (shaded === 3 ? 1 : 0);
+  return { done: n === ND.tdah.length, n: n, shaded: shaded, sumA: sumA, I: I, H: H, Ipct: Math.round(I / 36 * 100), Hpct: Math.round(H / 36 * 100), lvl: lvl, pct: Math.round(shaded / 6 * 100) };
+};
+
+ND.scoreAQ = function (a) {
+  var s = 0, n = 0, x = {}, nx = 0;
+  ND.aq.forEach(function (it) {
+    var v = a[it.id]; if (v === undefined) return; n++;
+    if ((it.key === "A" && v <= 1) || (it.key === "D" && v >= 2)) s++;
+  });
+  ND.aqx.forEach(function (it) {
+    var v = a[it.id]; if (v === undefined) return; nx++;
+    x[it.f] = (x[it.f] || 0) + v;
+  });
+  var lvl = s >= 6 ? 2 : (s >= 4 ? 1 : 0);
+  return { done: n === ND.aq.length && nx === ND.aqx.length, n: n + nx, score: s, lvl: lvl, pct: s * 10, extra: x };
+};
+
+ND.scoreDis = function (a) {
+  var s = 0, n = 0;
+  ND.dis.forEach(function (it) { var v = a[it.id]; if (v === undefined) return; n++; s += it.w * (v + 1); });
+  var dc = 0, nd = 0;
+  ND.dcal.forEach(function (it) { var v = a[it.id]; if (v === undefined) return; nd++; dc += v; });
+  var lvl = s > 60 ? 2 : (s >= 40 ? 1 : 0);
+  var lvlC = dc >= 16 ? 2 : (dc >= 9 ? 1 : 0);
+  return { done: n === ND.dis.length && nd === ND.dcal.length, n: n + nd, score: s, lvl: lvl, pct: n ? Math.max(0, Math.round((s - 22) / 66 * 100)) : 0,
+           calc: dc, lvlC: lvlC, pctC: Math.round(dc / 24 * 100) };
+};
+
+ND.COG_MEAN = 11; ND.COG_SD = 3.8; ND.COG_CI = 15;
+ND.scoreCog = function (a, meta) {
+  var raw = 0, n = 0, dom = { Gf: [0, 0], Gq: [0, 0], Gc: [0, 0], Gv: [0, 0] };
+  ND.cog.forEach(function (it) {
+    dom[it.dom][1]++;
+    var v = a[it.id]; if (v === undefined) return; n++;
+    if (v === it.ans) { raw++; dom[it.dom][0]++; }
+  });
+  var z = (raw - ND.COG_MEAN) / ND.COG_SD;
+  var idx = Math.round(Math.max(55, Math.min(145, 100 + 15 * z)));
+  var band = idx >= 130 ? "Muy superior" : idx >= 115 ? "Superior al promedio" : idx >= 85 ? "Promedio" : idx >= 70 ? "Inferior al promedio" : "Muy inferior al promedio";
+  var dpct = {}; Object.keys(dom).forEach(function (k) { dpct[k] = Math.round(dom[k][0] / dom[k][1] * 100); });
+  var secs = meta && meta.secs || 0;
+  return { done: n === ND.cog.length || !!(meta && meta.finished), n: n, raw: raw, idx: idx, lo: Math.max(40, idx - ND.COG_CI), hi: Math.min(160, idx + ND.COG_CI),
+           band: band, dom: dpct, secs: secs, fast: secs > 0 && secs < 240, pct: Math.round(raw / 20 * 100) };
+};
+
+ND.scoreAC = function (a, cog) {
+  var f = {}, cnt = {}, n = 0;
+  ND.ac.forEach(function (it) {
+    var v = a[it.id]; if (v === undefined) return; n++;
+    f[it.f] = (f[it.f] || 0) + v; cnt[it.f] = (cnt[it.f] || 0) + 1;
+  });
+  var pc = function (k) { return cnt[k] ? Math.round(f[k] / (cnt[k] * 4) * 100) : 0; };
+  var comp = pc("Compromiso"), crea = pc("Creatividad");
+  var oe = {}; ["OE intelectual","OE imaginativa","OE emocional","OE sensual","OE psicomotriz"].forEach(function (k) { oe[k] = pc(k); });
+  var idx = cog && cog.n > 0 ? cog.idx : null;
+  var lvl = null;
+  if (idx !== null) {
+    var rings = (comp >= 70 ? 1 : 0) + (crea >= 70 ? 1 : 0);
+    if (idx >= 120 && rings === 2) lvl = 2;
+    else if ((idx >= 115 && rings >= 1) || idx >= 125) lvl = 1;
+    else lvl = 0;
+  }
+  return { done: n === ND.ac.length, n: n, comp: comp, crea: crea, oe: oe, idx: idx, lvl: lvl, pct: Math.round((comp + crea) / 2) };
+};
+
+ND.scoreAll = function (st) {
+  var a = st.ans || {};
+  var r = { tdah: ND.scoreTDAH(a), aq: ND.scoreAQ(a), dis: ND.scoreDis(a), cog: ND.scoreCog(a, st.cogMeta) };
+  r.ac = ND.scoreAC(a, r.cog);
+  r.twoE = r.ac.lvl !== null && r.ac.lvl >= 1 && (r.tdah.lvl === 2 || r.aq.lvl === 2 || r.dis.lvl === 2);
+  r.crisis = a.c6 === 1;
+  r.confusores = (a.c3 === 1 ? ["sueño insuficiente"] : []).concat(a.c4 === 1 ? ["ánimo bajo o ansiedad intensa"] : []);
+  return r;
+};
+
+if (typeof module !== "undefined") module.exports = ND;
+
+</script>
+<script>
+/* ===== INTERFAZ ===== */
+(function () {
+  var KEY = "perfilNeuro_v1";
+  var S = load();
+  var view = "home", cogIdx = 0, timerInt = null;
+  var app = document.getElementById("app");
+
+  function load() {
+    try { var s = JSON.parse(localStorage.getItem(KEY)); if (s && s.ans) return s; } catch (e) {}
+    return { consent: false, ans: {}, cogMeta: { timer: false, start: 0, secs: 0, finished: false }, prefs: { calm: false, read: false } };
+  }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  /* ---------- Preferencias ---------- */
+  function applyPrefs() {
+    document.body.classList.toggle("calm", !!S.prefs.calm);
+    document.body.classList.toggle("read", !!S.prefs.read);
+    document.getElementById("tCalm").setAttribute("aria-pressed", !!S.prefs.calm);
+    document.getElementById("tRead").setAttribute("aria-pressed", !!S.prefs.read);
+  }
+  document.getElementById("tCalm").onclick = function () { S.prefs.calm = !S.prefs.calm; save(); applyPrefs(); };
+  document.getElementById("tRead").onclick = function () { S.prefs.read = !S.prefs.read; save(); applyPrefs(); };
+  document.querySelectorAll("[data-go]").forEach(function (b) { b.onclick = function () { go(b.getAttribute("data-go")); }; });
+
+  /* ---------- Módulos ---------- */
+  var MODS = [
+    { id: "contexto", tag: "Paso 1 · 1 min", name: "Contexto personal", desc: "Seis preguntas breves sobre su historia, sueño y ánimo. Nos ayudan a interpretar bien sus resultados.", items: function () { return ND.contexto; } },
+    { id: "tdah", tag: "Atención y actividad · 4 min", name: "TDAH", desc: "18 reactivos basados en la escala ASRS v1.1 de la OMS. Piense en los últimos 6 meses.", items: function () { return ND.tdah; } },
+    { id: "autismo", tag: "Comunicación social y percepción · 4 min", name: "Espectro autista", desc: "10 reactivos basados en el AQ-10 y 6 reactivos complementarios de perfil sensorial, social y de camuflaje.", items: function () { return ND.aq.concat(ND.aqx); } },
+    { id: "dislexia", tag: "Lectura, escritura y números · 5 min", name: "Dislexia y discalculia", desc: "15 reactivos basados en el Adult Dyslexia Checklist (BDA) y 8 indicadores de procesamiento numérico.", items: function () { return ND.dis.concat(ND.dcal); } },
+    { id: "ac", tag: "Potencial y motivación · 3 min", name: "Altas capacidades", desc: "13 reactivos sobre los anillos de Renzulli (compromiso y creatividad) y las sobreexcitabilidades de Dabrowski.", items: function () { return ND.ac; } },
+    { id: "cog", tag: "Razonamiento · 15–25 min", name: "Índice cognitivo estimado", desc: "20 problemas originales con formato ICAR: matrices, series, razonamiento verbal y rotación mental.", items: function () { return ND.cog; } }
+  ];
+  function modProgress(m) { var it = m.items(), n = 0; it.forEach(function (i) { if (S.ans[i.id] !== undefined) n++; }); return [n, it.length]; }
+
+  function go(v) {
+    if (v !== "home" && v !== "about" && !S.consent) v = "home";
+    view = v;
+    document.querySelectorAll("[data-go]").forEach(function (b) {
+      if (b.getAttribute("data-go") === v || (v.indexOf("m:") === 0 && b.getAttribute("data-go") === "modules")) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
+    });
+    if (v !== "m:cog" && timerInt) { clearInterval(timerInt); timerInt = null; }
+    render(); window.scrollTo(0, 0); app.focus({ preventScroll: true });
+  }
+
+  function render() {
+    if (view === "home") return renderHome();
+    if (view === "modules") return renderModules();
+    if (view === "report") return renderReport();
+    if (view === "about") return renderAbout();
+    if (view === "m:cog") return renderCog();
+    if (view.indexOf("m:") === 0) return renderQ(view.slice(2));
+  }
+
+  /* ---------- Inicio ---------- */
+  function renderHome() {
+    var h = '<section class="card hero"><h1>Explore su perfil <em>neurocognitivo</em></h1>' +
+      '<p class="lead">Un recorrido de 30 a 40 minutos que identifica <strong>tendencias e indicadores</strong> de TDAH, autismo, dislexia, discalculia y altas capacidades, y que estima su <strong>índice cognitivo</strong> con el modelo CHC.</p></section>' +
+      '<div class="grid">' +
+      '<div class="card"><h3>¿Qué es?</h3><p class="note">Un <strong>tamizaje</strong>: indica si conviene buscar una evaluación profesional. Se basa en escalas usadas internacionalmente y en el modelo de inteligencia con más respaldo empírico.</p></div>' +
+      '<div class="card"><h3>¿Qué NO es?</h3><p class="note">No es un diagnóstico clínico ni sustituye una prueba estandarizada de CI (WAIS, WISC, etc.). Solo un profesional de la salud mental puede diagnosticar.</p></div>' +
+      '<div class="card"><h3>Su privacidad</h3><p class="note">No pedimos su nombre. Nada se envía a internet: sus respuestas viven en este navegador y puede borrarlas cuando quiera.</p></div></div>';
+    if (!S.consent) {
+      h += '<section class="card" aria-labelledby="ci"><h2 id="ci">Consentimiento informado</h2>' +
+        '<p>Antes de empezar, confirme que leyó y aceptas lo siguiente:</p>' +
+        chk("k1", "Tengo 18 años o más.") +
+        chk("k2", "Entiendo que esto es un tamizaje orientativo y <strong>no un diagnóstico</strong>. Los resultados pueden incluir falsos positivos y falsos negativos.") +
+        chk("k3", "Entiendo que mis respuestas se guardan solo en este dispositivo y que no deben usarse para decisiones académicas, laborales ni legales.") +
+        chk("k4", "Sé que puedo detenerme en cualquier momento. Si alguna pregunta me genera malestar, puedo buscar apoyo (los recursos aparecen en el reporte).") +
+        '<div class="row" style="margin-top:14px"><button class="btn accent" id="bStart" disabled>Acepto y quiero comenzar</button></div></section>';
+    } else {
+      h += '<div class="row"><button class="btn accent" data-n="modules">Continuar con los módulos</button><button class="btn alt" data-n="report">Ver mi reporte</button>' +
+        '<button class="btn alt" id="bReset">Borrar todos mis datos</button></div>';
+    }
+    app.innerHTML = h;
+    bindNav();
+    if (!S.consent) {
+      var bs = document.getElementById("bStart");
+      var upd = function () { bs.disabled = !["k1", "k2", "k3", "k4"].every(function (k) { return document.getElementById(k).checked; }); };
+      ["k1", "k2", "k3", "k4"].forEach(function (k) { document.getElementById(k).onchange = upd; });
+      bs.onclick = function () { S.consent = true; S.consentAt = new Date().toISOString(); save(); go("modules"); };
+    } else {
+      document.getElementById("bReset").onclick = resetAll;
+    }
+  }
+  function chk(id, t) { return '<label style="display:flex;gap:10px;align-items:flex-start;margin:10px 0"><input type="checkbox" id="' + id + '" style="width:20px;height:20px;margin-top:4px;accent-color:#231F20"> <span>' + t + '</span></label>'; }
+  function resetAll() {
+    if (!confirm("¿Borrar todas sus respuestas y su reporte de este navegador?")) return;
+    localStorage.removeItem(KEY); S = load(); applyPrefs(); go("home");
+  }
+  function bindNav() { app.querySelectorAll("[data-n]").forEach(function (b) { b.onclick = function () { go(b.getAttribute("data-n")); }; }); }
+
+  /* ---------- Menú de módulos ---------- */
+  function renderModules() {
+    var tot = 0, ans = 0;
+    var h = '<h1>Módulos</h1><p class="lead">Puede responderlos en cualquier orden y en varias sesiones. Su avance se guarda automáticamente. Sugerimos empezar por el contexto y dejar el razonamiento para cuando esté descansado/a.</p><div class="grid">';
+    MODS.forEach(function (m) {
+      var p = modProgress(m); tot += p[1]; ans += p[0];
+      var done = p[0] === p[1] || (m.id === "cog" && S.cogMeta.finished);
+      h += '<article class="card mod"><span class="tag">' + m.tag + '</span><h3>' + m.name + '</h3><p>' + m.desc + '</p>' +
+        '<div class="prog" aria-hidden="true"><i style="width:' + Math.round(p[0] / p[1] * 100) + '%"></i></div>' +
+        '<div class="foot"><span class="pill' + (done ? ' done' : '') + '">' + (done ? "✓ Completo" : p[0] + " / " + p[1]) + '</span>' +
+        '<button class="btn sm" data-n="m:' + m.id + '">' + (p[0] ? (done ? "Revisar" : "Continuar") : "Empezar") + '</button></div></article>';
+    });
+    h += '</div><div class="card row" style="justify-content:space-between"><div><strong>Avance global:</strong> ' + Math.round(ans / tot * 100) + '%</div><button class="btn accent" data-n="report">Ver mi reporte</button></div>';
+    app.innerHTML = h; bindNav();
+  }
+
+  /* ---------- Cuestionarios ---------- */
+  var INTRO = {
+    contexto: { t: "Contexto personal", p: "El diagnóstico de cualquier condición del neurodesarrollo exige que los rasgos aparezcan desde la infancia, que afecten su vida diaria y que no se expliquen mejor por otra causa, como falta de sueño, ansiedad o depresión. Estas preguntas ayudan a interpretar sus resultados con prudencia." },
+    tdah: { t: "Atención, organización y actividad (TDAH)", p: "Basado en la Adult ADHD Self-Report Scale (ASRS v1.1), desarrollada con la Organización Mundial de la Salud. Para cada pregunta, elija la frecuencia que mejor describe cómo se ha sentido y comportado <strong>en los últimos 6 meses</strong>. Piense en un día típico, no en sus mejores ni en sus peores días.", s: ["Hiperfoco en lo que le apasiona", "Creatividad y pensamiento divergente", "Energía y espontaneidad", "Buena respuesta en crisis", "Curiosidad"] },
+    autismo: { t: "Comunicación social, intereses y percepción (espectro autista)", p: "La primera parte se basa en el AQ-10 (Autism Research Centre, Cambridge), recomendado por NICE para adultos. Indique qué tan de acuerdo está con cada frase. La segunda parte explora su procesamiento sensorial, la energía social y el <em>camuflaje</em> (adaptarse para encajar), que es común en mujeres y en personas diagnosticadas en la adultez.", s: ["Atención al detalle", "Pensamiento sistemático y lógico", "Honestidad y franqueza", "Intereses profundos y conocimiento experto", "Memoria para patrones"] },
+    dislexia: { t: "Lectura, escritura y números (dislexia y discalculia)", p: "La primera parte adapta el Adult Dyslexia Checklist de la British Dyslexia Association, cuyas preguntas tienen pesos distintos según su capacidad predictiva. La segunda parte reúne indicadores de procesamiento numérico en la vida adulta.", s: ["Pensamiento visual y espacial", "Razonamiento global e integrador", "Narrativa y comunicación oral", "Resolución creativa de problemas", "Empatía"] },
+    ac: { t: "Potencial, motivación y creatividad (altas capacidades)", p: "Según Renzulli, la superdotación surge de la interacción entre una capacidad superior al promedio, el compromiso con la tarea y la creatividad. El componente de capacidad se toma de su índice cognitivo; aquí exploramos los otros dos. También incluimos las <em>sobreexcitabilidades</em> de Dabrowski, solo de manera descriptiva.", s: ["Curiosidad intensa", "Pensamiento complejo", "Sensibilidad ética", "Autonomía en el aprendizaje"] }
+  };
+  function scaleFor(mod, it) {
+    if (mod === "contexto") return it.o;
+    if (mod === "tdah") return ND.FREQ5;
+    if (mod === "autismo") return it.key ? ND.AGREE4 : ND.FREQ4;
+    if (mod === "dislexia") return it.w ? (it.s === "F" ? ND.FREQ4D : ND.EASE4) : ND.FREQ4;
+    if (mod === "ac") return ND.LIKE5;
+  }
+  function subhead(mod, it) {
+    if (mod === "autismo" && it.id === "q1") return "<h2>Parte 1 · AQ-10</h2>";
+    if (mod === "autismo" && it.id === "x1") return '<h2>Parte 2 · Perfil sensorial, social y de camuflaje</h2><p class="note">¿Con qué frecuencia le ocurre?</p>';
+    if (mod === "dislexia" && it.id === "d1") return '<h2>Parte 1 · Lectura y lenguaje</h2><p class="note">¿Con qué frecuencia le ocurre?</p>';
+    if (mod === "dislexia" && it.id === "d11") return '<p class="note" style="margin-top:22px">Ahora indique qué tan difícil le resulta:</p>';
+    if (mod === "dislexia" && it.id === "n1") return '<h2>Parte 2 · Números y cálculo</h2><p class="note">¿Con qué frecuencia le ocurre?</p>';
+    if (mod === "ac" && it.id === "t1") return '<h2>Compromiso con la tarea</h2><p class="note">¿Qué tanto le describe cada frase?</p>';
+    if (mod === "ac" && it.id === "k1") return "<h2>Creatividad</h2>";
+    if (mod === "ac" && it.id === "o1") return '<h2>Intensidades (sobreexcitabilidades)</h2><p class="note">Este bloque es descriptivo y no se usa para clasificar.</p>';
+    return "";
+  }
+  function renderQ(mod) {
+    var m = MODS.filter(function (x) { return x.id === mod; })[0], it = m.items(), I = INTRO[mod];
+    var idx = MODS.indexOf(m), next = MODS[idx + 1];
+    var h = '<p class="noprint"><button class="btn alt sm" data-n="modules">← Módulos</button></p><h1>' + I.t + '</h1><p class="lead">' + I.p + '</p>';
+    if (I.s) h += '<div class="box ok"><strong>Fortalezas que suelen asociarse a este perfil:</strong><ul class="strengths">' + I.s.map(function (s) { return "<li>" + s + "</li>"; }).join("") + "</ul></div>";
+    h += '<div class="card" style="position:sticky;top:64px;z-index:5;padding:12px 18px"><div class="row" style="justify-content:space-between"><span id="pTxt"></span></div><div class="prog" style="margin-top:6px"><i id="pBar"></i></div></div>';
+    it.forEach(function (q, k) {
+      h += subhead(mod, q);
+      var opts = scaleFor(mod, q);
+      h += '<fieldset class="q"><legend><span class="qnum">' + (k + 1) + '</span>' + esc(q.t) + '</legend><div class="scale">';
+      opts.forEach(function (o, v) {
+        h += '<label><input type="radio" name="' + q.id + '" value="' + v + '"' + (S.ans[q.id] === v ? " checked" : "") + '> ' + esc(o) + '</label>';
+      });
+      h += '</div>' + (q.crisis ? '<div id="crisisBox"></div>' : '') + '</fieldset>';
+    });
+    h += '<div class="row" style="margin-top:20px">' + (next ? '<button class="btn" data-n="m:' + next.id + '">Guardar y continuar: ' + next.name + ' →</button>' : '') +
+      '<button class="btn alt" data-n="modules">Volver a módulos</button><button class="btn alt" data-n="report">Ver reporte</button></div>';
+    app.innerHTML = h; bindNav();
+    var upd = function () {
+      var p = modProgress(m);
+      document.getElementById("pTxt").innerHTML = "<strong>" + m.name + "</strong> · " + p[0] + " de " + p[1] + " respondidas";
+      document.getElementById("pBar").style.width = Math.round(p[0] / p[1] * 100) + "%";
+      var cb = document.getElementById("crisisBox"); if (cb) cb.innerHTML = S.ans.c6 === 1 ? crisisHTML() : "";
+    };
+    app.querySelectorAll('input[type=radio]').forEach(function (r) {
+      r.onchange = function () { S.ans[r.name] = Number(r.value); save(); upd(); };
+    });
+    upd();
+  }
+  function crisisHTML() {
+    return '<div class="box crisis" role="alert"><strong>Gracias por compartirlo. No está solo/a.</strong> Si siente que podría hacerse daño, busque ayuda ahora:<br>' +
+      '• <strong>Línea de la Vida: 800 911 2000</strong> (gratuita, 24 horas, todo México)<br>• Emergencias: <strong>911</strong><br>• Acuda al servicio de urgencias más cercano o hable con alguien de confianza.</div>';
+  }
+
+  /* ---------- SVG: matrices ---------- */
+  var FILL = { W: "#ffffff", G: "#a99bc2", B: "#2c1f45" };
+  function shapeSVG(sh, cx, cy, r, fill) {
+    var st = 'fill="' + fill + '" stroke="#2c1f45" stroke-width="2.5"';
+    if (sh === "c") return '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" ' + st + '/>';
+    if (sh === "s") return '<rect x="' + (cx - r) + '" y="' + (cy - r) + '" width="' + 2 * r + '" height="' + 2 * r + '" ' + st + '/>';
+    if (sh === "t") return '<polygon points="' + cx + ',' + (cy - r) + ' ' + (cx + r) + ',' + (cy + r * .85) + ' ' + (cx - r) + ',' + (cy + r * .85) + '" ' + st + '/>';
+    if (sh === "d") return '<polygon points="' + cx + ',' + (cy - r * 1.15) + ' ' + (cx + r * 1.15) + ',' + cy + ' ' + cx + ',' + (cy + r * 1.15) + ' ' + (cx - r * 1.15) + ',' + cy + '" ' + st + '/>';
+  }
+  var POS = { 1: [[50, 50]], 2: [[30, 50], [70, 50]], 3: [[50, 28], [28, 70], [72, 70]], 4: [[30, 30], [70, 30], [30, 70], [70, 70]] };
+  function cellInner(code) {
+    if (!code) return '<text x="50" y="64" text-anchor="middle" font-size="42" font-weight="700" fill="#B85C38">?</text>';
+    if (code[0] === "a") {
+      var ang = +code.slice(1);
+      return '<g transform="rotate(' + ang + ' 50 50)"><line x1="50" y1="80" x2="50" y2="26" stroke="#2c1f45" stroke-width="6" stroke-linecap="round"/><polygon points="50,14 64,34 36,34" fill="#2c1f45"/><circle cx="50" cy="80" r="5" fill="#B85C38"/></g>';
+    }
+    if (code[0] === "L") {
+      var seg = { T: [18, 18, 82, 18], B: [18, 82, 82, 82], L: [18, 18, 18, 82], R: [82, 18, 82, 82], H: [18, 50, 82, 50], V: [50, 18, 50, 82], D1: [18, 18, 82, 82], D2: [82, 18, 18, 82] };
+      var o = '<rect x="18" y="18" width="64" height="64" fill="none" stroke="#d9d2e5" stroke-width="1.5" stroke-dasharray="3 3"/>';
+      code.slice(1).split(",").forEach(function (k) { var s = seg[k]; o += '<line x1="' + s[0] + '" y1="' + s[1] + '" x2="' + s[2] + '" y2="' + s[3] + '" stroke="#2c1f45" stroke-width="5" stroke-linecap="round"/>'; });
+      return o;
+    }
+    var mm = code.match(/^([cstd])([WGB]?)(\d?)$/);
+    var n = +(mm[3] || 1), f = FILL[mm[2] || "W"], r = n === 1 ? 24 : n === 2 ? 15 : 13;
+    return POS[n].map(function (p) { return shapeSVG(mm[1], p[0], p[1], r, f); }).join("");
+  }
+  function describe(code) {
+    if (!code) return "celda vacía";
+    if (code[0] === "a") return "flecha girada " + code.slice(1) + " grados";
+    if (code[0] === "L") return "líneas " + code.slice(1);
+    var mm = code.match(/^([cstd])([WGB]?)(\d?)$/);
+    return (mm[3] || 1) + " " + ({ c: "círculo", s: "cuadrado", t: "triángulo", d: "rombo" })[mm[1]] + " " + ({ W: "blanco", G: "gris", B: "negro" })[mm[2] || "W"];
+  }
+  function cellSVG(code, size) { return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 100 100" role="img" aria-label="' + describe(code) + '">' + cellInner(code) + '</svg>'; }
+  function matrixSVG(cells) {
+    var o = '<svg viewBox="0 0 312 312" width="300" height="300" role="img" aria-label="Matriz de 3 por 3 con una celda faltante">';
+    for (var r = 0; r < 3; r++) for (var c = 0; c < 3; c++) {
+      var x = 4 + c * 102, y = 4 + r * 102, code = cells[r][c];
+      o += '<rect x="' + x + '" y="' + y + '" width="100" height="100" rx="8" fill="' + (code ? "#fff" : "#fff3ea") + '" stroke="#cfc6dc" stroke-width="1.5"/>';
+      o += '<g transform="translate(' + x + ',' + y + ')">' + cellInner(code) + '</g>';
+    }
+    return o + "</svg>";
+  }
+  /* ---------- SVG: rotación ---------- */
+  function polySVG(sh, size, label) {
+    var c = ND.geo.norm(sh.cells), w = 1 + Math.max.apply(null, c.map(function (p) { return p[0]; })), hh = 1 + Math.max.apply(null, c.map(function (p) { return p[1]; }));
+    var dim = Math.max(w, hh), u = 80 / dim, ox = 10 + (80 - w * u) / 2, oy = 10 + (80 - hh * u) / 2;
+    var o = '<svg width="' + size + '" height="' + size + '" viewBox="0 0 100 100" role="img" aria-label="' + label + '">';
+    c.forEach(function (p, i) { o += '<rect x="' + (ox + p[0] * u) + '" y="' + (oy + p[1] * u) + '" width="' + u + '" height="' + u + '" fill="' + (i === sh.m ? "#B85C38" : "#3D5A73") + '" stroke="#fff" stroke-width="2"/>'; });
+    return o + "</svg>";
+  }
+
+  /* ---------- Prueba cognitiva ---------- */
+  function renderCog() {
+    var M = S.cogMeta;
+    if (!M.start && !M.finished) {
+      app.innerHTML = '<p class="noprint"><button class="btn alt sm" data-n="modules">← Módulos</button></p><h1>Índice cognitivo estimado</h1>' +
+        '<p class="lead">20 problemas originales organizados según el modelo Cattell-Horn-Carroll (CHC): <strong>razonamiento fluido</strong> (matrices), <strong>razonamiento cuantitativo</strong> (series), <strong>comprensión verbal</strong> y <strong>procesamiento visoespacial</strong> (rotación mental). Siguen el formato del International Cognitive Ability Resource (ICAR), un banco de dominio público.</p>' +
+        '<div class="card"><h3>Instrucciones</h3><ul><li>Busque un lugar tranquilo. No use calculadora, papel ni internet.</li><li>Dentro de cada bloque, la dificultad aumenta. Si no sabe una respuesta, elija la que le parezca más probable: no se restan puntos.</li><li>Puede moverse entre los reactivos y cambiar sus respuestas.</li><li>El cronómetro es <strong>opcional</strong>. Si lo activa, tendrá 25 minutos y no hay penalización.</li></ul>' +
+        '<label style="display:flex;gap:10px;align-items:center;margin:12px 0"><input type="checkbox" id="useT" style="width:20px;height:20px;accent-color:#231F20"> Usar cronómetro de 25 minutos</label>' +
+        '<button class="btn accent" id="goCog">Comenzar</button></div>';
+      bindNav();
+      document.getElementById("goCog").onclick = function () { M.timer = document.getElementById("useT").checked; M.start = Date.now(); save(); renderCog(); };
+      return;
+    }
+    if (M.finished) {
+      var r = ND.scoreCog(S.ans, M);
+      app.innerHTML = '<h1>Prueba cognitiva completada</h1><div class="card"><p>Respondió ' + r.n + ' de 20 reactivos. Su índice estimado aparece en el reporte, junto con su margen de error.</p><div class="row"><button class="btn accent" data-n="report">Ver mi reporte</button><button class="btn alt" id="redo">Revisar respuestas</button></div></div>';
+      bindNav(); document.getElementById("redo").onclick = function () { M.finished = false; save(); renderCog(); };
+      return;
+    }
+    var it = ND.cog[cogIdx], DOM = { Gf: "Razonamiento fluido · Matrices", Gq: "Razonamiento cuantitativo · Series", Gc: "Comprensión verbal", Gv: "Procesamiento visoespacial · Rotación" };
+    var h = '<div class="row noprint" style="justify-content:space-between"><button class="btn alt sm" data-n="modules">← Pausar</button>' +
+      (M.timer ? '<span>Tiempo restante: <span class="timer" id="tmr"></span></span>' : '<span class="note">Sin cronómetro</span>') + '</div>' +
+      '<div class="dots" aria-label="Navegación entre reactivos" style="margin:14px 0">' + ND.cog.map(function (q, k) { return '<button aria-label="Reactivo ' + (k + 1) + '" data-k="' + k + '" class="' + (S.ans[q.id] !== undefined ? "ans " : "") + (k === cogIdx ? "cur" : "") + '">' + (k + 1) + '</button>'; }).join("") + '</div>' +
+      '<div class="card cogwrap"><div class="note">Reactivo ' + (cogIdx + 1) + ' de 20 · ' + DOM[it.dom] + '</div><h2 style="margin:0">' + esc(it.q) + '</h2>';
+    var optsHTML = "", L = "ABCDEF";
+    if (it.type === "matrix") {
+      h += '<div class="stim">' + matrixSVG(it.cells) + '</div>';
+      optsHTML = '<div class="opts" role="radiogroup">' + it.opts.map(function (o, k) { return optLbl(it, k, cellSVG(o, 84)); }).join("") + '</div>';
+    } else if (it.type === "rot") {
+      h += '<div class="stim">' + polySVG(it.shape, 150, "Figura de referencia") + '</div>';
+      optsHTML = '<div class="opts" role="radiogroup">' + it.plan.map(function (p, k) { return optLbl(it, k, polySVG(ND.geo.variant(it.shape, p[0], p[1]), 110, "Opción " + L[k])); }).join("") + '</div>';
+    } else {
+      if (it.type === "series") h += '<div class="series" aria-label="Serie">' + esc(it.q) + '</div>';
+      optsHTML = '<div class="opts txt" role="radiogroup">' + it.opts.map(function (o, k) { return optLbl(it, k, '<span class="tx">' + esc(o) + '</span>'); }).join("") + '</div>';
+    }
+    h += optsHTML + '</div><div class="row">' +
+      '<button class="btn alt" id="prev"' + (cogIdx === 0 ? " disabled" : "") + '>← Anterior</button>' +
+      (cogIdx < 19 ? '<button class="btn" id="next">Siguiente →</button>' : '') +
+      '<button class="btn accent" id="fin" style="margin-left:auto">Terminar prueba</button></div>';
+    app.innerHTML = h; bindNav();
+    app.querySelectorAll(".dots button").forEach(function (b) { b.onclick = function () { cogIdx = +b.getAttribute("data-k"); renderCog(); }; });
+    app.querySelectorAll('.opts input').forEach(function (r) { r.onchange = function () { S.ans[it.id] = Number(r.value); save(); var d = app.querySelector('.dots button[data-k="' + cogIdx + '"]'); if (d) d.classList.add("ans"); }; });
+    document.getElementById("prev").onclick = function () { if (cogIdx > 0) { cogIdx--; renderCog(); } };
+    var nx = document.getElementById("next"); if (nx) nx.onclick = function () { cogIdx++; renderCog(); };
+    document.getElementById("fin").onclick = function () {
+      var n = ND.cog.filter(function (q) { return S.ans[q.id] !== undefined; }).length;
+      if (n < 20 && !confirm("Ha respondido " + n + " de 20 reactivos. Los que deje en blanco se contarán como incorrectos. ¿Terminar de todos modos?")) return;
+      finishCog();
+    };
+    if (M.timer) tick();
+  }
+  function optLbl(it, k, inner) {
+    return '<label class="opt"><input type="radio" name="' + it.id + '" value="' + k + '"' + (S.ans[it.id] === k ? " checked" : "") + ' aria-label="Opción ' + "ABCDEF"[k] + '"><span class="lbl">' + "ABCDEF"[k] + '</span>' + inner + '</label>';
+  }
+  function finishCog() {
+    var M = S.cogMeta; M.finished = true; M.secs = Math.round((Date.now() - M.start) / 1000); save();
+    if (timerInt) { clearInterval(timerInt); timerInt = null; }
+    renderCog();
+  }
+  function tick() {
+    if (timerInt) clearInterval(timerInt);
+    var f = function () {
+      var left = 25 * 60 - Math.round((Date.now() - S.cogMeta.start) / 1000), el = document.getElementById("tmr");
+      if (left <= 0) { finishCog(); return; }
+      if (el) el.textContent = Math.floor(left / 60) + ":" + ("0" + left % 60).slice(-2);
+    };
+    f(); timerInt = setInterval(f, 1000);
+  }
+
+  /* ---------- Gráficos SVG ---------- */
+  function barsSVG(rows) {
+    var W = 640, rh = 46, H = rows.length * rh + 30, x0 = 200, bw = W - x0 - 60;
+    var col = ["#2f7d5b", "#c27a00", "#c0392b", "#9a93a8"];
+    var o = '<svg class="chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Gráfico de barras con la intensidad de los indicadores por área">';
+    [0, 25, 50, 75, 100].forEach(function (t) { var x = x0 + bw * t / 100; o += '<line x1="' + x + '" y1="8" x2="' + x + '" y2="' + (H - 22) + '" stroke="#ece7f2"/><text x="' + x + '" y="' + (H - 6) + '" font-size="11" text-anchor="middle" fill="#5d5670">' + t + '%</text>'; });
+    rows.forEach(function (r, i) {
+      var y = 12 + i * rh, w = Math.max(2, bw * (r.pct || 0) / 100);
+      o += '<text x="' + (x0 - 10) + '" y="' + (y + 20) + '" font-size="14" text-anchor="end" fill="#1f1a2b">' + esc(r.label) + '</text>';
+      o += '<rect x="' + x0 + '" y="' + (y + 4) + '" width="' + bw + '" height="24" rx="6" fill="#f3f0f7"/>';
+      o += '<rect x="' + x0 + '" y="' + (y + 4) + '" width="' + w + '" height="24" rx="6" fill="' + col[r.lvl === null || r.lvl === undefined ? 3 : r.lvl] + '"/>';
+      if (r.cut) { var cx = x0 + bw * r.cut / 100; o += '<line x1="' + cx + '" y1="' + y + '" x2="' + cx + '" y2="' + (y + 32) + '" stroke="#1f1a2b" stroke-width="2" stroke-dasharray="4 3"/>'; }
+      o += '<text x="' + (x0 + bw + 8) + '" y="' + (y + 21) + '" font-size="13" fill="#5d5670">' + (r.txt || "") + '</text>';
+    });
+    return o + "</svg>";
+  }
+  function radarSVG(vals, labels) {
+    var cx = 240, cy = 150, R = 100, n = vals.length, o = '<svg class="chart" viewBox="0 0 480 300" role="img" aria-label="Gráfico radial del perfil cognitivo por dominio">';
+    var pt = function (i, r) { var a = -Math.PI / 2 + i * 2 * Math.PI / n; return [cx + r * Math.cos(a), cy + r * Math.sin(a)]; };
+    [25, 50, 75, 100].forEach(function (g) { o += '<polygon points="' + vals.map(function (_, i) { return pt(i, R * g / 100).join(","); }).join(" ") + '" fill="none" stroke="#e4dfec"/>'; });
+    vals.forEach(function (v, i) { var p = pt(i, R); o += '<line x1="' + cx + '" y1="' + cy + '" x2="' + p[0] + '" y2="' + p[1] + '" stroke="#e4dfec"/>'; var q = pt(i, R + 14), dx = q[0] - cx, anc = Math.abs(dx) < 5 ? "middle" : dx > 0 ? "start" : "end", dy = q[1] < cy - 5 ? -4 : q[1] > cy + 5 ? 14 : 4; o += '<text x="' + q[0] + '" y="' + (q[1] + dy) + '" font-size="12" text-anchor="' + anc + '" fill="#1f1a2b">' + labels[i] + ' · ' + v + '%</text>'; });
+    o += '<polygon points="' + vals.map(function (v, i) { return pt(i, R * Math.max(4, v) / 100).join(","); }).join(" ") + '" fill="rgba(255,89,0,.25)" stroke="#B85C38" stroke-width="2.5"/>';
+    vals.forEach(function (v, i) { var p = pt(i, R * Math.max(4, v) / 100); o += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="4" fill="#231F20"/>'; });
+    return o + "</svg>";
+  }
+  function bellSVG(idx, lo, hi) {
+    var W = 560, H = 150, X = function (v) { return 20 + (v - 55) / 90 * (W - 40); }, o = '<svg class="chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Curva normal con su índice estimado y su intervalo">';
+    var d = "M" + X(55) + " " + (H - 30);
+    for (var v = 55; v <= 145; v += 1) { var y = (H - 30) - 100 * Math.exp(-Math.pow((v - 100) / 15, 2) / 2); d += " L" + X(v).toFixed(1) + " " + y.toFixed(1); }
+    o += '<rect x="' + X(Math.max(55, lo)) + '" y="10" width="' + (X(Math.min(145, hi)) - X(Math.max(55, lo))) + '" height="' + (H - 40) + '" fill="rgba(255,89,0,.12)"/>';
+    o += '<path d="' + d + '" fill="none" stroke="#231F20" stroke-width="2.5"/>';
+    [70, 85, 100, 115, 130].forEach(function (t) { o += '<line x1="' + X(t) + '" y1="' + (H - 30) + '" x2="' + X(t) + '" y2="' + (H - 24) + '" stroke="#5d5670"/><text x="' + X(t) + '" y="' + (H - 10) + '" font-size="12" text-anchor="middle" fill="#5d5670">' + t + '</text>'; });
+    o += '<line x1="' + X(idx) + '" y1="8" x2="' + X(idx) + '" y2="' + (H - 30) + '" stroke="#B85C38" stroke-width="3"/><text x="' + X(idx) + '" y="22" font-size="13" font-weight="700" text-anchor="' + (idx > 130 ? "end" : "start") + '" dx="' + (idx > 130 ? -6 : 6) + '" fill="#B85C38">' + idx + '</text>';
+    return o + "</svg>";
+  }
+
+  /* ---------- Reporte ---------- */
+  function lvlChip(l, done) { if (l === null || l === undefined) return '<span class="lvl lx">Pendiente</span>'; return '<span class="lvl l' + l + '">Indicio ' + ND.level(l).toLowerCase() + '</span>' + (done ? "" : ' <span class="pill">incompleto</span>'); }
+  function renderReport() {
+    var R = ND.scoreAll(S), a = S.ans, T = R.tdah, A = R.aq, D = R.dis, C = R.cog, AC = R.ac;
+    var any = T.n + A.n + D.n + C.n + AC.n;
+    var h = '<div class="row noprint" style="justify-content:space-between"><h1 style="margin:0">Mi reporte</h1><div class="row"><button class="btn alt" onclick="window.print()">Imprimir / Guardar PDF</button><button class="btn alt" data-n="modules">Módulos</button></div></div>' +
+      '<p class="note">Generado el ' + new Date().toLocaleDateString("es-MX", { year: "numeric", month: "long", day: "numeric" }) + '. Documento personal de autoconocimiento. <strong>No constituye un diagnóstico.</strong></p>';
+    if (!any) { app.innerHTML = h + '<div class="card"><p>Aún no hay respuestas. Complete al menos un módulo para ver su reporte.</p><button class="btn" data-n="modules">Ir a módulos</button></div>'; bindNav(); return; }
+    if (R.crisis) h += crisisHTML();
+    if (R.confusores.length) h += '<div class="box warn"><strong>Ojo al interpretar:</strong> indicó ' + R.confusores.join(" y ") + '. Estas condiciones pueden afectar la atención, la memoria y el rendimiento, y producir puntajes que parecen de neurodivergencia. Considere atenderlas primero o comentarlas con un profesional.</div>';
+    if (a.c1 === 0) h += '<div class="box"><strong>Nota sobre el desarrollo:</strong> indicó que estos rasgos no estaban presentes en la infancia. Las condiciones del neurodesarrollo suelen manifestarse desde edades tempranas, aunque a veces pasan desapercibidas. Los rasgos que aparecen en la adultez merecen otra exploración.</div>';
+
+    // Resumen gráfico
+    var rows = [
+      { label: "TDAH (ASRS · Parte A)", pct: T.pct, lvl: T.n ? T.lvl : null, cut: 66.7, txt: T.n ? T.shaded + "/6" : "—" },
+      { label: "Autismo (AQ-10)", pct: A.pct, lvl: A.n ? A.lvl : null, cut: 60, txt: A.n ? A.score + "/10" : "—" },
+      { label: "Dislexia (BDA)", pct: D.pct, lvl: D.n ? D.lvl : null, cut: Math.round((40 - 22) / 66 * 100), txt: D.n ? D.score + " pts" : "—" },
+      { label: "Procesamiento numérico", pct: D.pctC, lvl: D.n ? D.lvlC : null, cut: Math.round(16 / 24 * 100), txt: D.n ? D.calc + "/24" : "—" },
+      { label: "Altas capacidades (R)", pct: AC.pct, lvl: AC.n ? AC.lvl : null, cut: 70, txt: AC.n ? AC.pct + "%" : "—" }
+    ];
+    h += '<section class="card"><h2 style="margin-top:0">Panorama general</h2>' + barsSVG(rows) +
+      '<p class="note">Cada barra muestra la intensidad del indicador. La línea punteada marca el punto de corte de referencia de cada escala. Colores: <span style="color:#2f7d5b">■</span> indicio bajo · <span style="color:#c27a00">■</span> moderado · <span style="color:#c0392b">■</span> alto · <span style="color:#9a93a8">■</span> pendiente.</p></section>';
+    if (R.twoE) h += '<div class="box warn"><strong>Posible doble excepcionalidad (2e).</strong> Sus resultados combinan indicios de alta capacidad con un indicio alto de neurodivergencia. En la doble excepcionalidad, la capacidad puede ocultar las dificultades, o al revés. Lo ideal es una evaluación neuropsicológica integral.</div>';
+
+    // TDAH
+    h += '<section class="card"><div class="row" style="justify-content:space-between"><h2 style="margin:0">Atención y actividad (TDAH)</h2>' + lvlChip(T.n ? T.lvl : null, T.done) + '</div>';
+    if (T.n) {
+      h += '<p><strong>' + T.shaded + ' de 6</strong> respuestas de la Parte A quedaron en la zona de riesgo (el corte del ASRS es de 4 o más). Suma de la Parte A: ' + T.sumA + '/24 (con el método de suma, el corte es de 14 o más).</p>' +
+        '<p>Perfil: <strong>inatención ' + T.Ipct + '%</strong> · <strong>hiperactividad/impulsividad ' + T.Hpct + '%</strong>' + (T.Ipct - T.Hpct >= 15 ? " (predomina la inatención)" : T.Hpct - T.Ipct >= 15 ? " (predomina la hiperactividad/impulsividad)" : " (perfil combinado o equilibrado)") + '.</p>' +
+        '<p>' + ["Sus respuestas no muestran un patrón típico de TDAH en adultos. Si tiene dificultades de atención, puede valer la pena explorar otras causas, como el sueño, el estrés o la carga de trabajo.",
+          "Su puntuación está cerca del punto de corte. Algunos rasgos de atención o actividad son frecuentes en su día a día. Observe si aparecen en varios contextos y desde la infancia.",
+          "Su patrón coincide con el de adultos a quienes se recomienda una evaluación clínica de TDAH. Esto <strong>no confirma</strong> un diagnóstico. Una evaluación completa revisaría su historia desde la infancia, el impacto en su vida diaria y otras posibles explicaciones."][T.lvl] + '</p>';
+    } else h += '<p class="note">Módulo pendiente.</p>';
+    h += '</section>';
+
+    // Autismo
+    h += '<section class="card"><div class="row" style="justify-content:space-between"><h2 style="margin:0">Comunicación social y percepción (espectro autista)</h2>' + lvlChip(A.n ? A.lvl : null, A.done) + '</div>';
+    if (A.n) {
+      var ex = A.extra, ept = function (k, n) { return Math.round((ex[k] || 0) / (n * 3) * 100); };
+      h += '<p>Puntuación AQ-10: <strong>' + A.score + '/10</strong>. NICE recomienda ofrecer una evaluación especializada a partir de 6.</p>' +
+        '<p>' + ["Sus respuestas no indican un patrón característico del espectro autista según el AQ-10.",
+          "Presenta algunos rasgos asociados al espectro. Pueden ser parte de su estilo cognitivo sin implicar una condición.",
+          "Su puntuación supera el corte recomendado para una evaluación especializada. Esto indica que vale la pena una evaluación profesional, no que exista un diagnóstico."][A.lvl] + '</p>' +
+        '<p class="note">Perfil complementario: sensorial ' + ept("Sensorial", 2) + '% · energía social ' + ept("Social", 2) + '% · camuflaje ' + ept("Camuflaje", 1) + '% · necesidad de rutina ' + ept("Rutina", 1) + '%.' +
+        (A.lvl < 2 && (ept("Camuflaje", 1) >= 67 || ept("Sensorial", 2) >= 67) ? ' <strong>Su perfil sensorial o de camuflaje es alto aunque el AQ-10 no lo sea.</strong> El AQ-10 detecta menos casos en mujeres y en personas que camuflan, así que, si se identifica con estos rasgos, considere una evaluación.' : '') + '</p>';
+    } else h += '<p class="note">Módulo pendiente.</p>';
+    h += '</section>';
+
+    // Dislexia
+    h += '<section class="card"><div class="row" style="justify-content:space-between"><h2 style="margin:0">Lectura y lenguaje (dislexia)</h2>' + lvlChip(D.n ? D.lvl : null, D.done) + '</div>';
+    if (D.n) {
+      h += '<p>Puntuación ponderada: <strong>' + D.score + '</strong> (rango de 22 a 88). Referencias: menos de 40, probablemente sin dislexia (Stark et al., 2024); de 40 a 60, signos leves; más de 60, signos moderados o severos (BDA).</p><p>' +
+        ["No se observan signos consistentes con dislexia.", "Hay signos compatibles con una dislexia leve, o con dificultades de lectura y escritura que conviene explorar.", "Hay signos compatibles con una dislexia moderada o severa. Se recomienda una evaluación psicopedagógica o neuropsicológica."][D.lvl] + '</p>';
+      h += '<h3>Procesamiento numérico (discalculia) ' + lvlChip(D.lvlC, D.done) + '</h3><p>Indicadores: <strong>' + D.calc + '/24</strong>. ' +
+        ["Pocos indicadores de dificultad numérica.", "Algunos indicadores. Pueden deberse a ansiedad matemática, a lagunas de aprendizaje o a una discalculia leve.", "Muchos indicadores de dificultad persistente con los números. Vale la pena una evaluación especializada del aprendizaje."][D.lvlC] +
+        ' <span class="note">(Esta escala es orientativa: no existe un tamizaje breve validado de discalculia en adultos.)</span></p>';
+    } else h += '<p class="note">Módulo pendiente.</p>';
+    h += '</section>';
+
+    // Cognitivo
+    h += '<section class="card"><div class="row" style="justify-content:space-between"><h2 style="margin:0">Índice cognitivo estimado (CHC)</h2>' + (C.n ? '<span class="pill">' + C.band + '</span>' : '<span class="lvl lx">Pendiente</span>') + '</div>';
+    if (C.n) {
+      h += '<div class="rgrid"><div><div class="kpi">' + C.idx + '</div><p class="note">Índice estimado (media 100, DE 15)<br>Rango probable (IC 95%): <strong>' + C.lo + '–' + C.hi + '</strong><br>Aciertos: ' + C.raw + '/20' + (S.cogMeta.timer ? " · con cronómetro" : " · sin cronómetro") + (C.secs ? " · " + Math.round(C.secs / 60) + " min" : "") + '</p>' + bellSVG(C.idx, C.lo, C.hi) + '</div>' +
+        '<div>' + radarSVG([C.dom.Gf, C.dom.Gq, C.dom.Gc, C.dom.Gv], ["Gf Fluido", "Gq Cuantitativo", "Gc Verbal", "Gv Visoespacial"]) + '<p class="note" style="text-align:center">Porcentaje de aciertos por dominio CHC</p></div></div>';
+      if (C.fast) h += '<div class="box warn">Terminó en menos de 4 minutos. Es posible que el resultado no refleje su capacidad real.</div>';
+      if (!C.done) h += '<div class="box warn">La prueba no está terminada. El índice se calculó con los reactivos respondidos hasta ahora y contó los demás como incorrectos.</div>';
+      var doms = [["Gf", C.dom.Gf], ["Gq", C.dom.Gq], ["Gc", C.dom.Gc], ["Gv", C.dom.Gv]].sort(function (x, y) { return y[1] - x[1]; });
+      var NM = { Gf: "razonamiento fluido", Gq: "razonamiento cuantitativo", Gc: "comprensión verbal", Gv: "procesamiento visoespacial" };
+      h += '<p>Su dominio relativamente más fuerte es el <strong>' + NM[doms[0][0]] + '</strong>' + (doms[0][1] - doms[3][1] >= 40 ? ' y hay una diferencia notable con el ' + NM[doms[3][0]] + '. Los perfiles disparejos son frecuentes en personas neurodivergentes y aportan información útil a un profesional.' : '. Su perfil es relativamente homogéneo.') + '</p>' +
+        '<p class="note"><strong>Importante:</strong> este índice es una <strong>estimación no normada</strong>. Usa parámetros supuestos para población universitaria, porque no hay normas locales; además, tiene un techo cercano a 136 y un error de medición amplio. No equivale a un CI obtenido con pruebas estandarizadas como WAIS-IV o WAIS-5. Su estado ese día (cansancio, ansiedad, distracciones) puede influir mucho.</p>';
+    } else h += '<p class="note">Módulo pendiente.</p>';
+    h += '</section>';
+
+    // Altas capacidades
+    h += '<section class="card"><div class="row" style="justify-content:space-between"><h2 style="margin:0">Altas capacidades</h2>' + (AC.n ? (AC.lvl === null ? '<span class="pill">Requiere el índice cognitivo</span>' : lvlChip(AC.lvl, AC.done)) : '<span class="lvl lx">Pendiente</span>') + '</div>';
+    if (AC.n) {
+      h += '<p><strong>Modelo de los tres anillos (Renzulli):</strong> capacidad ' + (C.n ? "(índice " + C.idx + ")" : "(pendiente)") + ' · compromiso con la tarea <strong>' + AC.comp + '%</strong> · creatividad <strong>' + AC.crea + '%</strong>.</p>';
+      if (AC.lvl !== null) h += '<p>' + ["Sus resultados no muestran por ahora la combinación de anillos que caracteriza a las altas capacidades. Recuerda que, según Gagné, el talento se desarrolla: la motivación, las oportunidades y el entorno cuentan tanto como la aptitud.",
+        "Muestra algunos componentes de las altas capacidades. Podría tratarse de una dotación (aptitud alta) que todavía no se convierte en talento, o de un área específica destacada.",
+        "Su perfil combina una capacidad estimada alta con compromiso y creatividad elevados, la confluencia que describe Renzulli. Si le interesa confirmarlo, una evaluación psicométrica formal puede abrirle acceso a programas de enriquecimiento o de mentoría."][AC.lvl] + '</p>';
+      h += '<p class="note">Intensidades de Dabrowski (solo descriptivas): ' + Object.keys(AC.oe).map(function (k) { return k.replace("OE ", "") + " " + AC.oe[k] + "%"; }).join(" · ") + '.</p>';
+    } else h += '<p class="note">Módulo pendiente.</p>';
+    h += '</section>';
+
+    // Recomendaciones
+    var hi = [T.n && T.lvl === 2 ? "TDAH" : null, A.n && A.lvl === 2 ? "autismo" : null, D.n && D.lvl === 2 ? "dislexia" : null, D.n && D.lvlC === 2 ? "discalculia" : null].filter(Boolean);
+    h += '<section class="card"><h2 style="margin-top:0">¿Qué sigue?</h2>' +
+      (hi.length ? '<p>Sus resultados sugieren que una <strong>evaluación profesional</strong> sería útil para: <strong>' + hi.join(", ") + '</strong>.</p>' : '<p>No aparecen indicios altos. Si aun así siente que algo no encaja, su experiencia es válida y puede consultar a un profesional.</p>') +
+      '<ul><li>Busque un <strong>neuropsicólogo/a o psiquiatra</strong> con experiencia en adultos. Puede verificar su cédula en el Registro Nacional de Profesionistas (SEP).</li>' +
+      '<li>Lleve este reporte impreso, ejemplos concretos de su vida diaria y, si es posible, boletas o testimonios de su infancia.</li>' +
+      '<li>Acuda al servicio de <strong>bienestar u orientación psicopedagógica de su universidad</strong>. Muchas instituciones ofrecen ajustes razonables (más tiempo en exámenes, materiales accesibles) aun antes de un diagnóstico formal.</li>' +
+      '<li>En el sector público: Centros Comunitarios de Salud Mental y Adicciones (CECOSAMA) y, en Yucatán, los Servicios de Salud de Yucatán (Hospital Psiquiátrico Yucatán, en Mérida).</li>' +
+      '<li>Orientación gratuita 24/7: <strong>Línea de la Vida 800 911 2000</strong>. Emergencias: <strong>911</strong>.</li></ul>' +
+      '<h3>Limitaciones de este instrumento</h3><ul class="note"><li>Los tamizajes privilegian la sensibilidad: es esperable que haya falsos positivos.</li><li>Las versiones en español son paráfrasis sin validación psicométrica local.</li><li>El autorreporte depende del autoconocimiento y del estado de ánimo actual.</li><li>Los rasgos de distintas condiciones se superponen (por ejemplo, la ansiedad eleva los puntajes de TDAH y de autismo).</li><li>El índice cognitivo no está normado: no lo use para comparaciones formales.</li></ul>' +
+      '<div class="row noprint"><button class="btn alt" onclick="window.print()">Imprimir / Guardar PDF</button><button class="btn alt" id="bReset2">Borrar mis datos</button></div></section>';
+    app.innerHTML = h; bindNav();
+    var b2 = document.getElementById("bReset2"); if (b2) b2.onclick = resetAll;
+  }
+
+  /* ---------- Fundamentación ---------- */
+  function renderAbout() {
+    app.innerHTML = '<h1>Fundamentación y referencias</h1><p class="lead">Cómo se construyó este instrumento, qué decidió el panel de expertos y en qué fuentes se apoya.</p>' +
+      '<section class="card"><h2 style="margin-top:0">Marco diagnóstico</h2><p>Las categorías siguen el <strong>DSM-5-TR</strong> (APA, 2022) y la <strong>CIE-11</strong> (OMS): TDAH (6A05), trastorno del espectro autista (6A02) y trastornos del desarrollo del aprendizaje con dificultad en la lectura (6A03.0) o en las matemáticas (6A03.2). Un diagnóstico exige que los rasgos aparezcan en el desarrollo temprano, que causen afectación funcional en varios contextos y que se descarten otras explicaciones. Un tamizaje solo responde a una pregunta: <em>¿conviene hacer una evaluación completa?</em></p></section>' +
+      '<section class="card"><h2 style="margin-top:0">Instrumentos y puntos de corte</h2><table class="ref"><thead><tr><th>Módulo</th><th>Base</th><th>Calificación</th><th>Niveles</th></tr></thead><tbody>' +
+      '<tr><td>TDAH</td><td>ASRS v1.1 (OMS; Kessler, Adler et al., 2005). 18 reactivos.</td><td>Parte A: reactivos 1–3 cuentan desde “A veces” y reactivos 4–6 desde “A menudo”. Parte B: perfil de inatención e hiperactividad.</td><td>Bajo: 0–2 · Moderado: 3 · Alto: ≥4</td></tr>' +
+      '<tr><td>Autismo</td><td>AQ-10 adulto (Allison, Auyeung y Baron-Cohen, 2012). Reactivos complementarios inspirados en los factores del RAADS-14 (Eriksson et al., 2013).</td><td>1 punto por respuesta en la dirección esperada: de acuerdo en los reactivos 1, 7, 8 y 10; en desacuerdo en los demás.</td><td>Bajo: 0–3 · Moderado: 4–5 · Alto: ≥6 (NICE CG142)</td></tr>' +
+      '<tr><td>Dislexia</td><td>Adult Dyslexia Checklist (BDA; Smythe y Everatt, 2001; Vinegrad, 1994). Validación: Stark et al., 2024 (α = .86).</td><td>Peso del reactivo (1–3) × frecuencia (1–4). Rango 22–88.</td><td>Bajo: &lt;40 · Moderado: 40–60 · Alto: &gt;60</td></tr>' +
+      '<tr><td>Discalculia</td><td>Indicadores adaptados de The Dyscalculia Network y de la literatura sobre sentido numérico.</td><td>8 reactivos de 0 a 3 (0–24).</td><td>Bajo: &lt;9 · Moderado: 9–15 · Alto: ≥16 (orientativo)</td></tr>' +
+      '<tr><td>Altas capacidades</td><td>Tres anillos de Renzulli; DMGT de Gagné; sobreexcitabilidades de Dabrowski (OEQ-II, solo descriptivas).</td><td>Capacidad = índice cognitivo; compromiso y creatividad en porcentaje.</td><td>Alto: índice ≥120 y ambos anillos ≥70% · Moderado: índice ≥115 y un anillo ≥70%, o índice ≥125</td></tr>' +
+      '<tr><td>Cognitivo</td><td>Modelo CHC (Cattell-Horn-Carroll; Schneider y McGrew). Formato ICAR (Condon y Revelle, 2014).</td><td>20 reactivos originales, 5 por dominio. z = (aciertos − 11) / 3.8; índice = 100 + 15z.</td><td>IC 95% ±15 · bandas &lt;70, 70–84, 85–114, 115–129, ≥130</td></tr>' +
+      '</tbody></table></section>' +
+      '<section class="card"><h2 style="margin-top:0">Panel de expertos: decisiones clave</h2><ul>' +
+      '<li><strong>Neuropsicología clínica:</strong> conservar los cortes oficiales, usar tres niveles de indicio, añadir preguntas de contexto (inicio en la infancia, afectación, sueño y ánimo) y advertir sobre la superposición de síntomas.</li>' +
+      '<li><strong>Psicometría:</strong> reactivos originales con dificultad graduada y clave verificada con código; índice con intervalo de confianza amplio; cronómetro opcional; aviso si la prueba se responde demasiado rápido.</li>' +
+      '<li><strong>Neurodiversidad:</strong> lenguaje no patologizante (indicio, rasgo, perfil), fortalezas en cada módulo y atención al camuflaje y a sus efectos en el AQ-10.</li>' +
+      '<li><strong>Diseño instruccional (DUA/WCAG):</strong> modo de baja estimulación, modo de lectura amplia, navegación con teclado, descripciones accesibles en las figuras, progreso guardado y módulos independientes.</li>' +
+      '<li><strong>Ética:</strong> consentimiento informado, mayoría de edad, ningún dato sale del navegador, borrado en un clic, recursos de crisis y prohibición explícita de usar los resultados en decisiones de selección.</li></ul></section>' +
+      '<section class="card"><h2 style="margin-top:0">Referencias</h2><ol class="refs">' +
+      '<li>American Psychiatric Association (2022). <em>DSM-5-TR</em>. APA Publishing.</li>' +
+      '<li>Organización Mundial de la Salud (2022). <em>CIE-11 para estadísticas de mortalidad y morbilidad</em>.</li>' +
+      '<li>Kessler, R. C., Adler, L., et al. (2005). The World Health Organization Adult ADHD Self-Report Scale (ASRS). <em>Psychological Medicine, 35</em>(2), 245–256. <a href="https://thereachinstitute.org/wp-content/uploads/2021/06/Adult_ADHD_Self_Report_ASRSv1.1_revised.pdf" target="_blank" rel="noopener">Hoja ASRS v1.1</a></li>' +
+      '<li>Allison, C., Auyeung, B., & Baron-Cohen, S. (2012). Toward brief “red flags” for autism screening. <em>JAACAP, 51</em>(2), 202–212.</li>' +
+      '<li>NICE (2012, act. 2021). <em>Autism spectrum disorder in adults: diagnosis and management</em> (CG142). <a href="https://pubmed.ncbi.nlm.nih.gov/32186834/" target="_blank" rel="noopener">PubMed</a></li>' +
+      '<li>Estudio sobre el corte óptimo del AQ-10 (2025). <a href="https://pubmed.ncbi.nlm.nih.gov/39964454/" target="_blank" rel="noopener">PubMed 39964454</a></li>' +
+      '<li>Eriksson, J. M., Andersen, L. M., & Bejerot, S. (2013). RAADS-14 Screen. <em>Molecular Autism, 4</em>, 49. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3907126/" target="_blank" rel="noopener">PMC3907126</a></li>' +
+      '<li>Smythe, I., & Everatt, J. (2001). <em>Adult Dyslexia Checklist</em>. British Dyslexia Association. <a href="https://www.dyslexiauk.co.uk/wp-content/uploads/2022/02/Adult-Checklist-1.pdf" target="_blank" rel="noopener">PDF</a></li>' +
+      '<li>Stark, Z., Elalouf, K., Soldano, V., Franzen, L., & Johnson, A. P. (2024). Validation and reliability of the Dyslexia Adult Checklist. <em>Dyslexia, 31</em>(1), e1797. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11632572/" target="_blank" rel="noopener">PMC11632572</a></li>' +
+      '<li>The Dyscalculia Network (2021). <em>A Dyscalculia Checklist</em>.</li>' +
+      '<li>Renzulli, J. S. (1978/2005). The three-ring conception of giftedness. <a href="https://files.eric.ed.gov/fulltext/EJ914587.pdf" target="_blank" rel="noopener">ERIC EJ914587</a></li>' +
+      '<li>Gagné, F. (2004). Transforming gifts into talents: the DMGT as a developmental theory. <em>High Ability Studies, 15</em>(2), 119–147.</li>' +
+      '<li>Vuyk, M. A., Krieshok, T. S., & Kerr, B. A. (2016). Openness to experience rather than overexcitabilities. Véase también De Bondt & Van Petegem (2015), evaluación psicométrica del OEQ-II, <em>Frontiers in Psychology</em>. <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2015.01963/full" target="_blank" rel="noopener">Frontiers</a></li>' +
+      '<li>Schneider, W. J., & McGrew, K. S. (2018). The Cattell-Horn-Carroll theory of cognitive abilities. En <em>Contemporary Intellectual Assessment</em> (4.ª ed.). Guilford.</li>' +
+      '<li>Condon, D. M., & Revelle, W. (2014). The International Cognitive Ability Resource. <em>Intelligence, 43</em>, 52–64. <a href="https://reference-global.com/download/article/10.5334/jopd.25.pdf" target="_blank" rel="noopener">Datos ICAR</a></li>' +
+      '<li>CONASAMA. Línea de la Vida 800 911 2000. <a href="https://www.gob.mx/conasama/articulos/linea-de-la-vida-800-911-2000" target="_blank" rel="noopener">gob.mx</a></li></ol>' +
+      '<p class="note">Aviso de uso: los reactivos de los cuestionarios son paráfrasis en español con fines educativos y de tamizaje, sin validación local. Los reactivos cognitivos son originales y no reproducen material protegido (WAIS, Raven, Stanford-Binet) ni reactivos del banco ICAR.</p></section>';
+  }
+
+  applyPrefs();
+  go(S.consent ? "modules" : "home");
+})();
+
+</script>
+<footer class="brand"><a href="https://yo.memovaldez.com">Memo Valdez</a> · Proyectos · Herramienta de tamizaje y autoconocimiento. No sustituye una evaluación clínica profesional.</footer>
+</body>
+</html>
